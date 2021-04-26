@@ -6,7 +6,7 @@
 ### General description
 **next2U** is an app to buy things from small stores by filtering by location and by kind of store.
 
-### Necessity that resolves
+###Necessity that resolves
 Big companies such as Fnac, elCorteIngles, the big supermarkets and similar have their own on-line platform and delivery system. But small local stores don’t have enough resources (neither technological nor logistics) to achieve that goal.
 Being inspired by other platforms (like ones which join different restaurants), **next2U** seeks to become a platform where little stores could easily sell online and deliver their products to their customers (if they want it).
 
@@ -64,7 +64,79 @@ You will change to the next page when confirm order button is clicked
 - Button to confirm the order --> the app finishes here
 
 ------
+### Data model
+#### USERS:
+  {
+    ID: uid,
+    name: String,
+    surnames: String,
+    adress(es)_to_deliverr: String,
+    mail: String,
+    phone: Number,
+    last_order_ID: uid
+  }
 
+#### STORES_LIST
+  {
+    ID: uid,
+    name: String,
+    location: String,
+    maps_code: ????,
+    deliver_option: boolean ,
+    deliver_price: Number,
+    score: number,
+    opening_hours: array???,
+    minimum_price_order: Number,
+    store_categories_id (“labels”): Array of strings,
+    product_list: {
+      product_category_ID: Number: product_ID: Array of numbers
+      (as much entries as product_categories_ID has the store linked)
+    }
+  }
+
+***Duda: pongo en la store una array de product ID (los productos que pertenecen a esta store) o en la colección de productos que haya un campo que sea store ID (para marcar a qué store pertenecen)???***
+
+
+#### STORE_CATEGORIES
+  {
+    ID: uid,
+    name: String
+  }
+
+PRODUCT_CATEGORIES
+  {
+    ID: uid,
+    name: String
+  }
+
+
+#### PRODUCTS_LIST 
+  {
+    ID: uid,
+    name: String,
+    product_category id: Number,
+    price/unit: Number,
+    units_available: Number,
+    kind_of_unit: String,
+    photo: Link??? String????,
+    description: String
+  }
+
+
+#### ORDERS
+  {
+    ID: uid,
+    user_ID: uid,
+    store_ID: uid,
+    product details: {
+        name: String,
+        units: Number,
+        price: Number
+    }
+  total_price: Number,
+  date: Date???,
+  status: Enum (delivered/picked/cancelled)
+}
 
 
 
