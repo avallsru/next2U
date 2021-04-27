@@ -81,11 +81,10 @@ You will change to the next page when confirm order button is clicked
     ID: uid,
     name: String,
     location: String,
-    maps_code: ????,
     deliver_option: boolean ,
     deliver_price: Number,
     score: number,
-    opening_hours: array???,
+    opening_hours: array,
     minimum_price_order: Number,
     store_categories_id (“labels”): Array of strings,
     product_list: {
@@ -94,16 +93,13 @@ You will change to the next page when confirm order button is clicked
     }
   }
 
-***Duda: pongo en la store una array de product ID (los productos que pertenecen a esta store) o en la colección de productos que haya un campo que sea store ID (para marcar a qué store pertenecen)???***
-
-
 #### STORE_CATEGORIES
   {
     ID: uid,
     name: String
   }
 
-PRODUCT_CATEGORIES
+#### PRODUCT_CATEGORIES
   {
     ID: uid,
     name: String
@@ -116,9 +112,9 @@ PRODUCT_CATEGORIES
     name: String,
     product_category id: Number,
     price/unit: Number,
-    units_available: Number,
     kind_of_unit: String,
-    photo: Link??? String????,
+    units_available: Number,
+    photo: String,
     description: String
   }
 
