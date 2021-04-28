@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Antic&display=swap');
+
+//COLORS
+$soft_green: rgb(126, 217, 87);
+$dark_green: rgb(0, 128, 55);
+
+//FONTS
+@mixin primaryFont {
+  font-family: 'Antic', sans-serif;
+}
+
