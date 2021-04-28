@@ -1,0 +1,49 @@
+@import '../../utils/general.scss';
+
+.inputAdress {
+  margin: 30vh 10vw 0 10vw;
+  >* {
+    @include primaryFont;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 1vh 2vw;
+  }
+  input {
+    width: 70%;
+  }
+  button {
+    width: 20%;
+    background-color: $soft_green;
+    color: $dark_green;
+    border-color: $dark_green;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .inputAdress {
+    margin: 25vh 20vw 0 20vw;
+    >* {
+      @include primaryFont;
+      font-size: 1rem;
+      font-weight: bold;
+      padding: 1vh 2vw;
+    }
+    input {
+      width: 70%;
+    }
+    button {
+      width: 20%;
+      background-color: $soft_green;
+      color: $dark_green;
+      border-color: $dark_green;
+    }
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .inputAdress {
+    >* {
+      font-size: 1.5rem;
+    }
+  }
+}

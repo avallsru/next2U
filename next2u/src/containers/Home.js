@@ -1,14 +1,16 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 
-import InputAdress from '../Components/InputAdress';
+import InputAddress from '../Components/InputAddress';
+
+import './Home.scss';
 
 const Home = props => {
-
-  
+ 
   return (
     <div>
-      <InputAdress />
+        <InputAddress />
+      
     </div>
   );
 };
