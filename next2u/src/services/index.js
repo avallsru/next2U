@@ -1,7 +1,7 @@
 import getStores from './getStores';
-import getCoords from './getCoords';
+import getAddressDetails from './getAddressDetails';
 
 export {
   getStores,
-  getCoords
+  getAddressDetails
 }

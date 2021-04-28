@@ -1,1 +1,2 @@
 export const SET_COORDINATES = 'ADD_COORDINATES';
+export const SAVE_ADDRESS = 'SAVE_ADDRESS';
