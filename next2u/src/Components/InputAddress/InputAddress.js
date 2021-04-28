@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 // import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 import { getAddressDetails, getStores } from '../../services';
 
@@ -10,9 +11,12 @@ import './InputAddress.scss';
 
 const InputAdress = props => {
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const [coords, setCoords] = useState({lat: 0, lon: 0});
   const [address, setAddress] = useState('');
+
+  
 
   useEffect(() => {
     dispatch(setCoordinates(coords));
@@ -30,6 +34,8 @@ const InputAdress = props => {
 
     setCoords({lat, lon});
     setAddress(formatedAddress);
+
+    history.push('/stores_results');
   }
 
   return (
