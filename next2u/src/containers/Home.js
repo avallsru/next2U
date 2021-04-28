@@ -1,10 +1,14 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 
+import InputAdress from '../Components/InputAdress';
+
 const Home = props => {
+
+  
   return (
     <div>
-      This is the home;
+      <InputAdress />
     </div>
   );
 };
