@@ -1,4 +1,5 @@
-const API_KEY=process.env.REACT_APP_API_KEY; 
+const API_KEY=process.env.REACT_APP_API_KEY;
+
 const API_BASE_SEARCH_NEAR_STORES=`https://maps.googleapis.com/maps/api/place/nearbysearch/json?`;
 
 
@@ -8,3 +9,9 @@ const API_BASE_SEARCH_NEAR_STORES=`https://maps.googleapis.com/maps/api/place/ne
 const API_BASE_CONVERT_ADRESS_TO_COORD=`https://maps.googleapis.com/maps/api/geocode/json?`;
 //To add: address=Avinguda+del+Parc+57+Cornellà+de+llobregat&key=${API_KEY};
 //fields=results>formated_adress,geometry>location
+
+export {
+  API_KEY,
+  API_BASE_SEARCH_NEAR_STORES,
+  API_BASE_CONVERT_ADRESS_TO_COORD
+}
