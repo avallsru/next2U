@@ -1,4 +1,4 @@
-const admin = require('./node_modules/firebase-admin');
+const admin = require('firebase-admin');
 const serviceAccount = require("./serviceAccountKey.json");
 const data = require("./data.json");
 const collectionKey = "stores"; //name of the collection
