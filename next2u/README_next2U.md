@@ -81,7 +81,8 @@ You will change to the next page when confirm order button is clicked
     ID: uid,
     name: String,
     location: String,
-    deliver_option: boolean ,
+    photo: String,
+    deliver_option: boolean,
     deliver_price: Number,
     score: number,
     opening_hours: array,
@@ -96,7 +97,8 @@ You will change to the next page when confirm order button is clicked
 #### STORE_CATEGORIES
   {
     ID: uid,
-    name: String
+    name: String,
+    img: String
   }
 
 #### PRODUCT_CATEGORIES
