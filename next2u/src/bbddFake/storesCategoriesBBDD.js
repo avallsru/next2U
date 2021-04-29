@@ -26,7 +26,7 @@ export const storesCatBBDD = [
   },
   {
     id: 6,
-    name: 'Cuidado personal',
+    name: 'Perfumería',
     img: 'stores_categories/6.jpg'
   },
 
