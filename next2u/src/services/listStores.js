@@ -17,11 +17,12 @@ export async function listStores(collection, id) {
     let db = getCollection(collection);
     if (id) {
       db = db.where("store_categories_id", "array-contains", id);
-    }
+    } 
     const querySnapshot = await db.get();
     const data = [];
     querySnapshot.forEach((doc) => {
       data.push(parseDocument(doc));
+      console.log(data);
     })
 
     console.log(data);

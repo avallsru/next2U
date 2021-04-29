@@ -8,6 +8,7 @@ function addressReducer(state = defaultAddress, action) {
     case SAVE_ADDRESS:   {
       return action.payload;
     }
+    
     default: {
       return state;
     }

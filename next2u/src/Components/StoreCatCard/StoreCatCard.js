@@ -1,19 +1,30 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 // import PropTypes from 'prop-types';
 
 import { listStores } from '../../services';
 
+import { listToPrint } from '../../redux/actions/storesActions';
+
 import './StoreCatCard.scss';
 
 const StoreCatCard = ({cat}) => {
-  console.log(cat);
+  const dispatch = useDispatch();
+
+  const [storesList, setStoresList] = useState([]);
+
+  useEffect(() => {
+    dispatch(listToPrint(storesList));
+  }, [storesList, dispatch])
 
   const {name, img, id} = cat;
-  const other_image = 'stores_categories/white_1.jpg'
   const imgRoute = `assets/img/${img}`;
 
-  const handleClick = (e) => {
-    listStores('stores', id);
+
+  const handleClick = async (e) => {
+    const storesToPrint = await listStores('stores', id);
+    console.log(storesToPrint);
+    setStoresList(storesToPrint);
   }
 
   const handleHover = (e) => {
