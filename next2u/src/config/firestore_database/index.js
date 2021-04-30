@@ -1,7 +1,7 @@
 const admin = require('firebase-admin');
 const serviceAccount = require("./serviceAccountKey.json");
-const data = require("./data.json");
-const collectionKey = "stores"; //name of the collection
+const data = require("./stores_categories.json");
+const collectionKey = "stores_categories"; //name of the collection
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   databaseURL: "https://next2u-31408-default-rtdb.europe-west1.firebasedatabase.app/"
