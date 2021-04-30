@@ -65,6 +65,7 @@ You will change to the next page when confirm order button is clicked
 
 ------
 ### Data model
+```js
 #### USERS:
   {
     ID: uid,
@@ -135,6 +136,7 @@ You will change to the next page when confirm order button is clicked
   date: Date???,
   status: Enum (delivered/picked/cancelled)
 }
+```js
 
 
 
