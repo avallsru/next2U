@@ -1,16 +1,20 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
-import { listStoresToPrint } from "../../logic";
+import { useDispatch, useSelector } from "react-redux";
+
 // import PropTypes from 'prop-types';
+
+import { listStoresToPrint } from "../../logic";
+
+import { listToPrint } from "../../redux/actions/storesActions";
 
 import "./InputRestName.scss";
 
 const InputRestName = (props) => {
+  const dispatch = useDispatch();
   const { storesReducer } = useSelector((store) => store);
   const storesNearAddress = storesReducer.storesNearAddress;
 
   const [name, setName] = useState();
-  const [storesList, setStoresList] = useState([]);
 
   const handleChange = ({ target }) => {
     setName(target.value);
@@ -18,8 +22,9 @@ const InputRestName = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const listToPrint = listStoresToPrint(storesNearAddress, name, "byName");
-    console.log(listToPrint);
+    const storesSelected = listStoresToPrint(storesNearAddress, name, "byName");
+    dispatch(listToPrint(storesSelected));
+    setName('');
   }
 
   return (

@@ -1,10 +1,9 @@
 export default function listStoresToPrint(storesArr, toSearch, kind) {
-  const regexToFind = new RegExp(`/(?:${toSearch})/gi`);
+  const regexToFind = new RegExp(`(?:${toSearch})`, 'gi');
   console.log(regexToFind);
   const storesToPrint = storesArr.filter(store => {
     if (kind === 'byName') {
-      console.log(store.name.match(regexToFind));
-      return store.name.match(regexToFind);
+      return  regexToFind.test(store.name);
     }
     return store.store_categories_id.includes(toSearch);
   });
