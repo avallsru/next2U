@@ -91,8 +91,9 @@ You will change to the next page when confirm order button is clicked
     store_categories_id (“labels”): Array of strings,
     product_list: {
       product_category_ID: Number: product_ID: Array of numbers
-      (as much entries as product_categories_ID has the store linked)
+      ("as much entries as product_categories_ID has the store linked")
     }
+    img: URL
   }
 
 #### STORE_CATEGORIES
