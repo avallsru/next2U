@@ -22,10 +22,8 @@ export async function listStores(collection, id) {
     const data = [];
     querySnapshot.forEach((doc) => {
       data.push(parseDocument(doc));
-      console.log(data);
     })
-
-    console.log(data);
+    
     return data;
     
   } catch (error) {

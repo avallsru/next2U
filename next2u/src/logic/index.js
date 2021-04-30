@@ -1,7 +1,5 @@
-import storesToPrint from './storesToPrint';
-import {listStores} from '../services/listStores';
+import listStoresToPrint from './listStoresToPrint';
 
 export {
-  storesToPrint,
-  listStores
+  listStoresToPrint
 }

@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 // import PropTypes from 'prop-types';
 
 import { listStores } from '../../services';
+import { removeObjectById } from '../../services/removeById';
+
+import {listStoresToPrint} from '../../logic';
 
 import { listToPrint } from '../../redux/actions/storesActions';
 
@@ -13,18 +16,22 @@ const StoreCatCard = ({cat}) => {
 
   const [storesList, setStoresList] = useState([]);
 
+  const {name, img, id} = cat;
+  const imgRoute = `assets/img/${img}`;
+  const {storesReducer} = useSelector(store => store);
+
   useEffect(() => {
     dispatch(listToPrint(storesList));
   }, [storesList, dispatch])
 
-  const {name, img, id} = cat;
-  const imgRoute = `assets/img/${img}`;
+  
 
 
-  const handleClick = async (e) => {
-    const storesToPrint = await listStores('stores', id);
-    console.log(storesToPrint);
-    setStoresList(storesToPrint);
+  const handleClick = (e) => {
+    const storesNearAddress = storesReducer.storesNearAddress;
+    console.log(storesNearAddress);
+    const listToPrint = listStoresToPrint(storesNearAddress, id);
+    setStoresList(listToPrint);
   }
 
   const handleHover = (e) => {

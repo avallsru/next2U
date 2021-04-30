@@ -11,4 +11,5 @@ function listSelectedStores(storesArr) {
 
 export {
   listToPrint,
+  listSelectedStores
 }
