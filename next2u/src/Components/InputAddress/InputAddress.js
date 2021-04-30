@@ -8,7 +8,7 @@ import { getAddressDetails, getStores, listStores } from '../../services';
 import {setCoordinates, saveAddress} from '../../redux/actions/addressActions';
 
 import './InputAddress.scss';
-import { listSelectedStores } from '../../redux/actions/storesActions';
+import { listSelectedStores, listToPrint } from '../../redux/actions/storesActions';
 
 const InputAdress = props => {
   const dispatch = useDispatch();
@@ -23,6 +23,7 @@ const InputAdress = props => {
     dispatch(setCoordinates(coords));
     dispatch(saveAddress(address));
     dispatch(listSelectedStores(storesList));
+    dispatch(listToPrint(storesList));
   }, [coords, dispatch, address, storesList]);
 
   const handleChange = ({ target }) => {

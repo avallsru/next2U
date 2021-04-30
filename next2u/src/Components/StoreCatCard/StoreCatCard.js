@@ -20,18 +20,12 @@ const StoreCatCard = ({cat}) => {
   const imgRoute = `assets/img/${img}`;
   const {storesReducer} = useSelector(store => store);
 
-  useEffect(() => {
-    dispatch(listToPrint(storesList));
-  }, [storesList, dispatch])
-
-  
-
-
   const handleClick = (e) => {
     const storesNearAddress = storesReducer.storesNearAddress;
     console.log(storesNearAddress);
     const listToPrint = listStoresToPrint(storesNearAddress, id);
     setStoresList(listToPrint);
+    dispatch(listToPrint(storesList));
   }
 
   const handleHover = (e) => {
