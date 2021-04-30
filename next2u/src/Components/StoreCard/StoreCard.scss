@@ -1,0 +1,8 @@
+@import '../../utils/general.scss';
+.storeCard-container {
+  display: flex;
+  border: 2px solid black;
+  > * {
+    @include primaryFont;
+  }
+}

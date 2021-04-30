@@ -6,6 +6,8 @@ import { useSelector } from "react-redux";
 
 import { storesCatBBDD } from '../../bbddFake/storesCategoriesBBDD';
 
+import './StoreCard.scss'
+
 const StoreCard = store => {
 
   //to delete after the storecardlist is implemented
