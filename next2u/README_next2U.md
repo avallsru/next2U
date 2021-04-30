@@ -136,7 +136,7 @@ You will change to the next page when confirm order button is clicked
   date: Date???,
   status: Enum (delivered/picked/cancelled)
 }
-```js
+```
 
 
 
