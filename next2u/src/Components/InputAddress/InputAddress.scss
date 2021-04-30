@@ -3,10 +3,7 @@
 .inputAdress {
   margin: 30vh 10vw 0 10vw;
   >* {
-    @include primaryFont;
-    font-size: 0.8rem;
-    font-weight: bold;
-    padding: 1vh 2vw;
+    @include searchInput;
   }
   input {
     width: 70%;

@@ -9,3 +9,10 @@ $dark_green: rgb(0, 128, 55);
   font-family: 'Antic', sans-serif;
 }
 
+@mixin searchInput {
+  @include primaryFont;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 1vh 2vw;
+}
+
