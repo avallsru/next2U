@@ -1,8 +1,9 @@
-import { STORES_TO_PRINT, STORES_SELECTED } from '../types';
+import { STORES_TO_PRINT, STORES_SELECTED, STORE_TO_DETAIL } from '../types';
 
 const defaultList = {
   storesNearAddress: [],
-  storesToPrint: []
+  storesToPrint: [],
+  storeToDetail: {}
 }
 
 function storesReducer(state = defaultList, action) {
@@ -12,6 +13,9 @@ function storesReducer(state = defaultList, action) {
     }
     case STORES_TO_PRINT: {
       return {...state, storesToPrint: action.payload}
+    }
+    case STORE_TO_DETAIL: {
+      return {...state, storeToDetail: action.payload}
     }
     default: {
       return state;

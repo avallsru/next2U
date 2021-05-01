@@ -1,8 +1,10 @@
 import React from "react";
 // import PropTypes from 'prop-types';
-
-import { useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import { FcClock, FcMoneyTransfer } from "react-icons/fc";
+
+import { saveStoreToDetail } from '../../redux/actions/storesActions';
 
 import { storesCatBBDD } from "../../bbddFake/storesCategoriesBBDD";
 
@@ -16,6 +18,8 @@ const StoreCard = (store) => {
   ////
 
   const storeToPrint = store.store;
+  const history = useHistory();
+  const dispatch = useDispatch();
 
   //to change when firebase bbdd where implemented
   const categories = storesCatBBDD;
@@ -35,8 +39,14 @@ const StoreCard = (store) => {
 
     return categoriesName.join(" ");
   };
+
+  const handleClick = () => {
+    dispatch(saveStoreToDetail(storeToPrint));
+    history.push("/store_details");
+  }
+
   return (
-    <div className="storeCard-container">
+    <div className="storeCard-container" onClick={handleClick}>
       <div className="store-img container">
         <img src={`assets/img/stores/${storeToPrint.id}.jpg`} alt="store-logo" />
       </div>
