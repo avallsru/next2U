@@ -1,13 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 // import PropTypes from 'prop-types';
 
-import { listStores } from "../../services";
-import { removeObjectById } from "../../services/removeById";
-
 import { listStoresToPrint } from "../../logic";
-
-import { listToPrint } from "../../redux/actions/storesActions";
 
 import "./StoreCatCard.scss";
 
