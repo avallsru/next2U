@@ -14,6 +14,7 @@ function parseDocument(doc) {
 }
 
 export async function listFromDb(collection, id) {
+  // debugger;
   try {
     let db = getCollection(collection);
     console.log(db);

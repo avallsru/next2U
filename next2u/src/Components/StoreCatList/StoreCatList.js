@@ -23,9 +23,13 @@ const StoreCatList = (props) => {
       key={Math.random() * Date.now()} />
     });
     setListToPrint(temporalList);
-  }, [categories])
+  }, [categories]);
+
+  useEffect(() => {
+    getList();
+  }, []);
   
-  getList();
+  
   return (
     <div className="categories-list">
       {listToPrint}
