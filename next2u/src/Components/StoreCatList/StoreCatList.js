@@ -8,6 +8,7 @@ import './StoreCatList.scss';
 
 const StoreCatList = props => {
   // const listToPrint = storesCatBBDD;
+
   const listToPrint = storesCatBBDD.map((category) => {
     return <StoreCatCard cat={category} 
     key={Math.random() * Date.now()} />
