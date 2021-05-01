@@ -1,6 +1,7 @@
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 
+
 function getCollection(collection) {
   return firebase.firestore().collection(collection); // todos | profiles
 }
@@ -15,6 +16,7 @@ function parseDocument(doc) {
 export async function listStores(collection, id) {
   try {
     let db = getCollection(collection);
+    console.log(db);
     if (id) {
       db = db.where("store_categories_id", "array-contains", id);
     } 
