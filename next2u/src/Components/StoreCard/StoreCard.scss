@@ -1,0 +1,68 @@
+@import '../../utils/general.scss';
+.storeCard-container {
+  display: grid;
+  grid-template-columns: 40% 20% 40%;
+  grid-template-areas: "photo basic-data other-details"; 
+  margin: 5vh 0;
+  border: 2px solid black;
+  > * {
+    @include primaryFont;
+  }
+  :hover {
+    cursor: pointer;
+  }
+}
+
+.store-img {
+  grid-area: photo;
+  padding: auto;
+  
+  img {
+    margin: auto auto auto auto;
+    max-width: 239px;
+    max-height: 125px;
+    padding: 5px;
+  }
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  
+}
+
+.store-basic-data {
+  grid-area: basic-data;
+  text-align: center;
+  padding-left: 1em;
+}
+
+.store-other-details {
+  grid-area: other-details;
+}
+
+.store-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-block-end: 0.3em; 
+  margin-block-start: 0.3em;
+}
+
+.opening-hours {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.paying-info {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  .delivery-price,
+  .minimum-order {
+    padding-left: 0.3em;
+  }
+  .minimum-order {
+    padding-right: 0.3em;
+  }
+
+}

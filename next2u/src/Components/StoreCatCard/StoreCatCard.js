@@ -1,15 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 // import PropTypes from 'prop-types';
 
-import { listStores } from "../../services";
-import { removeObjectById } from "../../services/removeById";
+import { listToPrint } from '../../redux/actions/storesActions';
 
 import { listStoresToPrint } from "../../logic";
 
-import { listToPrint } from "../../redux/actions/storesActions";
-
 import "./StoreCatCard.scss";
+import StoreList from "../StoreList";
 
 const StoreCatCard = ({ cat }) => {
   const dispatch = useDispatch();
@@ -18,14 +16,16 @@ const StoreCatCard = ({ cat }) => {
 
   const { name, img, id } = cat;
   const imgRoute = `assets/img/${img}`;
-  const { storesReducer } = useSelector((store) => store);
+  const { storesNearAddress } = useSelector((store) => store.storesReducer);
 
   const handleClick = (e) => {
-    const storesNearAddress = storesReducer.storesNearAddress;
     console.log(storesNearAddress);
-    const listToPrint = listStoresToPrint(storesNearAddress, id);
-    setStoresList(listToPrint);
+    const definedList = listStoresToPrint(storesNearAddress, id);
+    setStoresList(definedList);
     dispatch(listToPrint(storesList));
+    return(
+      <StoreList />
+    )
   };
 
   const handleHover = (e) => {
