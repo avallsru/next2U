@@ -9,12 +9,12 @@ import { storesCatBBDD } from "../../bbddFake/storesCategoriesBBDD";
 import "./StoreCard.scss";
 
 const StoreCard = (store) => {
-  //to delete after the storecardlist is implemented
-  const storesSelected = useSelector(
-    (store) => store.storesReducer.storesNearAddress
-  );
-  const temporalStore = storesSelected[0];
-  ////
+  // //to delete after the storecardlist is implemented
+  // const storesSelected = useSelector(
+  //   (store) => store.storesReducer.storesNearAddress
+  // );
+  // const temporalStore = storesSelected[0];
+  // ////
 
   //to change when firebase bbdd where implemented
   const categories = storesCatBBDD;
