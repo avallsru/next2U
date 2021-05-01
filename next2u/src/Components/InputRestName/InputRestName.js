@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { listStoresToPrint } from "../../logic";
 
 import { listToPrint } from "../../redux/actions/storesActions";
+import StoreList from "../StoreList";
 
 import "./InputRestName.scss";
 
@@ -25,6 +26,9 @@ const InputRestName = (props) => {
     const storesSelected = listStoresToPrint(storesNearAddress, name, "byName");
     dispatch(listToPrint(storesSelected));
     setName('');
+    return(
+      <StoreList />
+    )
   }
 
   return (

@@ -1,0 +1,542 @@
+{
+  "1": {
+    "name": "Arroz redondo",
+    "product_cat_id": 10,
+    "price_unit": "0,8",
+    "kind_of_unit": "kg",
+    "units_available": 6,
+    "photo": "products/1/10/1.jpg",
+    "description": ""
+  },
+  "2": {
+    "name": "Arroz bomba",
+    "product_cat_id": 10,
+    "price_unit": "2,5",
+    "kind_of_unit": "kg",
+    "units_available": 6,
+    "photo": "products/1/10/2.jpg",
+    "description": ""
+  },
+  "3": {
+    "name": "Arroz largo",
+    "product_cat_id": 10,
+    "price_unit": "0,83",
+    "kind_of_unit": "kg",
+    "units_available": 6,
+    "photo": "products/1/10/3.jpg",
+    "description": ""
+  },
+  "4": {
+    "name": "Quinoa",
+    "product_cat_id": 10,
+    "price_unit": "5,7",
+    "kind_of_unit": "kg",
+    "units_available": 6,
+    "photo": "products/1/10/4.jpg",
+    "description": ""
+  },
+  "5": {
+    "name": "Maíz",
+    "product_cat_id": 10,
+    "price_unit": "2,9",
+    "kind_of_unit": "kg",
+    "units_available": 6,
+    "photo": "products/1/10/5.jpg",
+    "description": ""
+  },
+  "6": {
+    "name": "Trigo sarraceno",
+    "product_cat_id": 10,
+    "price_unit": "3,78",
+    "kind_of_unit": "kg",
+    "units_available": 6,
+    "photo": "products/1/10/6.jpg",
+    "description": ""
+  },
+  "7": {
+    "name": "Almendra común",
+    "product_cat_id": 11,
+    "price_unit": "19,9",
+    "kind_of_unit": "kg",
+    "units_available": 6,
+    "photo": "products/1/11/7.jpg",
+    "description": ""
+  },
+  "8": {
+    "name": "Pistachos",
+    "product_cat_id": 11,
+    "price_unit": "23,9",
+    "kind_of_unit": "kg",
+    "units_available": 6,
+    "photo": "products/1/11/8.jpg",
+    "description": ""
+  },
+  "9": {
+    "name": "Avellanas",
+    "product_cat_id": 11,
+    "price_unit": "12,4",
+    "kind_of_unit": "kg",
+    "units_available": 6,
+    "photo": "products/1/11/9.jpg",
+    "description": ""
+  },
+  "10": {
+    "name": "Nueces",
+    "product_cat_id": 11,
+    "price_unit": "17,6",
+    "kind_of_unit": "kg",
+    "units_available": 6,
+    "photo": "products/1/11/10.jpg",
+    "description": ""
+  },
+  "11": {
+    "name": "Almendra largueta",
+    "product_cat_id": 11,
+    "price_unit": "22,1",
+    "kind_of_unit": "kg",
+    "units_available": 6,
+    "photo": "products/1/11/11.jpg",
+    "description": ""
+  },
+  "12": {
+    "name": "Avellanas",
+    "product_cat_id": 12,
+    "price_unit": "12,9",
+    "kind_of_unit": "kg",
+    "units_available": 6,
+    "photo": "products/1/12/12.jpg",
+    "description": ""
+  },
+  "13": {
+    "name": "Pistachos",
+    "product_cat_id": 12,
+    "price_unit": "24,5",
+    "kind_of_unit": "kg",
+    "units_available": 6,
+    "photo": "products/1/12/13.jpg",
+    "description": ""
+  },
+  "14": {
+    "name": "Almendra largueta",
+    "product_cat_id": 12,
+    "price_unit": "12,6",
+    "kind_of_unit": "kg",
+    "units_available": 6,
+    "photo": "products/1/12/14.jpg",
+    "description": ""
+  },
+  "15": {
+    "name": "Cacahuetes",
+    "product_cat_id": 13,
+    "price_unit": "3,12",
+    "kind_of_unit": "kg",
+    "units_available": 6,
+    "photo": "products/1/13/15.jpg",
+    "description": ""
+  },
+  "16": {
+    "name": "Mezcla",
+    "product_cat_id": 13,
+    "price_unit": "6,4",
+    "kind_of_unit": "kg",
+    "units_available": 6,
+    "photo": "products/1/13/16.jpg",
+    "description": ""
+  },
+  "17": {
+    "name": "Kikos",
+    "product_cat_id": 13,
+    "price_unit": "8,5",
+    "kind_of_unit": "kg",
+    "units_available": 6,
+    "photo": "products/1/13/17.jpg",
+    "description": ""
+  },
+  "18": {
+    "name": "Avellanas",
+    "product_cat_id": 14,
+    "price_unit": "17,1",
+    "kind_of_unit": "kg",
+    "units_available": 6,
+    "photo": "products/1/14/18.jpg",
+    "description": ""
+  },
+  "19": {
+    "name": "Almendras comunes",
+    "product_cat_id": 14,
+    "price_unit": "27,1",
+    "kind_of_unit": "kg",
+    "units_available": 6,
+    "photo": "products/1/14/19.jpg",
+    "description": ""
+  },
+  "20": {
+    "name": "Nueces de Macadamia",
+    "product_cat_id": 14,
+    "price_unit": "35,5",
+    "kind_of_unit": "kg",
+    "units_available": 6,
+    "photo": "products/1/14/20.jpg",
+    "description": ""
+  },
+  "21": {
+    "name": "Anacardos",
+    "product_cat_id": 14,
+    "price_unit": "20,3",
+    "kind_of_unit": "kg",
+    "units_available": 6,
+    "photo": "products/1/14/21.jpg",
+    "description": ""
+  },
+  "22": {
+    "name": "Lentejas de pardinas",
+    "product_cat_id": 15,
+    "price_unit": "1,49",
+    "kind_of_unit": "kg",
+    "units_available": 6,
+    "photo": "products/1/15/22.jpg",
+    "description": ""
+  },
+  "23": {
+    "name": "Lentejas rojas",
+    "product_cat_id": 15,
+    "price_unit": "5,15",
+    "kind_of_unit": "kg",
+    "units_available": 6,
+    "photo": "products/1/15/23.jpg",
+    "description": ""
+  },
+  "24": {
+    "name": "Alubias blancas",
+    "product_cat_id": 15,
+    "price_unit": "1,74",
+    "kind_of_unit": "kg",
+    "units_available": 6,
+    "photo": "products/1/15/24.jpg",
+    "description": ""
+  },
+  "25": {
+    "name": "Alubias pintas",
+    "product_cat_id": 15,
+    "price_unit": "1,97",
+    "kind_of_unit": "kg",
+    "units_available": 6,
+    "photo": "products/1/15/25.jpg",
+    "description": ""
+  },
+  "26": {
+    "name": "Garbanzo pequeño",
+    "product_cat_id": 15,
+    "price_unit": "2,15",
+    "kind_of_unit": "kg",
+    "units_available": 6,
+    "photo": "products/1/15/26.jpg",
+    "description": ""
+  },
+  "27": {
+    "name": "Garbanzo de cocido",
+    "product_cat_id": 15,
+    "price_unit": "2,4",
+    "kind_of_unit": "kg",
+    "units_available": 6,
+    "photo": "products/1/15/27.jpg",
+    "description": ""
+  },
+  "28": {
+    "name": "Frijoles negros",
+    "product_cat_id": 15,
+    "price_unit": "1,85",
+    "kind_of_unit": "kg",
+    "units_available": 6,
+    "photo": "products/1/15/28.jpg",
+    "description": ""
+  },
+  "29": {
+    "name": "Habas",
+    "product_cat_id": 15,
+    "price_unit": "3,56",
+    "kind_of_unit": "kg",
+    "units_available": 6,
+    "photo": "products/1/15/29.jpg",
+    "description": ""
+  },
+  "30": {
+    "name": "Miel mil flores 1/2 kg",
+    "product_cat_id": 16,
+    "price_unit": 6,
+    "kind_of_unit": "U",
+    "units_available": 10,
+    "photo": "products/1/16/30.jpg",
+    "description": ""
+  },
+  "31": {
+    "name": "Miel mil flores 1kg",
+    "product_cat_id": 16,
+    "price_unit": 11,
+    "kind_of_unit": "U",
+    "units_available": 10,
+    "photo": "products/1/16/31.jpg",
+    "description": ""
+  },
+  "32": {
+    "name": "Miel romero 1/2 kg",
+    "product_cat_id": 16,
+    "price_unit": "6,5",
+    "kind_of_unit": "U",
+    "units_available": 7,
+    "photo": "products/1/16/32.jpg",
+    "description": ""
+  },
+  "33": {
+    "name": "Miel romero 1 kg",
+    "product_cat_id": 16,
+    "price_unit": 12,
+    "kind_of_unit": "U",
+    "units_available": 7,
+    "photo": "products/1/16/33.jpg",
+    "description": ""
+  },
+  "34": {
+    "name": "Miel naranjo 1/2kg",
+    "product_cat_id": 16,
+    "price_unit": "6,7",
+    "kind_of_unit": "U",
+    "units_available": 5,
+    "photo": "products/1/16/34.jpg",
+    "description": ""
+  },
+  "35": {
+    "name": "Miel eucaliptus 1/2kg",
+    "product_cat_id": 16,
+    "price_unit": "6,7",
+    "kind_of_unit": "U",
+    "units_available": 5,
+    "photo": "products/1/16/35.jpg",
+    "description": ""
+  },
+  "36": {
+    "name": "Rosquillas de anís",
+    "product_cat_id": 17,
+    "price_unit": "8,32",
+    "kind_of_unit": "kg",
+    "units_available": 2,
+    "photo": "products/1/17/36.jpg",
+    "description": ""
+  },
+  "37": {
+    "name": "Roscos de naranja",
+    "product_cat_id": 17,
+    "price_unit": "9,9",
+    "kind_of_unit": "kg",
+    "units_available": 2,
+    "photo": "products/1/17/37.jpg",
+    "description": ""
+  },
+  "38": {
+    "name": "Flores manchegas",
+    "product_cat_id": 17,
+    "price_unit": 35,
+    "kind_of_unit": "kg",
+    "units_available": 2,
+    "photo": "products/1/17/38.jpg",
+    "description": ""
+  },
+  "39": {
+    "name": "Pestiños",
+    "product_cat_id": 17,
+    "price_unit": 7,
+    "kind_of_unit": "kg",
+    "units_available": 2,
+    "photo": "products/1/17/39.jpg",
+    "description": ""
+  },
+  "40": {
+    "name": "Empanadillas de cabello de angel",
+    "product_cat_id": 17,
+    "price_unit": 40,
+    "kind_of_unit": "kg",
+    "units_available": 2,
+    "photo": "products/1/17/40.jpg",
+    "description": ""
+  },
+  "41": {
+    "name": "Caramelos de miel",
+    "product_cat_id": 6,
+    "price_unit": 14,
+    "kind_of_unit": "kg",
+    "units_available": 5,
+    "photo": "products/3/6/41.jpg",
+    "description": ""
+  },
+  "42": {
+    "name": "Caramelos de regaliz",
+    "product_cat_id": 6,
+    "price_unit": 12,
+    "kind_of_unit": "kg",
+    "units_available": 5,
+    "photo": "products/3/6/42.jpg",
+    "description": ""
+  },
+  "43": {
+    "name": "Caramelos de eucalipto",
+    "product_cat_id": 6,
+    "price_unit": 12,
+    "kind_of_unit": "kg",
+    "units_available": 5,
+    "photo": "products/3/6/43.jpg",
+    "description": ""
+  },
+  "44": {
+    "name": "Caramelos de café",
+    "product_cat_id": 6,
+    "price_unit": 13,
+    "kind_of_unit": "kg",
+    "units_available": 5,
+    "photo": "products/3/6/44.jpg",
+    "description": ""
+  },
+  "45": {
+    "name": "Sugus",
+    "product_cat_id": 6,
+    "price_unit": 10,
+    "kind_of_unit": "kg",
+    "units_available": 5,
+    "photo": "products/3/6/45.jpg",
+    "description": ""
+  },
+  "46": {
+    "name": "Palotes",
+    "product_cat_id": 6,
+    "price_unit": "0,06",
+    "kind_of_unit": "U",
+    "units_available": 30,
+    "photo": "products/3/6/46.jpg",
+    "description": ""
+  },
+  "47": {
+    "name": "Piruletas",
+    "product_cat_id": 6,
+    "price_unit": "0,2",
+    "kind_of_unit": "U",
+    "units_available": 30,
+    "photo": "products/3/6/47.jpg",
+    "description": ""
+  },
+  "48": {
+    "name": "Chupa-chups",
+    "product_cat_id": 6,
+    "price_unit": "0,3",
+    "kind_of_unit": "U",
+    "units_available": 30,
+    "photo": "products/3/6/48.jpg",
+    "description": ""
+  },
+  "49": {
+    "name": "Caramelo de palo con chicle",
+    "product_cat_id": 6,
+    "price_unit": "0,5",
+    "kind_of_unit": "U",
+    "units_available": 30,
+    "photo": "products/3/6/49.jpg",
+    "description": ""
+  },
+  "50": {
+    "name": "Ositos",
+    "product_cat_id": 7,
+    "price_unit": 11,
+    "kind_of_unit": "kg",
+    "units_available": 3,
+    "photo": "products/3/7/50.jpg",
+    "description": ""
+  },
+  "51": {
+    "name": "Huevos fritos",
+    "product_cat_id": 7,
+    "price_unit": 11,
+    "kind_of_unit": "kg",
+    "units_available": 3,
+    "photo": "products/3/7/51.jpg",
+    "description": ""
+  },
+  "52": {
+    "name": "Tiburón",
+    "product_cat_id": 7,
+    "price_unit": 11,
+    "kind_of_unit": "kg",
+    "units_available": 3,
+    "photo": "products/3/7/52.jpg",
+    "description": ""
+  },
+  "53": {
+    "name": "Moras",
+    "product_cat_id": 7,
+    "price_unit": 11,
+    "kind_of_unit": "kg",
+    "units_available": 3,
+    "photo": "products/3/7/53.jpg",
+    "description": ""
+  },
+  "54": {
+    "name": "Coca-colas",
+    "product_cat_id": 8,
+    "price_unit": 11,
+    "kind_of_unit": "kg",
+    "units_available": 3,
+    "photo": "products/3/8/54.jpg",
+    "description": ""
+  },
+  "55": {
+    "name": "Corazones",
+    "product_cat_id": 8,
+    "price_unit": 11,
+    "kind_of_unit": "kg",
+    "units_available": 3,
+    "photo": "products/3/8/55.jpg",
+    "description": ""
+  },
+  "56": {
+    "name": "Ladrillos",
+    "product_cat_id": 8,
+    "price_unit": 11,
+    "kind_of_unit": "kg",
+    "units_available": 3,
+    "photo": "products/3/8/56.jpg",
+    "description": ""
+  },
+  "57": {
+    "name": "Lenguas",
+    "product_cat_id": 8,
+    "price_unit": "0,05",
+    "kind_of_unit": "U",
+    "units_available": 100,
+    "photo": "products/3/8/57.jpg",
+    "description": ""
+  },
+  "58": {
+    "name": "Calaveras picantes",
+    "product_cat_id": 8,
+    "price_unit": 11,
+    "kind_of_unit": "kg",
+    "units_available": 3,
+    "photo": "products/3/8/58.jpg",
+    "description": ""
+  },
+  "59": {
+    "name": "Bolsa preparada grande",
+    "product_cat_id": 9,
+    "price_unit": 3,
+    "kind_of_unit": "U",
+    "units_available": 10,
+    "photo": "products/3/9/59.jpg",
+    "description": "Incluye: 1 bolsa de gusanitos, 1 piruleta, 1 tiburón, 2 corazones, 2 huevos fritos, 1 ladrillo, una lengua y ositos"
+  },
+  "60": {
+    "name": "Bolsa preparada pequeña",
+    "product_cat_id": 9,
+    "price_unit": "1,6",
+    "kind_of_unit": "U",
+    "units_available": 10,
+    "photo": "products/3/9/60.jpg",
+    "description": "Incluye: 1 piruleta, 2 corazones, 1 huevo frito, 1 mora, 1 lengua y ositos"
+  }
+}

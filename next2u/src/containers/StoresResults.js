@@ -4,7 +4,7 @@ import React from 'react';
 
 import StoreCatList from '../Components/StoreCatList';
 import InputRestName from '../Components/InputRestName';
-import StoreCard from '../Components/StoreCard/StoreCard';
+import StoreList from '../Components/StoreList';
 
 import './StoresResults.scss';
 
@@ -19,7 +19,7 @@ const StoresResults = props => {
         <InputRestName className="filter-by-name" />
       </div>
       <div className="stores-container">
-        <StoreCard />
+        <StoreList />
       </div>
       
       
