@@ -3,9 +3,13 @@
   display: grid;
   grid-template-columns: 40% 20% 40%;
   grid-template-areas: "photo basic-data other-details"; 
+  margin: 5vh 0;
   border: 2px solid black;
   > * {
     @include primaryFont;
+  }
+  :hover {
+    cursor: pointer;
   }
 }
 
@@ -13,8 +17,11 @@
   grid-area: photo;
   padding: auto;
   
-  > * {
+  img {
     margin: auto auto auto auto;
+    max-width: 239px;
+    max-height: 125px;
+    padding: 5px;
   }
 }
 .container {

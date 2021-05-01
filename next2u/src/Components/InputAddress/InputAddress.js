@@ -5,30 +5,29 @@ import { useHistory } from "react-router-dom";
 
 import { getAddressDetails, getStores, listFromDb } from "../../services";
 
-import {
-  setCoordinates,
-  saveAddress,
-} from "../../redux/actions/addressActions";
+import { setCoordinates, saveAddress } from "../../redux/actions/addressActions";
 
 import "./InputAddress.scss";
-import {
-  listSelectedStores,
-  listToPrint,
-} from "../../redux/actions/storesActions";
+import { listSelectedStores, listToPrint } from "../../redux/actions/storesActions";
 
 const InputAdress = (props) => {
   const dispatch = useDispatch();
   const history = useHistory();
 
+  const addressSearchedBefore = localStorage.getItem('address');
   const [coords, setCoords] = useState({ lat: 0, lon: 0 });
-  const [address, setAddress] = useState("");
+  const [address, setAddress] = useState(addressSearchedBefore);
   const [storesList, setStoresList] = useState([]);
+
+  
 
   useEffect(() => {
     dispatch(setCoordinates(coords));
     dispatch(saveAddress(address));
     dispatch(listSelectedStores(storesList));
     dispatch(listToPrint(storesList));
+
+    
   }, [coords, dispatch, address, storesList]);
 
   const handleChange = ({ target }) => {
@@ -36,6 +35,8 @@ const InputAdress = (props) => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    localStorage.setItem('address', address, JSON.stringify(address));
 
     //GET THE COORDS
     // const {lat, lon, formatedAddress} = await getAddressDetails(address);

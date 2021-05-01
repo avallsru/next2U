@@ -6,12 +6,13 @@
     "deliver_option": 1,
     "deliver_price": 1,
     "score": 0,
-    "opening_hours": "9-14 17-20:30",
+    "opening_hours": "9-14h 17-20:30h",
     "minimum_price_order": 3,
     "store_categories_id": [
       1
     ],
-    "product_list": "{10:[1,2,3,4,5,6],11:[7,8,9,10,11],12:[12,13,14],13:[15,16,17],14:[18,19,20,21],15:[22,23,24,25,26,27,28,29],16:[30,31,32,33,34,35],17:[36,37,38,39,40]}"
+    "product_list": "{10:[1,2,3,4,5,6],11:[7,8,9,10,11],12:[12,13,14],13:[15,16,17],14:[18,19,20,21],15:[22,23,24,25,26,27,28,29],16:[30,31,32,33,34,35],17:[36,37,38,39,40]}",
+    "logo": "stores/1.jpg"
   },
   "2": {
     "name": "La mongeta boja",
@@ -20,12 +21,13 @@
     "deliver_option": 1,
     "deliver_price": 0,
     "score": 0,
-    "opening_hours": "9-21",
+    "opening_hours": "9-21h",
     "minimum_price_order": "1,5",
     "store_categories_id": [
       1
     ],
-    "product_list": {}
+    "product_list": {},
+    "logo": "stores/2.jpg"
   },
   "3": {
     "name": "Duldi",
@@ -34,12 +36,13 @@
     "deliver_option": 1,
     "deliver_price": 2,
     "score": 0,
-    "opening_hours": "10-13:30 17-20",
+    "opening_hours": "10-13:30h 17-20h",
     "minimum_price_order": 3,
     "store_categories_id": [
       3
     ],
-    "product_list": "{6:[41,42,43,44,45,46,47,48,49],7:[50,51,52,53],8:[54,55,56,57,58],9:[59,60]}"
+    "product_list": "{6:[41,42,43,44,45,46,47,48,49],7:[50,51,52,53],8:[54,55,56,57,58],9:[59,60]}",
+    "logo": "stores/3.jpg"
   },
   "4": {
     "name": "Atalaya perfumeries",
@@ -48,13 +51,14 @@
     "deliver_option": 1,
     "deliver_price": 1,
     "score": 0,
-    "opening_hours": "9:30-14 17-20:30",
+    "opening_hours": "9:30-14h 17-20:30h",
     "minimum_price_order": 5,
     "store_categories_id": [
       4,
       6
     ],
-    "product_list": {}
+    "product_list": {},
+    "logo": "stores/4.jpg"
   },
   "5": {
     "name": "Danna moda",
@@ -63,24 +67,13 @@
     "deliver_option": 1,
     "deliver_price": 0,
     "score": 0,
-    "opening_hours": "10-20:30",
+    "opening_hours": "10-20:30h",
     "minimum_price_order": 5,
     "store_categories_id": [
       4,
       5
     ],
-    "product_list": {}
-  },
-  "": {
-    "name": "",
-    "location": "",
-    "phone_contact": "",
-    "deliver_option": "",
-    "deliver_price": "",
-    "score": 0,
-    "opening_hours": "",
-    "minimum_price_order": "",
-    "store_categories_id": "",
-    "product_list": ""
+    "product_list": {},
+    "logo": "stores/5.jpg"
   }
 }

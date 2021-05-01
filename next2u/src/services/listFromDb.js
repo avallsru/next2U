@@ -14,10 +14,8 @@ function parseDocument(doc) {
 }
 
 export async function listFromDb(collection, id) {
-  // debugger;
   try {
     let db = getCollection(collection);
-    console.log(db);
     if (id) {
       db = db.where("store_categories_id", "array-contains", id);
     } 
