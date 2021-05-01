@@ -13,7 +13,7 @@ function parseDocument(doc) {
   }
 }
 
-export async function listStores(collection, id) {
+export async function listFromDb(collection, id) {
   try {
     let db = getCollection(collection);
     console.log(db);

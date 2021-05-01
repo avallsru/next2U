@@ -4,14 +4,14 @@ import React from 'react';
 import { storesCatBBDD } from '../../bbddFake/storesCategoriesBBDD';
 import StoreCatCard from '../StoreCatCard';
 
-import { getCollection } from '../../services';
+import { getCollection, listFromDb } from '../../services';
 
 import './StoreCatList.scss';
 
-const StoreCatList = props => {
-  // const listToPrint = storesCatBBDD;
-  const storesCatList = getCollection('stores_categories');
-  console.log(storesCatList);
+const StoreCatList = async(props) => {
+  const categories = await listFromDb('stores_categories');
+  // const categoriesArr = Object.values(categories);
+
   const listToPrint = storesCatBBDD.map((category) => {
     return <StoreCatCard cat={category} 
     key={Math.random() * Date.now()} />
