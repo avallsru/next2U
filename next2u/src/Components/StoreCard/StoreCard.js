@@ -1,8 +1,10 @@
 import React from "react";
 // import PropTypes from 'prop-types';
-
-import { useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import { FcClock, FcMoneyTransfer } from "react-icons/fc";
+
+import { saveStoreToDetail } from '../../redux/actions/storesActions';
 
 import { storesCatBBDD } from "../../bbddFake/storesCategoriesBBDD";
 
@@ -10,15 +12,18 @@ import "./StoreCard.scss";
 
 const StoreCard = (store) => {
   //to delete after the storecardlist is implemented
-  const storesSelected = useSelector(
-    (store) => store.storesReducer.storesNearAddress
-  );
-  const temporalStore = storesSelected[0];
+  // const storesSelected = useSelector(
+  //   (store) => store.storesReducer.storesNearAddress
+  // );
   ////
+
+  const storeToPrint = store.store;
+  const history = useHistory();
+  const dispatch = useDispatch();
 
   //to change when firebase bbdd where implemented
   const categories = storesCatBBDD;
-  const idsToSearch = temporalStore.store_categories_id;
+  const idsToSearch = storeToPrint.store_categories_id;
   /////
 
   const getCatNames = (categoriesArr) => {
@@ -34,19 +39,25 @@ const StoreCard = (store) => {
 
     return categoriesName.join(" ");
   };
+
+  const handleClick = () => {
+    dispatch(saveStoreToDetail(storeToPrint));
+    history.push("/store_details");
+  }
+
   return (
-    <div className="storeCard-container">
+    <div className="storeCard-container" onClick={handleClick}>
       <div className="store-img container">
-        <img src="assets/img/stores/1.jpg" alt="store-logo" />
+        <img src={`assets/img/stores/${storeToPrint.id}.jpg`} alt="store-logo" />
       </div>
       <div className="store-basic-data container">
-        <p className="store-name">{temporalStore.name}</p>
+        <p className="store-name">{storeToPrint.name}</p>
         <div className="category-names">{getCatNames(idsToSearch)}</div>
       </div>
       <div className="store-other-details container">
         <div className="opening-hours">
           <FcClock />
-          {temporalStore["opening_hours"]}
+          {storeToPrint["opening_hours"]}
         </div>
         <div className="paying-info">
           <FcMoneyTransfer />
@@ -55,7 +66,7 @@ const StoreCard = (store) => {
               <span>
                 <b>Entrega:</b>
               </span>
-              <span>{`${temporalStore["deliver_price"]}€`}</span>
+              <span>{`${storeToPrint["deliver_price"]}€`}</span>
             </div>
           </div>
           <div className="minimum-order">
@@ -63,7 +74,7 @@ const StoreCard = (store) => {
               <span>
                 <b>Pedido mín:</b>
               </span>
-              <span>{`${temporalStore["minimum_price_order"]}€`}</span>
+              <span>{`${storeToPrint["minimum_price_order"]}€`}</span>
             </div>
           </div>
         </div>

@@ -5,16 +5,10 @@ import { useHistory } from "react-router-dom";
 
 import { getAddressDetails, getStores, listStores } from "../../services";
 
-import {
-  setCoordinates,
-  saveAddress,
-} from "../../redux/actions/addressActions";
+import { setCoordinates, saveAddress } from "../../redux/actions/addressActions";
 
 import "./InputAddress.scss";
-import {
-  listSelectedStores,
-  listToPrint,
-} from "../../redux/actions/storesActions";
+import { listSelectedStores, listToPrint } from "../../redux/actions/storesActions";
 
 const InputAdress = (props) => {
   const dispatch = useDispatch();
