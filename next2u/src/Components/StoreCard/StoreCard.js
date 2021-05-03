@@ -12,26 +12,11 @@ import { storesCatBBDD } from "../../bbddFake/storesCategoriesBBDD";
 import "./StoreCard.scss";
 
 const StoreCard = (store) => {
-  // //to delete after the storecardlist is implemented
-  // const storesSelected = useSelector(
-  //   (store) => store.storesReducer.storesNearAddress
-  // );
-  // const temporalStore = storesSelected[0];
-  // ////
-  //to delete after the storecardlist is implemented
-  // const storesSelected = useSelector(
-  //   (store) => store.storesReducer.storesNearAddress
-  // );
-  ////
 
   const storeToPrint = store.store;
   const history = useHistory();
   const dispatch = useDispatch();
 
-  //to change when firebase bbdd where implemented
-  // const categories = storesCatBBDD;
-  // const idsToSearch = temporalStore.store_categories_id;
-  /////
   const [categories, setCategories] = useState([]);
   // const [storeToPrint, setStoreToPrint] = useState([]);
   // const [idsToSearch, setIdsToSearch] = useState([]);
@@ -57,7 +42,6 @@ const StoreCard = (store) => {
     categoriesArr.forEach((idToFind) => {
       const filteredByCat = categories.filter(
         (category) => category.id === idToFind.toString()
-        
       );
       console.log(filteredByCat);
       filteredByCat.forEach((categoryObj) => {

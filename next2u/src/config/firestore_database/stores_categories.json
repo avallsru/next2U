@@ -1,26 +1,26 @@
 {
   "1": {
     "name": "Alimentación",
-    "img": "stores_categories/1.jpg"
+    "img": "1.jpg"
   },
   "2": {
     "name": "Dulces",
-    "img": "stores_categories/2.jpg"
+    "img": "2.jpg"
   },
   "3": {
     "name": "Niños",
-    "img": "stores_categories/3.jpg"
+    "img": "3.jpg"
   },
   "4": {
     "name": "Adultos",
-    "img": "stores_categories/4.jpg"
+    "img": "4.jpg"
   },
   "5": {
     "name": "Ropa",
-    "img": "stores_categories/5.jpg"
+    "img": "5.jpg"
   },
   "6": {
     "name": "Cuidado personal",
-    "img": "stores_categories/6.jpg"
+    "img": "6.jpg"
   }
 }
