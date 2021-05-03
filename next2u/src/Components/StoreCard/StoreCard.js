@@ -21,10 +21,7 @@ const StoreCard = (store) => {
   // const [storeToPrint, setStoreToPrint] = useState([]);
   // const [idsToSearch, setIdsToSearch] = useState([]);
   const [catNames, setCatNames] = useState('');
-  useEffect(() => {
-    
-    getCategories();
-  }, []);
+ 
  
 
   const getCategories = async () => {
@@ -38,20 +35,22 @@ const StoreCard = (store) => {
 
   const getCatNames = (categoriesArr) => {
     const categoriesName = [];
-    console.log(categories);
     categoriesArr.forEach((idToFind) => {
       const filteredByCat = categories.filter(
-        (category) => category.id === idToFind.toString()
+        (category) => (parseInt(category.id) + 1) === idToFind
       );
-      console.log(filteredByCat);
       filteredByCat.forEach((categoryObj) => {
-        // console.log(categoryObj);
         categoriesName.push(categoryObj.name);
       });
     });
 
     setCatNames( categoriesName.join(" "));
   };
+
+  useEffect(() => {
+    
+    getCategories();
+  }, []);
 
   return (
     <div className="storeCard-container">
@@ -60,6 +59,7 @@ const StoreCard = (store) => {
       </div>
       <div className="store-basic-data container">
         <p className="store-name">{storeToPrint.name}</p>
+        
         <div className="category-names">{catNames}</div>
       </div>
       <div className="store-other-details container">
