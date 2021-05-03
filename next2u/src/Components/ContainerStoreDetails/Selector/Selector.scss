@@ -1,0 +1,7 @@
+.selector-container {
+  > * {
+    :hover {
+      cursor: pointer;
+    }
+  }
+}

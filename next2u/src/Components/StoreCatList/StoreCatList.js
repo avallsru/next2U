@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 // import PropTypes from 'prop-types';
 
-import { storesCatBBDD } from '../../bbddFake/storesCategoriesBBDD';
 import StoreCatCard from '../StoreCatCard';
 
-import { getCollection, listFromDb } from '../../services';
+import { listFromDb } from '../../services';
 
 import './StoreCatList.scss';
 

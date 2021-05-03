@@ -16,8 +16,6 @@ const StoreCard = (store) => {
   const dispatch = useDispatch();
 
   const [categories, setCategories] = useState([]);
-  // const [storeToPrint, setStoreToPrint] = useState([]);
-  // const [idsToSearch, setIdsToSearch] = useState([]);
   const [catNames, setCatNames] = useState('');
  
   useEffect(() => {
@@ -51,16 +49,16 @@ const StoreCard = (store) => {
   } 
   
   return (
-    <div className="storeCard-container" onClick={handleClick}>
-      <div className="store-img container">
-        <img src="assets/img/stores/1.jpg" alt="store-logo" />
+    <div className="detailsCard-container" onClick={handleClick}>
+      <div className="detail-img container">
+        <img src="assets/img/stores/1.jpg" alt="detail-img" />
       </div>
-      <div className="store-basic-data container">
-        <p className="store-name">{storeToPrint.name}</p>
+      <div className="detail-basic-data container">
+        <p className="detail-name">{storeToPrint.name}</p>
         
         <div className="category-names">{catNames}</div>
       </div>
-      <div className="store-other-details container">
+      <div className="detail-other-info container">
         <div className="opening-hours">
           <FcClock />
           {storeToPrint["opening_hours"]}

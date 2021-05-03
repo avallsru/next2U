@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 // import PropTypes from 'prop-types';
 
-import StoreCard from '../StoreCard';
+import { StoreCard } from '../DetailCards';
 
 const StoreList = props => {
   const { storesToPrint } = useSelector(store => store.storesReducer);
