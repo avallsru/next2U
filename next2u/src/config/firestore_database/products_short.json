@@ -5,7 +5,7 @@
     "price_unit": "0,8",
     "kind_of_unit": "kg",
     "units_available": 6,
-    "photo": "products/1/10/1.jpg",
+    "photo": "1.jpg",
     "description": ""
   },
   "2": {
@@ -14,7 +14,7 @@
     "price_unit": "2,5",
     "kind_of_unit": "kg",
     "units_available": 6,
-    "photo": "products/1/10/2.jpg",
+    "photo": "2.jpg",
     "description": ""
   },
   "3": {
@@ -23,7 +23,7 @@
     "price_unit": "0,83",
     "kind_of_unit": "kg",
     "units_available": 6,
-    "photo": "products/1/10/3.jpg",
+    "photo": "3.jpg",
     "description": ""
   },
   "4": {
@@ -32,7 +32,7 @@
     "price_unit": "5,7",
     "kind_of_unit": "kg",
     "units_available": 6,
-    "photo": "products/1/10/4.jpg",
+    "photo": "4.jpg",
     "description": ""
   },
   "5": {
@@ -41,7 +41,7 @@
     "price_unit": "2,9",
     "kind_of_unit": "kg",
     "units_available": 6,
-    "photo": "products/1/10/5.jpg",
+    "photo": "5.jpg",
     "description": ""
   },
   "6": {
@@ -50,7 +50,7 @@
     "price_unit": "3,78",
     "kind_of_unit": "kg",
     "units_available": 6,
-    "photo": "products/1/10/6.jpg",
+    "photo": "6.jpg",
     "description": ""
   },
   "7": {
@@ -59,7 +59,7 @@
     "price_unit": "19,9",
     "kind_of_unit": "kg",
     "units_available": 6,
-    "photo": "products/1/11/7.jpg",
+    "photo": "7.jpg",
     "description": ""
   },
   "8": {
@@ -68,7 +68,7 @@
     "price_unit": "23,9",
     "kind_of_unit": "kg",
     "units_available": 6,
-    "photo": "products/1/11/8.jpg",
+    "photo": "8.jpg",
     "description": ""
   },
   "9": {
@@ -77,7 +77,7 @@
     "price_unit": "12,4",
     "kind_of_unit": "kg",
     "units_available": 6,
-    "photo": "products/1/11/9.jpg",
+    "photo": "9.jpg",
     "description": ""
   },
   "10": {
@@ -86,7 +86,7 @@
     "price_unit": "17,6",
     "kind_of_unit": "kg",
     "units_available": 6,
-    "photo": "products/1/11/10.jpg",
+    "photo": "10.jpg",
     "description": ""
   }
 }
