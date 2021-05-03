@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 
-import { getAddressDetails, getStores, listStores } from "../../services";
+import { getAddressDetails, getStores, listFromDb } from "../../services";
 
 import { setCoordinates, saveAddress } from "../../redux/actions/addressActions";
 
@@ -44,7 +44,7 @@ const InputAdress = (props) => {
     // console.log(result);
 
     //GET THE STORES THAT COINCIDE
-    const storesToPrint = await listStores("stores");
+    const storesToPrint = await listFromDb("stores");
 
     // setCoords({lat, lon});
     // setAddress(formatedAddress);

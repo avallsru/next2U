@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 // import PropTypes from 'prop-types';
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { FcClock, FcMoneyTransfer } from "react-icons/fc";
 
+import { getCollection, listFromDb } from '../../services';
 import { saveStoreToDetail } from '../../redux/actions/storesActions';
 
 import { storesCatBBDD } from "../../bbddFake/storesCategoriesBBDD";
@@ -11,48 +12,55 @@ import { storesCatBBDD } from "../../bbddFake/storesCategoriesBBDD";
 import "./StoreCard.scss";
 
 const StoreCard = (store) => {
-  //to delete after the storecardlist is implemented
-  // const storesSelected = useSelector(
-  //   (store) => store.storesReducer.storesNearAddress
-  // );
-  ////
 
   const storeToPrint = store.store;
   const history = useHistory();
   const dispatch = useDispatch();
 
-  //to change when firebase bbdd where implemented
-  const categories = storesCatBBDD;
-  const idsToSearch = storeToPrint.store_categories_id;
-  /////
+  const [categories, setCategories] = useState([]);
+  // const [storeToPrint, setStoreToPrint] = useState([]);
+  // const [idsToSearch, setIdsToSearch] = useState([]);
+  const [catNames, setCatNames] = useState('');
+  useEffect(() => {
+    
+    getCategories();
+  }, []);
+ 
+
+  const getCategories = async () => {
+    const categoriesFromPromise = await listFromDb('stores_categories');
+    setCategories(categoriesFromPromise);
+
+    getCatNames(storeToPrint['store_categories_id']);
+  }
+
+
 
   const getCatNames = (categoriesArr) => {
     const categoriesName = [];
+    console.log(categories);
     categoriesArr.forEach((idToFind) => {
       const filteredByCat = categories.filter(
-        (category) => category.id === idToFind
+        (category) => category.id === idToFind.toString()
       );
+      console.log(filteredByCat);
       filteredByCat.forEach((categoryObj) => {
+        // console.log(categoryObj);
         categoriesName.push(categoryObj.name);
       });
     });
 
-    return categoriesName.join(" ");
+    setCatNames( categoriesName.join(" "));
   };
 
-  const handleClick = () => {
-    dispatch(saveStoreToDetail(storeToPrint));
-    history.push("/store_details");
-  }
-
   return (
-    <div className="storeCard-container" onClick={handleClick}>
+    <div className="storeCard-container">
       <div className="store-img container">
-        <img src={`assets/img/stores/${storeToPrint.id}.jpg`} alt="store-logo" />
+        <img src="assets/img/stores/1.jpg" alt="store-logo" />
       </div>
       <div className="store-basic-data container">
         <p className="store-name">{storeToPrint.name}</p>
-        <div className="category-names">{getCatNames(idsToSearch)}</div>
+        <div className="category-names">{catNames}</div>
       </div>
       <div className="store-other-details container">
         <div className="opening-hours">
@@ -62,27 +70,25 @@ const StoreCard = (store) => {
         <div className="paying-info">
           <FcMoneyTransfer />
           <div className="delivery-price">
-            <div className="delivery-price">
-              <span>
-                <b>Entrega:</b>
-              </span>
-              <span>{`${storeToPrint["deliver_price"]}€`}</span>
-            </div>
+            <span>
+              <b>Entrega:</b>
+            </span>
+            <span>{`${storeToPrint["deliver_price"]}€`}</span>
           </div>
           <div className="minimum-order">
-            <div className="minimum-order">
-              <span>
-                <b>Pedido mín:</b>
-              </span>
-              <span>{`${storeToPrint["minimum_price_order"]}€`}</span>
-            </div>
+            <span>
+              <b>Pedido mín:</b>
+            </span>
+            <span>{`${storeToPrint["minimum_price_order"]}€`}</span>
           </div>
         </div>
       </div>
     </div>
-  );
-};
-
+  )
+  }
+  
+ 
+  
 // StoreCard.propTypes = {
 
 // };

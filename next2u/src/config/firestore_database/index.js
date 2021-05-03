@@ -3,8 +3,8 @@ const { v4: uuidv4 } = require("uuid");
 
 const admin = require("firebase-admin");
 const serviceAccount = require("./serviceAccountKey.json");
-const data = require("./products.json");
-const collectionKey = "products"; //name of the collection
+const data = require("./stores.json");
+const collectionKey = "stores_v1"; //name of the collection
 
 const STORAGE_BUCKET = 'next2u-31408.appspot.com'; // storage bucket from firebase project settings
 const FIREBASE_STORE_API_BASE = "https://firebasestorage.googleapis.com/v0/b";
@@ -27,8 +27,8 @@ function uploadToFireBase() {
 
   const uploadsArr = documents.map((doc) => {
     // Returns an array of Promise
-    if (doc.photo) {
-      return uploadFile(doc.photo); // async => <Promise>
+    if (doc.logo) {
+      return uploadFile(doc.logo); // async => <Promise>
     }
 
     return null;
@@ -71,11 +71,11 @@ function getDocumentUrl(bucketData) {
 }
 
 async function uploadFile(fileName) {
-  const imgPath = `${root}/public/assets/img/${fileName}`;
+  const imgPath = `${root}/public/assets/img/stores/${fileName}`;
 
   const uploadResponse = await storage.bucket().upload(imgPath, {
     gzip: true,
-    destination: `${fileName}`,
+    destination: `stores_v1/${fileName}`,
     metadata: {
       cacheControl: "public, max-age=31536000",
       metadata: {
