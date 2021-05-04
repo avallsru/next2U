@@ -1,5 +1,5 @@
 @import '../../utils/general.scss';
-.storeCard-container {
+.detailsCard-container {
   display: grid;
   grid-template-columns: 40% 20% 40%;
   grid-template-areas: "photo basic-data other-details"; 
@@ -13,7 +13,7 @@
   }
 }
 
-.store-img {
+.detail-img {
   grid-area: photo;
   padding: auto;
   
@@ -30,17 +30,17 @@
   justify-content: center;  
 }
 
-.store-basic-data {
+.detail-basic-data {
   grid-area: basic-data;
   text-align: center;
   padding-left: 1em;
 }
 
-.store-other-details {
+.detail-other-info {
   grid-area: other-details;
 }
 
-.store-name {
+.detail-name {
   font-size: 1.2rem;
   font-weight: bold;
   margin-block-end: 0.3em; 
