@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 
 import { listFromDb } from "../../services";
 
-import { getCatNames } from "../../logic";
+import { getNames } from "../../logic";
 
 import { setCoordinates, saveAddress } from "../../redux/actions/addressActions";
 import { listSelectedStores, listToPrint } from "../../redux/actions/storesActions";
@@ -33,13 +33,14 @@ const InputAdress = (props) => {
   }, [coords, dispatch, address, storesList]);
 
   const addCatNames =  (selectedStores) => {
-    console.log(selectedStores);
     const listWithCatNames = selectedStores.map(async(store) => {
       
-      const catNames = await getCatNames(store);
+      const catNames = await getNames(store['store_categories_id'], 'stores');
+      
       
       store['store_categories_names'] = catNames;
       const storeToSave = storesList.push(listWithCatNames);
+
       setStoresList(storeToSave);
     });
 
@@ -60,12 +61,13 @@ const InputAdress = (props) => {
     // console.log(result);
 
     //GET THE STORES THAT COINCIDE
-    const storesToPrint = await listFromDb("stores_v1");
+    const storesToPrint = await listFromDb("stores_v2");
 
     // setCoords({lat, lon});
     // setAddress(formatedAddress);
     addCatNames(storesToPrint);
     setStoresList(storesToPrint);
+    dispatch(listToPrint(storesList));
     
     history.push("/stores_results");
   };

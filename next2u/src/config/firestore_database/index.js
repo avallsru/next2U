@@ -3,8 +3,8 @@ const { v4: uuidv4 } = require("uuid");
 
 const admin = require("firebase-admin");
 const serviceAccount = require("./serviceAccountKey.json");
-const data = require("./stores.json");
-const collectionKey = "stores_v1"; //name of the collection
+const data = require("./stores_categories.json");
+const collectionKey = "stores_categories"; //name of the collection
 
 const STORAGE_BUCKET = 'next2u-31408.appspot.com'; // storage bucket from firebase project settings
 const FIREBASE_STORE_API_BASE = "https://firebasestorage.googleapis.com/v0/b";
@@ -71,11 +71,11 @@ function getDocumentUrl(bucketData) {
 }
 
 async function uploadFile(fileName) {
-  const imgPath = `${root}/public/assets/img/stores/${fileName}`;
+  const imgPath = `${root}/public/assets/img/stores_categories/${fileName}`;
 
   const uploadResponse = await storage.bucket().upload(imgPath, {
     gzip: true,
-    destination: `stores_v1/${fileName}`,
+    destination: `stores_categories/${fileName}`,
     metadata: {
       cacheControl: "public, max-age=31536000",
       metadata: {
@@ -89,3 +89,7 @@ async function uploadFile(fileName) {
 }
 
 uploadToFireBase();
+
+
+// https://firebasestorage.googleapis.com/v0/b/next2u-31408.appspot.com/o/stores_v2%2F1.jpg?alt=media&token=5280340e-16da-410f-9249-bf926fae2c75
+// https://firebasestorage.googleapis.com/v0/b/next2u-31408.appspot.com/o/stores_v2/1.jpg?alt=media&token=5280340e-16da-410f-9249-bf926fae2c75

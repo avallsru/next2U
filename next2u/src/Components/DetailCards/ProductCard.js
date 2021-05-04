@@ -1,7 +1,10 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 // import PropTypes from 'prop-types';
 
 const ProductCard = props => {
+  const {product_list} = useSelector(store => store.storesReducer.storeToDetail);
+  
   return (
     <div className="detailsCard-container" >
       <div className="detail-img container">
