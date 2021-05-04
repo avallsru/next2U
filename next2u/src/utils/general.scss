@@ -16,3 +16,9 @@ $dark_green: rgb(0, 128, 55);
   padding: 1vh 2vw;
 }
 
+@mixin hoverCursor {
+  & :hover {
+    cursor: pointer;
+  }
+}
+
