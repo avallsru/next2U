@@ -3,12 +3,14 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 
-import { getAddressDetails, getStores, listFromDb } from "../../services";
+import { listFromDb } from "../../services";
+
+import { getCatNames } from "../../logic";
 
 import { setCoordinates, saveAddress } from "../../redux/actions/addressActions";
+import { listSelectedStores, listToPrint } from "../../redux/actions/storesActions";
 
 import "./InputAddress.scss";
-import { listSelectedStores, listToPrint } from "../../redux/actions/storesActions";
 
 const InputAdress = (props) => {
   const dispatch = useDispatch();
@@ -30,12 +32,26 @@ const InputAdress = (props) => {
     
   }, [coords, dispatch, address, storesList]);
 
+  const addCatNames =  (selectedStores) => {
+    console.log(selectedStores);
+    const listWithCatNames = selectedStores.map(async(store) => {
+      
+      const catNames = await getCatNames(store);
+      
+      store['store_categories_names'] = catNames;
+      const storeToSave = storesList.push(listWithCatNames);
+      setStoresList(storeToSave);
+    });
+
+    
+  }
+
+
   const handleChange = ({ target }) => {
     setAddress(target.value);
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     localStorage.setItem('address', address, JSON.stringify(address));
 
     //GET THE COORDS
@@ -48,8 +64,9 @@ const InputAdress = (props) => {
 
     // setCoords({lat, lon});
     // setAddress(formatedAddress);
+    addCatNames(storesToPrint);
     setStoresList(storesToPrint);
-
+    
     history.push("/stores_results");
   };
 
