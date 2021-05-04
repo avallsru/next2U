@@ -9,9 +9,8 @@ import { saveStoreToDetail } from '../../redux/actions/storesActions';
 
 import "./StoreCard.scss";
 
-const StoreCard = (store) => {
+const StoreCard = ({store}) => {
 
-  const storeToPrint = store.store;
   const history = useHistory();
   const dispatch = useDispatch();
 
@@ -19,7 +18,7 @@ const StoreCard = (store) => {
   const [catNames, setCatNames] = useState('');
  
   const handleClick = () => {
-    dispatch(saveStoreToDetail(storeToPrint));
+    dispatch(saveStoreToDetail(store));
     history.push('store_details');
   } 
   
@@ -29,14 +28,14 @@ const StoreCard = (store) => {
         <img src="assets/img/stores/1.jpg" alt="detail-img" />
       </div>
       <div className="detail-basic-data container">
-        <p className="detail-name">{storeToPrint.name}</p>
+        <p className="detail-name">{store.name}</p>
         
-        <div className="category-names">{storeToPrint.stores_categories_names}</div>
+        <div className="category-names">{store['store_categories_names']}</div>
       </div>
       <div className="detail-other-info container">
         <div className="opening-hours">
           <FcClock />
-          {storeToPrint["opening_hours"]}
+          {store["opening_hours"]}
         </div>
         <div className="paying-info">
           <FcMoneyTransfer />
@@ -44,13 +43,13 @@ const StoreCard = (store) => {
             <span>
               <b>Entrega:</b>
             </span>
-            <span>{`${storeToPrint["deliver_price"]}€`}</span>
+            <span>{`${store["deliver_price"]}€`}</span>
           </div>
           <div className="minimum-order">
             <span>
               <b>Pedido mín:</b>
             </span>
-            <span>{`${storeToPrint["minimum_price_order"]}€`}</span>
+            <span>{`${store["minimum_price_order"]}€`}</span>
           </div>
         </div>
       </div>

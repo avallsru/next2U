@@ -13,7 +13,9 @@ import "./StoreCard.scss";
 
 const StoreCard = (store) => {
 
-  const storeToPrint = store.store;
+  const {storeToPrint} = store.store;
+  debugger;
+  console.log(storeToPrint);
   const history = useHistory();
   const dispatch = useDispatch();
 
