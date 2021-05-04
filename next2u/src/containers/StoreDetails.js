@@ -11,7 +11,7 @@ const StoreDetails = props => {
   return (
     <div>
       <StoreBasicInfo />
-      <Selector />
+      {/* <Selector /> */}
     </div>
   );
 };
