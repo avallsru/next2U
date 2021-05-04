@@ -13,12 +13,12 @@ const getNames = async(categoriesArr, kind) => {
         return ((parseInt(category.id) + 1) === numId)    
       }  
     );
-    
+    // console.log(filteredByCat);
     filteredByCat.forEach((categoryObj) => {
       categoriesName.push(categoryObj.name);
     });
   });
-  return categoriesName.join(" ");
+  return kind === 'stores' ?  categoriesName.join(" ") : categoriesName;
 }
 
 export default getNames;

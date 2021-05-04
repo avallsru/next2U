@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 // import PropTypes from 'prop-types';
 
@@ -9,20 +9,28 @@ import './CatsList.scss';
 const CatsList = ({list}) => {
   const [listToPrint, setListToPrint] = useState([]);
   
+  useEffect(() => {
+    getList();
+  }, []);
+
+  const handleClick = (e, category) => {
+    console.log(category);
+  } 
+
   const getList = async() => {
     const listIds = Object.keys(list).map(id => id);
-
     const listToUpdate = await getNames(listIds, 'products');
-
-    console.log(listToUpdate);
-    setListToPrint(listToUpdate);
+    const formatedList = listToUpdate.map(category => {
+      return (<div onClick={(e) => handleClick(e, category)}>{category}</div>)
+    })
+    setListToPrint(formatedList);
   }
 
-  getList();
+  
   
   
   return (
-    <div>
+    <div className="categories-to-print">
       {listToPrint}
     </div>
   );
