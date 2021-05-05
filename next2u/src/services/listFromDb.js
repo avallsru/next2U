@@ -13,18 +13,18 @@ function parseDocument(doc) {
   }
 }
 
-export async function listFromDb(collection, id) {
+export async function listFromDb(collection, filter) {
   try {
     let db = getCollection(collection);
-    if (id) {
-      db = db.where("store_categories_id", "array-contains", id);
+    // console.log(db);
+    if (filter) {
+      db = db.where(filter.field, filter.condition, filter.value);
     } 
     const querySnapshot = await db.get();
     const data = [];
     querySnapshot.forEach((doc) => {
       data.push(parseDocument(doc));
     })
-    
     return data;
     
   } catch (error) {

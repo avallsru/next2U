@@ -6,6 +6,9 @@ import StoreBasicInfo from '../Components/ContainerStoreDetails/StoreBasicInfo';
 import Selector from '../Components/ContainerStoreDetails/Selector';
 import { ProductCard } from '../Components/DetailCards';
 import CatsList from '../Components/ContainerStoreDetails/CatsList';
+import ProductsList from '../Components/ProductsList/ProductsList';
+
+import './StoreDetail.scss';
 
 
 const StoreDetails = props => {
@@ -13,8 +16,11 @@ const StoreDetails = props => {
   return (
     <div>
       <StoreBasicInfo />
-      <ProductCard  />
       <CatsList list={product_list}/>
+      <div className="products-list">
+        <ProductsList  />
+      </div>
+      
       {/* <Selector /> */}
     </div>
   );

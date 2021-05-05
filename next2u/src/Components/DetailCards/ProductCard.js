@@ -4,32 +4,21 @@ import { useSelector } from 'react-redux';
 
 import {getNames} from '../../logic';
 
-const ProductCard = props => {
-  const {product_list} = useSelector(store => store.storesReducer.storeToDetail);
-  const [keyName, setKeyName] = useState('');
-  const[productNames, setProductNames] = useState([]);
-  const [preparedList, setPreparedList] = useState({});
+const ProductCard = (something) => {
+  console.log(something);
+  const category = Object.keys(something);
   
-  const listWithNames = Object.create({});
-  
-  useEffect(() => {
-    modifyList();
-  }, []);
-  
-  const modifyList = async() => {
-    for (const [key, value] of Object.entries(product_list) ) {
-      const catName = await getNames([key], 'products_categories');
-      setKeyName(catName);
-      const arrsNames = await getNames(value, 'products');
-      setProductNames(arrsNames);
-      console.log(arrsNames);
-      Object.defineProperties(listWithNames, {keyName: productNames});
-      // const returnedList = Object.assign(listWithNames, listWithNames);
-      console.log(listWithNames);
-      // setPreparedList(returnedList);
-    }
-    console.log(keyName);
-  }
+  // const productDetail = Object.values(catList);
+  // const productToPrint = productDetail[0].map((product) => {
+  //   console.log(product);
+  //   return(
+  //     <>
+  //     <div>{product.name}</div>
+  //     <div>{product.price_unit}€</div>
+  //     <div>{product.description}</div>
+  //     </>
+  //   )
+  // })
 
   
   
@@ -39,11 +28,16 @@ const ProductCard = props => {
         <img src="assets/img/stores/1.jpg" alt="detail-img" />
       </div>
       <div className="detail-basic-data container">
-        <p className="detail-name">{}</p>
+        <p className="detail-name">{category[0]}</p>
         
-        <div className="category-names">{}</div>
+        <div className="category-names">{
+          
+        }</div>
       </div>
-      <div className="detail-other-info container">
+      <div>
+        {/* {productDetail} */}
+      </div>
+      {/* <div className="detail-other-info container">
         <div className="opening-hours">
         </div>
         <div className="paying-info">
@@ -60,7 +54,7 @@ const ProductCard = props => {
             <span>{}</span>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   )
 };

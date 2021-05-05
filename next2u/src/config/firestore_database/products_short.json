@@ -1,92 +1,103 @@
-{
-  "11": {
-    "name": "Almendra largueta",
+[
+  {
+    "ID": 1,
+    "name": "Arroz redondo",
+    "product_cat_id": 10,
+    "price_unit": "0,8",
+    "kind_of_unit": "kg",
+    "units_available": 6,
+    "photo": "products/1/10/1.jpg",
+    "description": ""
+  },
+  {
+    "ID": 2,
+    "name": "Arroz bomba",
+    "product_cat_id": 10,
+    "price_unit": "2,5",
+    "kind_of_unit": "kg",
+    "units_available": 6,
+    "photo": "products/1/10/2.jpg",
+    "description": ""
+  },
+  {
+    "ID": 3,
+    "name": "Arroz largo",
+    "product_cat_id": 10,
+    "price_unit": "0,83",
+    "kind_of_unit": "kg",
+    "units_available": 6,
+    "photo": "products/1/10/3.jpg",
+    "description": ""
+  },
+  {
+    "ID": 4,
+    "name": "Quinoa",
+    "product_cat_id": 10,
+    "price_unit": "5,7",
+    "kind_of_unit": "kg",
+    "units_available": 6,
+    "photo": "products/1/10/4.jpg",
+    "description": ""
+  },
+  {
+    "ID": 5,
+    "name": "Maíz",
+    "product_cat_id": 10,
+    "price_unit": "2,9",
+    "kind_of_unit": "kg",
+    "units_available": 6,
+    "photo": "products/1/10/5.jpg",
+    "description": ""
+  },
+  {
+    "ID": 6,
+    "name": "Trigo sarraceno",
+    "product_cat_id": 10,
+    "price_unit": "3,78",
+    "kind_of_unit": "kg",
+    "units_available": 6,
+    "photo": "products/1/10/6.jpg",
+    "description": ""
+  },
+  {
+    "ID": 7,
+    "name": "Almendra común",
     "product_cat_id": 11,
-    "price_unit": "22,1",
+    "price_unit": "19,9",
     "kind_of_unit": "kg",
     "units_available": 6,
-    "photo": "1/11/11.jpg",
+    "photo": "products/1/11/7.jpg",
     "description": ""
   },
-  "12": {
-    "name": "Avellanas",
-    "product_cat_id": 12,
-    "price_unit": "12,9",
-    "kind_of_unit": "kg",
-    "units_available": 6,
-    "photo": "1/12/12.jpg",
-    "description": ""
-  },
-  "13": {
+  {
+    "ID": 8,
     "name": "Pistachos",
-    "product_cat_id": 12,
-    "price_unit": "24,5",
+    "product_cat_id": 11,
+    "price_unit": "23,9",
     "kind_of_unit": "kg",
     "units_available": 6,
-    "photo": "1/12/13.jpg",
+    "photo": "products/1/11/8.jpg",
     "description": ""
   },
-  "14": {
-    "name": "Almendra largueta",
-    "product_cat_id": 12,
-    "price_unit": "12,6",
-    "kind_of_unit": "kg",
-    "units_available": 6,
-    "photo": "1/12/14.jpg",
-    "description": ""
-  },
-  "15": {
-    "name": "Cacahuetes",
-    "product_cat_id": 13,
-    "price_unit": "3,12",
-    "kind_of_unit": "kg",
-    "units_available": 6,
-    "photo": "1/13/15.jpg",
-    "description": ""
-  },
-  "16": {
-    "name": "Mezcla",
-    "product_cat_id": 13,
-    "price_unit": "6,4",
-    "kind_of_unit": "kg",
-    "units_available": 6,
-    "photo": "1/13/16.jpg",
-    "description": ""
-  },
-  "17": {
-    "name": "Kikos",
-    "product_cat_id": 13,
-    "price_unit": "8,5",
-    "kind_of_unit": "kg",
-    "units_available": 6,
-    "photo": "1/13/17.jpg",
-    "description": ""
-  },
-  "18": {
+  {
+    "ID": 9,
     "name": "Avellanas",
-    "product_cat_id": 14,
-    "price_unit": "17,1",
+    "product_cat_id": 11,
+    "price_unit": "12,4",
     "kind_of_unit": "kg",
     "units_available": 6,
-    "photo": "1/14/18.jpg",
+    "photo": "products/1/11/9.jpg",
     "description": ""
   },
-  "19": {
-    "name": "Almendras comunes",
-    "product_cat_id": 14,
-    "price_unit": "27,1",
+  {
+    "ID": 10,
+    "name": "Nueces",
+    "product_cat_id": 11,
+    "price_unit": "17,6",
     "kind_of_unit": "kg",
     "units_available": 6,
-    "photo": "1/14/19.jpg",
-    "description": ""
-  },
-  "20": {
-    "name": "Nueces de Macadamia",
-    "product_cat_id": 14,
-    "price_unit": "35,5",
-    "kind_of_unit": "kg",
-    "units_available": 6,
-    "photo": "1/14/20.jpg",
+    "photo": "products/1/11/10.jpg",
     "description": ""
   }
-}
+]
+ 
