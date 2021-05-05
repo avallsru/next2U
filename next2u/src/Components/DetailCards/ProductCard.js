@@ -1,9 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 // import PropTypes from 'prop-types';
 
-const ProductCard = props => {
-  const {product_list} = useSelector(store => store.storesReducer.storeToDetail);
+import {getNames} from '../../logic';
+
+const ProductCard = (something) => {
+  console.log(something);
+  const category = Object.keys(something);
+  
+  // const productDetail = Object.values(catList);
+  // const productToPrint = productDetail[0].map((product) => {
+  //   console.log(product);
+  //   return(
+  //     <>
+  //     <div>{product.name}</div>
+  //     <div>{product.price_unit}€</div>
+  //     <div>{product.description}</div>
+  //     </>
+  //   )
+  // })
+
+  
   
   return (
     <div className="detailsCard-container" >
@@ -11,11 +28,16 @@ const ProductCard = props => {
         <img src="assets/img/stores/1.jpg" alt="detail-img" />
       </div>
       <div className="detail-basic-data container">
-        <p className="detail-name">{}</p>
+        <p className="detail-name">{category[0]}</p>
         
-        <div className="category-names">{}</div>
+        <div className="category-names">{
+          
+        }</div>
       </div>
-      <div className="detail-other-info container">
+      <div>
+        {/* {productDetail} */}
+      </div>
+      {/* <div className="detail-other-info container">
         <div className="opening-hours">
         </div>
         <div className="paying-info">
@@ -32,7 +54,7 @@ const ProductCard = props => {
             <span>{}</span>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   )
 };

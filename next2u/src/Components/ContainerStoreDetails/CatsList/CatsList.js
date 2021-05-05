@@ -19,9 +19,9 @@ const CatsList = ({list}) => {
 
   const getList = async() => {
     const listIds = Object.keys(list).map(id => id);
-    const listToUpdate = await getNames(listIds, 'products');
+    const listToUpdate = await getNames(listIds, 'products_categories');
     const formatedList = listToUpdate.map(category => {
-      return (<div onClick={(e) => handleClick(e, category)}>{category}</div>)
+      return (<div key={Math.random()*Date.now()} onClick={(e) => handleClick(e, category)}>{category}</div>)
     })
     setListToPrint(formatedList);
   }

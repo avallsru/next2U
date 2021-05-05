@@ -61,7 +61,7 @@ const InputAdress = (props) => {
     // console.log(result);
 
     //GET THE STORES THAT COINCIDE
-    const storesToPrint = await listFromDb("stores_v2");
+    const storesToPrint = await listFromDb("stores");
 
     // setCoords({lat, lon});
     // setAddress(formatedAddress);

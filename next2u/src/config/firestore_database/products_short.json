@@ -1,92 +1,103 @@
-{
-  "1": {
+[
+  {
+    "ID": 1,
     "name": "Arroz redondo",
     "product_cat_id": 10,
     "price_unit": "0,8",
     "kind_of_unit": "kg",
     "units_available": 6,
-    "photo": "1.jpg",
+    "photo": "products/1/10/1.jpg",
     "description": ""
   },
-  "2": {
+  {
+    "ID": 2,
     "name": "Arroz bomba",
     "product_cat_id": 10,
     "price_unit": "2,5",
     "kind_of_unit": "kg",
     "units_available": 6,
-    "photo": "2.jpg",
+    "photo": "products/1/10/2.jpg",
     "description": ""
   },
-  "3": {
+  {
+    "ID": 3,
     "name": "Arroz largo",
     "product_cat_id": 10,
     "price_unit": "0,83",
     "kind_of_unit": "kg",
     "units_available": 6,
-    "photo": "3.jpg",
+    "photo": "products/1/10/3.jpg",
     "description": ""
   },
-  "4": {
+  {
+    "ID": 4,
     "name": "Quinoa",
     "product_cat_id": 10,
     "price_unit": "5,7",
     "kind_of_unit": "kg",
     "units_available": 6,
-    "photo": "4.jpg",
+    "photo": "products/1/10/4.jpg",
     "description": ""
   },
-  "5": {
+  {
+    "ID": 5,
     "name": "Maíz",
     "product_cat_id": 10,
     "price_unit": "2,9",
     "kind_of_unit": "kg",
     "units_available": 6,
-    "photo": "5.jpg",
+    "photo": "products/1/10/5.jpg",
     "description": ""
   },
-  "6": {
+  {
+    "ID": 6,
     "name": "Trigo sarraceno",
     "product_cat_id": 10,
     "price_unit": "3,78",
     "kind_of_unit": "kg",
     "units_available": 6,
-    "photo": "6.jpg",
+    "photo": "products/1/10/6.jpg",
     "description": ""
   },
-  "7": {
+  {
+    "ID": 7,
     "name": "Almendra común",
     "product_cat_id": 11,
     "price_unit": "19,9",
     "kind_of_unit": "kg",
     "units_available": 6,
-    "photo": "7.jpg",
+    "photo": "products/1/11/7.jpg",
     "description": ""
   },
-  "8": {
+  {
+    "ID": 8,
     "name": "Pistachos",
     "product_cat_id": 11,
     "price_unit": "23,9",
     "kind_of_unit": "kg",
     "units_available": 6,
-    "photo": "8.jpg",
+    "photo": "products/1/11/8.jpg",
     "description": ""
   },
-  "9": {
+  {
+    "ID": 9,
     "name": "Avellanas",
     "product_cat_id": 11,
     "price_unit": "12,4",
     "kind_of_unit": "kg",
     "units_available": 6,
-    "photo": "9.jpg",
+    "photo": "products/1/11/9.jpg",
     "description": ""
   },
-  "10": {
+  {
+    "ID": 10,
     "name": "Nueces",
     "product_cat_id": 11,
     "price_unit": "17,6",
     "kind_of_unit": "kg",
     "units_available": 6,
-    "photo": "10.jpg",
+    "photo": "products/1/11/10.jpg",
     "description": ""
   }
-}
+]
+ 
