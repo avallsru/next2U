@@ -1,13 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 // import PropTypes from 'prop-types';
 
-import {getNames} from '../../logic';
 import { listFromDb } from '../../services';
+
+import {getNames} from '../../logic';
+import { defineProductsToPrint, saveStoreToDetail } from '../../redux/actions/storesActions';
+
 import { ProductCard } from '../DetailCards';
 
 const ProductsList = props => {
-  const {product_list} = useSelector(store => store.storesReducer.storeToDetail);
+  const storeToDetail = useSelector(store => store.storesReducer.storeToDetail);
+  const { product_list } = storeToDetail;
+  const dispatch = useDispatch();
+
   const [valuesArr, setTemporalValuesArr] = useState([]);
   const [keyName, setKeyName] = useState([]);
   const [componentsList, setComponentsList] = useState('');
@@ -17,12 +23,16 @@ const ProductsList = props => {
 
   useEffect(() => {
     getListToPrint();
-    
   }, []);
 
   // useEffect(() => {
-  //   console.log(valuesArr)
-  // }, [valuesArr])
+  //   console.timeLog(storeToDetail)
+  //   dispatch(saveStoreToDetail(storeToDetail))
+  // }, [storeToDetail]);
+
+  useEffect(() => {
+    dispatch(defineProductsToPrint(productArr));
+  }, [productArr])
   
   const getListToPrint = () => {
 
@@ -40,7 +50,7 @@ const ProductsList = props => {
      })
     //  setTemporalValuesArr(...valuesArr, temporalValues);
      Promise.all(temporalValues).then((results) => {
-      setProductArr(...productArr, {[temporalKey[0]]: results})
+      setProductArr(...productArr,  {[temporalKey[0]]: results})
       
      })
      
@@ -53,7 +63,7 @@ const ProductsList = props => {
         </div>
         <div className="products-container">
         <div>  
-            <ProductCard catList={productArr}/>
+            <ProductCard />
           </div>
           {/* <ProductCard /> */}
         </div>

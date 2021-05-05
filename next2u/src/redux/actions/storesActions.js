@@ -1,4 +1,4 @@
-import { STORES_TO_PRINT, STORES_SELECTED, STORE_TO_DETAIL } from '../types';
+import { STORES_TO_PRINT, STORES_SELECTED, STORE_TO_DETAIL, PRODUCTS_TO_PRINT } from '../types';
 
 
 function listToPrint(storesArr) {
@@ -12,8 +12,13 @@ function listSelectedStores(storesArr) {
 function saveStoreToDetail(store) {
   return {type: STORE_TO_DETAIL, payload: store}
 }
+
+function defineProductsToPrint(productsArr) {
+  return{type: PRODUCTS_TO_PRINT, payload: productsArr}
+}
 export {
   listToPrint,
   listSelectedStores,
-  saveStoreToDetail
+  saveStoreToDetail,
+  defineProductsToPrint
 }
