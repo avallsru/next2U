@@ -8,30 +8,41 @@ import './CatsList.scss';
 
 const CatsList = ({list}) => {
   const [listToPrint, setListToPrint] = useState([]);
+  const {productsToPrint} = useSelector(store => store.storesReducer);
+  debugger;
   
   useEffect(() => {
     getList();
-  }, []);
+  }, [listToPrint]);
 
   const handleClick = (e, category) => {
     console.log(category);
   } 
 
-  const getList = async() => {
-    const listIds = Object.keys(list).map(id => id);
-    const listToUpdate = await getNames(listIds, 'products_categories');
-    const formatedList = listToUpdate.map(category => {
-      return (<div key={Math.random()*Date.now()} onClick={(e) => handleClick(e, category)}>{category}</div>)
-    })
-    setListToPrint(formatedList);
+  const getList = () => {
+    setListToPrint([]);
+    debugger;
+    const catsArr = productsToPrint.map(group => {
+      const catName = Object.keys(group).join();
+      return(
+        <div onClick={e => handleClick(e, catName)}>{catName}</div>
+      )
+    });
+    setListToPrint(catsArr);
   }
 
   
-  
+  if (listToPrint !== []) {
+    return (
+      <div className="categories-to-print">
+        {listToPrint}
+      </div>
+    );
+  } 
   
   return (
     <div className="categories-to-print">
-      {listToPrint}
+      Loading...
     </div>
   );
 };

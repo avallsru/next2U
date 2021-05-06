@@ -1,0 +1,11 @@
+@import '../../utils/general.scss';
+
+.detail-basic-data {
+  @include primaryFont;
+  
+}
+
+.product-detail {
+  border: 1px solid black;
+  margin: 5% 0;
+}

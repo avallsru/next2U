@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { listFromDb } from '../../services';
 
 import {getNames} from '../../logic';
-import { defineProductsToPrint, saveStoreToDetail } from '../../redux/actions/storesActions';
+import { defineProductsToPrint, resetProductsToPrint } from '../../redux/actions/storesActions';
 
 import { ProductCard } from '../DetailCards';
 
@@ -23,6 +23,7 @@ const ProductsList = props => {
 
   useEffect(() => {
     getListToPrint();
+    dispatch(resetProductsToPrint());
   }, []);
 
   // useEffect(() => {
