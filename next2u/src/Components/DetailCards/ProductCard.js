@@ -17,13 +17,15 @@ const ProductCard = () => {
     //TRANSFORM THE PRODUCTS ARR INTO SOMETHING PRINTABLE
     const valuesArr = productsArr[0].map((product) => {
       return (
-        <div className="product-detail container">
+        <div className="product-detail container" key={Math.random()*Date.now()}>
           <div>{product.name}</div>
           <div>{product.price_unit}€</div>
           <div>{product.description}</div>
         </div>
       );
     });
+
+    //RETURN THE COMPLETE GROUP
     return (
       <div className="detail-basic-data container">
         <p className="detail-name">{category}</p>

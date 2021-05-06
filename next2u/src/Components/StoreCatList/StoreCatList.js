@@ -17,16 +17,21 @@ const StoreCatList = (props) => {
   }
 
   useEffect(() => {
-    const temporalList = categories.map((category) => {
+    getList();
+  }, []);
+
+  useEffect(() => {
+    
+    defineListToPrint();
+  }, [categories]);
+
+  const defineListToPrint = () => {
+const temporalList = categories.map((category) => {
       return <StoreCatCard cat={category} 
       key={Math.random() * Date.now()} />
     });
     setListToPrint(temporalList);
-  }, [categories]);
-
-  useEffect(() => {
-    getList();
-  }, []);
+  }
   
   
   return (
