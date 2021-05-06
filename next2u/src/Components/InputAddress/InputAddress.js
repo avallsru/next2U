@@ -34,16 +34,15 @@ const InputAdress = (props) => {
 
   const addCatNames =  (selectedStores) => {
     const listWithCatNames = selectedStores.map(async(store) => {
-      
+      // debugger;
       const catNames = await getNames(store['store_categories_id'], 'stores');
       
-      
       store['store_categories_names'] = catNames;
-      const storeToSave = storesList.push(listWithCatNames);
-
-      setStoresList(storeToSave);
+     
     });
+    const storeToSave = storesList.push(listWithCatNames);
 
+    setStoresList(storeToSave);
     
   }
 

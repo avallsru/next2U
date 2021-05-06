@@ -1,7 +1,7 @@
 import StoreCard from './StoreCard';
-import ProductCard from './ProductCard';
+import ProductCards from './ProductCards';
 
 export {
   StoreCard,
-  ProductCard
+  ProductCards
 }

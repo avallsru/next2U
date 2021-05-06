@@ -9,7 +9,7 @@ import "./CatsList.scss";
 const CatsList = ({ list }) => {
   const [listToPrint, setListToPrint] = useState([]);
   const { productsToPrint } = useSelector((store) => store.storesReducer);
-  debugger;
+
 
   useEffect(() => {
     getList();
