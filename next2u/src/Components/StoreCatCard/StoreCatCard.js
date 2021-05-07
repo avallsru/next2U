@@ -19,7 +19,6 @@ const StoreCatCard = ({ cat }) => {
   const { storesNearAddress } = useSelector((store) => store.storesReducer);
 
   const handleClick = (e) => {
-    debugger;
     const definedList = listStoresToPrint(storesNearAddress, id);
     dispatch(listToPrint(definedList));
     return(

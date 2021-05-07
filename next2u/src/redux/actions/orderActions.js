@@ -1,9 +1,9 @@
-import {UPDATE_ORDER} from '../types';
+import {ADD_PRODUCT} from '../types';
 
-function updateOrder(orderItem) {
-  return {type: UPDATE_ORDER, payload: orderItem}
+function addProduct(orderItem) {
+  return {type: ADD_PRODUCT, payload: orderItem}
 }
 
 export {
-  updateOrder
+  addProduct
 }

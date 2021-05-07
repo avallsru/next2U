@@ -11,7 +11,6 @@ const getStores = async ({lat, lon}, page = '') => {
   const apiToCall = pageToken === '' 
     ? `${baseUrl}location=${lat},${lon}&radius=140&type=store&key=${API_KEY}`
     : `${baseUrl}location=${lat},${lon}&radius=140&type=store&pagetoken=${pageToken}&key=${API_KEY}`;
-  debugger;
   
   const results = await fetch(apiToCall);
   const fetchedResults = await results.json();

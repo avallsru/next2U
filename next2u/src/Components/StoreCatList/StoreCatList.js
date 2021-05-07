@@ -26,7 +26,7 @@ const StoreCatList = (props) => {
   }, [categories]);
 
   const defineListToPrint = () => {
-const temporalList = categories.map((category) => {
+    const temporalList = categories.map((category) => {
       return <StoreCatCard cat={category} 
       key={Math.random() * Date.now()} />
     });

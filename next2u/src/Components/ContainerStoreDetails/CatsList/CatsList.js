@@ -20,7 +20,7 @@ const CatsList = ({ list }) => {
   };
 
   const getList = () => {
-    setListToPrint([]);
+    // setListToPrint([]);
     const catsArr = productsToPrint.map((group) => {
       const catName = Object.keys(group).join();
       return <div key={Math.random()*Date.now()} onClick={(e) => handleClick(e, catName)}>{catName}</div>;

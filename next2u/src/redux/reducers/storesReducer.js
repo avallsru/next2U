@@ -11,7 +11,8 @@ const defaultList = {
   storesNearAddress: [],
   storesToPrint: [],
   storeToDetail: {},
-  productsToPrint: []
+  productsToPrint: [],
+  ref: null
 }
 
 function storesReducer(state = defaultList, action) {
@@ -36,7 +37,7 @@ function storesReducer(state = defaultList, action) {
 
       const updatedList = state.productsToPrint.map((group) => {
         const groupCategory = Object.keys(group)[0]; 
-        
+
         const updatedValues = group[groupCategory].map((product) => {
           if(product.ID===idToFind - 1) {
             return {...product, units_selected: unitsSelected};
@@ -48,6 +49,9 @@ function storesReducer(state = defaultList, action) {
 
         
       return{...state, productsToPrint: updatedList};
+    }
+    case 'setReference': {
+      return {...state, ...action.payload}
     }
     default: {
       return state;

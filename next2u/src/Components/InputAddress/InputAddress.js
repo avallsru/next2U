@@ -28,13 +28,13 @@ const InputAdress = (props) => {
     dispatch(saveAddress(address));
     dispatch(listSelectedStores(storesList));
     dispatch(listToPrint(storesList));
+    dispatch({type: 'setReference', payload: {ref: React.createRef()}});
 
     
   }, [coords, dispatch, address, storesList]);
 
   const addCatNames =  (selectedStores) => {
     const listWithCatNames = selectedStores.map(async(store) => {
-      // debugger;
       const catNames = await getNames(store['store_categories_id'], 'stores');
       
       store['store_categories_names'] = catNames;

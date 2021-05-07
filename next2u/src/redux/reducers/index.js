@@ -8,7 +8,8 @@ import orderReducer from './orderReducer';
 const reducers = combineReducers({
   addressReducer,
   coordsReducer,
-   storesReducer
+  storesReducer,
+  orderReducer
 })
 
 export default reducers;
