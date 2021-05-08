@@ -9,7 +9,6 @@ import { addStoresToCompare } from '../redux/actions/storesActions';
 const storesToCompare = [];
 const getStores = async (...args) => {
   const baseUrl = API_BASE_SEARCH_NEAR_STORES;
-  debugger;
   let lat, lon = 0;
   let apiToCall = '';
 
@@ -21,8 +20,6 @@ const getStores = async (...args) => {
     const page = args[0];
     apiToCall = `${baseUrl}nearest-stores/next?token=${page}`;;
   }
-
-  debugger;
   
   const results = await fetch(apiToCall);
   const fetchedResults = await results.json();
@@ -32,14 +29,11 @@ const getStores = async (...args) => {
   console.log(storesToCompare);
   
   const pageToken = fetchedResults['next_page_token'];
+
   if(pageToken) {
-    getStores(pageToken);
+    await getStores(pageToken);
   }  
-  return (
-    <div>
-      
-    </div>
-  );
+  return storesToCompare;
 };
 
 // getStores.propTypes = {
