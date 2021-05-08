@@ -190,5 +190,21 @@
     ],
     "product_list": {},
     "logo": "5.jpg"
+  },
+  {
+    "ID": 6,
+    "name": "Inventada",
+    "location": "Roc Boronat, 30, 08005 Cornellà",
+    "phone_contact": 933333333,
+    "deliver_option": 1,
+    "deliver_price": 0,
+    "score": 0,
+    "opening_hours": "10-20:30h",
+    "minimum_price_order": 5,
+    "store_categories_id": [
+      2
+    ],
+    "product_list": "",
+    "logo": ""
   }
 ]

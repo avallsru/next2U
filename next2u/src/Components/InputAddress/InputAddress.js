@@ -3,9 +3,9 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 
-import { listFromDb } from "../../services";
+import { listFromDb, getAddressDetails, getStores } from "../../services";
 
-import { getNames } from "../../logic";
+import { filterNearStores, getNames } from "../../logic";
 
 import { setCoordinates, saveAddress } from "../../redux/actions/addressActions";
 import { listSelectedStores, listToPrint } from "../../redux/actions/storesActions";
@@ -24,14 +24,25 @@ const InputAdress = (props) => {
   
 
   useEffect(() => {
-    dispatch(setCoordinates(coords));
+    dispatch(setCoordinates(coords));    
+  }, [coords]);
+
+  useEffect(() => {
     dispatch(saveAddress(address));
+  }, [address]);
+
+  useEffect(() => {
     dispatch(listSelectedStores(storesList));
     dispatch(listToPrint(storesList));
+<<<<<<< HEAD
     dispatch({type: 'setReference', payload: {ref: React.createRef()}});
 
     
   }, [coords, dispatch, address, storesList]);
+=======
+  }, [storesList]);
+  
+>>>>>>> 40ce91fdc02e6d15c02997f208367b384f70f2da
 
   const addCatNames =  (selectedStores) => {
     const listWithCatNames = selectedStores.map(async(store) => {
@@ -55,18 +66,17 @@ const InputAdress = (props) => {
     localStorage.setItem('address', address, JSON.stringify(address));
 
     //GET THE COORDS
-    // const {lat, lon, formatedAddress} = await getAddressDetails(address);
-    // const result = await getStores({lat: 41.359620, lon: 2.076710});
-    // console.log(result);
+    const {lat, lon, formatedAddress} = await getAddressDetails(address);
+    const allStores = await getStores(lat, lon);
 
     //GET THE STORES THAT COINCIDE
-    const storesToPrint = await listFromDb("stores");
-
+    const storesToPrint = await filterNearStores(allStores);
+    debugger;
+    
     // setCoords({lat, lon});
-    // setAddress(formatedAddress);
+    setAddress(formatedAddress);
     addCatNames(storesToPrint);
     setStoresList(storesToPrint);
-    dispatch(listToPrint(storesList));
     
     history.push("/stores_results");
   };
