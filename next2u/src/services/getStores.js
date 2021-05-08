@@ -9,11 +9,6 @@ import { addStoresToCompare } from '../redux/actions/storesActions';
 const storesToCompare = [];
 const getStores = async (...args) => {
   const baseUrl = API_BASE_SEARCH_NEAR_STORES;
-<<<<<<< HEAD
-  const apiToCall = pageToken === '' 
-    ? `${baseUrl}location=${lat},${lon}&radius=140&type=store&key=${API_KEY}`
-    : `${baseUrl}location=${lat},${lon}&radius=140&type=store&pagetoken=${pageToken}&key=${API_KEY}`;
-=======
   let lat, lon = 0;
   let apiToCall = '';
 
@@ -25,7 +20,6 @@ const getStores = async (...args) => {
     const page = args[0];
     apiToCall = `${baseUrl}nearest-stores/next?token=${page}`;;
   }
->>>>>>> 40ce91fdc02e6d15c02997f208367b384f70f2da
   
   const results = await fetch(apiToCall);
   const fetchedResults = await results.json();

@@ -34,15 +34,7 @@ const InputAdress = (props) => {
   useEffect(() => {
     dispatch(listSelectedStores(storesList));
     dispatch(listToPrint(storesList));
-<<<<<<< HEAD
-    dispatch({type: 'setReference', payload: {ref: React.createRef()}});
-
-    
-  }, [coords, dispatch, address, storesList]);
-=======
   }, [storesList]);
-  
->>>>>>> 40ce91fdc02e6d15c02997f208367b384f70f2da
 
   const addCatNames =  (selectedStores) => {
     const listWithCatNames = selectedStores.map(async(store) => {
@@ -71,7 +63,6 @@ const InputAdress = (props) => {
 
     //GET THE STORES THAT COINCIDE
     const storesToPrint = await filterNearStores(allStores);
-    debugger;
     
     // setCoords({lat, lon});
     setAddress(formatedAddress);
