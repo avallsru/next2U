@@ -39,7 +39,7 @@ function storesReducer(state = defaultList, action) {
         const groupCategory = Object.keys(group)[0]; 
 
         const updatedValues = group[groupCategory].map((product) => {
-          if(product.ID===idToFind - 1) {
+          if(product.ID===idToFind) {
             return {...product, units_selected: unitsSelected};
           }
           return product;

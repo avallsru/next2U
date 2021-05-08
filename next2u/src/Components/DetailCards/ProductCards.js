@@ -12,14 +12,15 @@ const ProductCards = () => {
   const dispatch = useDispatch();
   const { productsToPrint } = useSelector((store) => store.storesReducer);
   const [quantity, setQuantity] = useState(0);
+  const [productToOrder, setProductToOrder] = useState({});
 
   const updateQuantity = ({ target }, unitsAvailable, unitsSelected, ID) => {
     if(target.value === '+' && unitsSelected < unitsAvailable && unitsSelected >= 0) {
       const updatedQuantity = unitsSelected + 1;
-      dispatch(updateProductsToPrint(ID + 1, updatedQuantity));
+      dispatch(updateProductsToPrint(ID, updatedQuantity));
     } else if(target.value === '-' && unitsSelected > 0) {
       const updatedQuantity = unitsSelected - 1;
-      dispatch(updateProductsToPrint(ID + 1, updatedQuantity));
+      dispatch(updateProductsToPrint(ID, updatedQuantity));
     }
   };
 
