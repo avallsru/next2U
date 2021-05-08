@@ -4,9 +4,9 @@ const updateProdsById = (productToFind, productsInRedux) => {
   const keyProductToFind = Object.keys(productToFind)[0];
   for (let key in productsInRedux) {
     if(key === keyProductToFind) {
-      productsInRedux[key] = productToFind[key];
       debugger;
-      return productsInRedux;
+      productToFind[key].totalPrice = productToFind[key].priceUnit * productToFind[key].unitsSelected
+      productsInRedux[key] = productToFind[key];
     }
   }
   const productsUpdated = {...productsInRedux, ...productToFind};

@@ -3,11 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 // import PropTypes from 'prop-types';
 
-import { getNames, updateProdsById } from "../../logic";
+import { getNames, updateOrderPrice, updateProdsById } from "../../logic";
 
 import "./ProductCards.scss";
 import { updateProductsToPrint } from "../../redux/actions/storesActions";
-import {updateOrder} from "../../redux/actions/orderActions";
+import {updateOrder, updateTotalPrice} from "../../redux/actions/orderActions";
 
 const ProductCards = () => {
   const dispatch = useDispatch();
@@ -34,12 +34,14 @@ const ProductCards = () => {
     const productToAdd = {[id]: {
       name,
       unitsSelected,
-      priceUnit
+      priceUnit,
+      totalPrice: priceUnit
     }}
 
-    const productToDispatch = updateProdsById(productToAdd, orderProductsRedux);
-
-    dispatch(updateOrder(productToDispatch))
+    const productsToDispatch = updateProdsById(productToAdd, orderProductsRedux);
+    const newTotalPrice = updateOrderPrice(productsToDispatch).toFixed(2);
+    dispatch(updateTotalPrice(newTotalPrice));
+    dispatch(updateOrder(productsToDispatch))
   }
 
   const arrToPrint = productsToPrint.map((group) => {

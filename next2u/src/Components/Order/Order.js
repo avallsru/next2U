@@ -1,13 +1,25 @@
 import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 import './Order.scss'
 
 const Order = () => {
-  const order = useState(store => store.orderReducer);
+  const [orderToPrint, setOrderToPrint] = useState([]);
+  // debugger;
+  const {products} = useSelector(store => store.orderReducer);
   
-  useEffect(() => {
-    console.log(order)
-  }, [order])
+  const prepareOrder = () => {
+    for(let productToPrint in products) {
+      const formatedProduct = 
+        <div className="product-ordered">
+          <div className="product-name">{productToPrint.name}</div>
+        </div>
+    }
+  }
+  
+  // useEffect(() => {
+  //   console.log(order)
+  // }, [order])
   return (
     <div>
       
