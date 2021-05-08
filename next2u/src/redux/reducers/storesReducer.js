@@ -1,6 +1,7 @@
-import { STORES_TO_PRINT, STORES_SELECTED, STORE_TO_DETAIL, PRODUCTS_TO_PRINT, RESET_PRODUCTS_TO_PRINT } from '../types';
+import { ALL_STORES, STORES_TO_PRINT, STORES_SELECTED, STORE_TO_DETAIL, PRODUCTS_TO_PRINT, RESET_PRODUCTS_TO_PRINT } from '../types';
 
 const defaultList = {
+  allStores: [],
   storesNearAddress: [],
   storesToPrint: [],
   storeToDetail: {},
@@ -9,6 +10,9 @@ const defaultList = {
 
 function storesReducer(state = defaultList, action) {
   switch(action.type) {
+    case ALL_STORES: {
+      return{ ...state, allStores: [...state.allStores, action.payload]}
+    }
     case STORES_SELECTED: {
       return { ...state, storesNearAddress: action.payload}
     }

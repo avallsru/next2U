@@ -1,6 +1,6 @@
 const API_KEY=process.env.REACT_APP_API_KEY;
 
-const API_BASE_SEARCH_NEAR_STORES=`https://maps.googleapis.com/maps/api/place/nearbysearch/json?`;
+const API_BASE_SEARCH_NEAR_STORES=`https://location-google.herokuapp.com/`;
 //To add: location=41.359620,2.076710&radius=140&type=store&pagetoken=${pageTokenFromResponseWhenNeeded}&key=${API_KEY}
 //fields:name,opening_hours,rating,user_ratings_total,vicinity
 

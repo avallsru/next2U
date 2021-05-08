@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 
-import { listFromDb } from "../../services";
+import { listFromDb, getAddressDetails, getStores } from "../../services";
 
 import { getNames } from "../../logic";
 
@@ -56,18 +56,19 @@ const InputAdress = (props) => {
     localStorage.setItem('address', address, JSON.stringify(address));
 
     //GET THE COORDS
-    // const {lat, lon, formatedAddress} = await getAddressDetails(address);
-    // const result = await getStores({lat: 41.359620, lon: 2.076710});
+    debugger;
+    const {lat, lon, formatedAddress} = await getAddressDetails(address);
+    const result = await getStores(lat, lon);
     // console.log(result);
 
-    //GET THE STORES THAT COINCIDE
-    const storesToPrint = await listFromDb("stores");
+    // //GET THE STORES THAT COINCIDE
+    // const storesToPrint = await listFromDb("stores");
 
     // setCoords({lat, lon});
     // setAddress(formatedAddress);
-    addCatNames(storesToPrint);
-    setStoresList(storesToPrint);
-    dispatch(listToPrint(storesList));
+    // addCatNames(storesToPrint);
+    // setStoresList(storesToPrint);
+    // dispatch(listToPrint(storesList));
     
     history.push("/stores_results");
   };
