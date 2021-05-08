@@ -1,5 +1,8 @@
-import { STORES_TO_PRINT, STORES_SELECTED, STORE_TO_DETAIL, PRODUCTS_TO_PRINT } from '../types';
+import { ALL_STORES, STORES_TO_PRINT, STORES_SELECTED, STORE_TO_DETAIL, PRODUCTS_TO_PRINT, RESET_PRODUCTS_TO_PRINT } from '../types';
 
+function addStoresToCompare(storesArr) {
+  return {type: ALL_STORES, payload: storesArr}
+}
 
 function listToPrint(storesArr) {
   return {type: STORES_TO_PRINT, payload: storesArr}
@@ -16,9 +19,14 @@ function saveStoreToDetail(store) {
 function defineProductsToPrint(productsArr) {
   return{type: PRODUCTS_TO_PRINT, payload: productsArr}
 }
+
+function resetProductsToPrint() {
+  return{type: RESET_PRODUCTS_TO_PRINT}
+}
 export {
   listToPrint,
   listSelectedStores,
   saveStoreToDetail,
-  defineProductsToPrint
+  defineProductsToPrint,
+  resetProductsToPrint
 }

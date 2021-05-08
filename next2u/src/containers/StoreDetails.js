@@ -15,8 +15,8 @@ const StoreDetails = props => {
   const {product_list} = useSelector(store => store.storesReducer.storeToDetail);
   return (
     <div>
-      <StoreBasicInfo />
-      <CatsList list={product_list}/>
+      <StoreBasicInfo className="basic-info"/>
+      <CatsList list={product_list} className="cats-list"/>
       <div className="products-list">
         <ProductsList  />
       </div>
