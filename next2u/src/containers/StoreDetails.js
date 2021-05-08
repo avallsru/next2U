@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux';
 
 import StoreBasicInfo from '../Components/ContainerStoreDetails/StoreBasicInfo';
 import Selector from '../Components/ContainerStoreDetails/Selector';
-import { ProductCard } from '../Components/DetailCards';
 import CatsList from '../Components/ContainerStoreDetails/CatsList';
 import ProductsList from '../Components/ProductsList/ProductsList';
 

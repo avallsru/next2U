@@ -1,0 +1,76 @@
+@import '../../utils/general.scss';
+
+
+// GROUP CONTAINER
+.detail-basic-data {
+  @include primaryFont;
+  
+}
+
+.product-detail {
+  border: 1px solid black;
+  margin: 5% 0;
+}
+
+// PRODUCT CARD
+.product-img-container {
+  grid-area: photo;
+  border: 1px solid red;
+}
+.basic-info {
+  &.first-row {
+    grid-area: basic-first;
+    font-weight: bold;
+  }
+  &.second-row {
+    grid-area: basic-second;
+    font-size: 0.7rem;
+    
+  }
+}
+
+.buy {
+  &.first-row {
+    grid-area: buy-first;
+  }
+
+  &.second-row {
+    grid-area: buy-second;
+    place-self: center;
+    width: auto;
+  }
+  &.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    >* {
+      margin: 2vh 0 0 0 ;
+    }
+    &:last-child {
+      margin-bottom: 2vh;
+    }
+  }
+}
+
+.product-detail {
+  display: grid;
+  grid-template-columns: 20% 30% 50%;
+  grid-template-rows: auto;
+  grid-template-areas: 
+  "photo basic-first buy-first"
+  "photo basic-second buy-second";
+}
+
+
+.quantity-container,
+.paying-container {
+  display: flex;
+  flex-direction: row;
+}
+.paying-container {
+  width: 100%;
+}
+.quantity-container {
+  justify-content: space-between;
+}

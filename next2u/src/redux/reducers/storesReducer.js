@@ -1,11 +1,20 @@
-import { ALL_STORES, STORES_TO_PRINT, STORES_SELECTED, STORE_TO_DETAIL, PRODUCTS_TO_PRINT, RESET_PRODUCTS_TO_PRINT } from '../types';
+import { 
+  ALL_STORES,
+  STORES_TO_PRINT, 
+  STORES_SELECTED, 
+  STORE_TO_DETAIL, 
+  PRODUCTS_TO_PRINT, 
+  RESET_PRODUCTS_TO_PRINT,
+  UPDATE_PRODUCTS_TO_PRINT
+} from '../types';
 
 const defaultList = {
   allStores: [],
   storesNearAddress: [],
   storesToPrint: [],
   storeToDetail: {},
-  productsToPrint: []
+  productsToPrint: [],
+  ref: null
 }
 
 function storesReducer(state = defaultList, action) {
@@ -28,6 +37,27 @@ function storesReducer(state = defaultList, action) {
     case RESET_PRODUCTS_TO_PRINT: {
       return{...state, productsToPrint:[]}
     }
+    case UPDATE_PRODUCTS_TO_PRINT: {
+      const {idToFind, unitsSelected} = action.payload;
+
+      const updatedList = state.productsToPrint.map((group) => {
+        const groupCategory = Object.keys(group)[0]; 
+
+        const updatedValues = group[groupCategory].map((product) => {
+          if(product.ID===idToFind) {
+            return {...product, units_selected: unitsSelected};
+          }
+          return product;
+        });
+        return ({[groupCategory]: updatedValues})
+      })
+
+        
+      return{...state, productsToPrint: updatedList};
+    }
+    // case 'setReference': {
+    //   return {...state, ...action.payload}
+    // }
     default: {
       return state;
     }
