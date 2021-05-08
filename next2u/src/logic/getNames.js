@@ -2,7 +2,6 @@ import { listFromDb } from '../services';
 
 const getNames = async(categoriesArr, kind) => {
   let categories = '';
-  // debugger;
   switch(kind) {
     case 'stores':
       categories = await listFromDb('stores_categories');

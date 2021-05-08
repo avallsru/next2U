@@ -35,20 +35,17 @@ const InputAdress = (props) => {
     dispatch(listSelectedStores(storesList));
     dispatch(listToPrint(storesList));
   }, [storesList]);
-  
 
   const addCatNames =  (selectedStores) => {
     const listWithCatNames = selectedStores.map(async(store) => {
-      
       const catNames = await getNames(store['store_categories_id'], 'stores');
       
-      
       store['store_categories_names'] = catNames;
-      const storeToSave = storesList.push(listWithCatNames);
-
-      setStoresList(storeToSave);
+     
     });
+    const storeToSave = storesList.push(listWithCatNames);
 
+    setStoresList(storeToSave);
     
   }
 
@@ -66,7 +63,6 @@ const InputAdress = (props) => {
 
     //GET THE STORES THAT COINCIDE
     const storesToPrint = await filterNearStores(allStores);
-    debugger;
     
     // setCoords({lat, lon});
     setAddress(formatedAddress);
