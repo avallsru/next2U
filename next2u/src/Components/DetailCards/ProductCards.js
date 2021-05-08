@@ -7,6 +7,7 @@ import { getNames } from "../../logic";
 
 import "./ProductCards.scss";
 import { updateProductsToPrint } from "../../redux/actions/storesActions";
+import {addProduct} from "../../redux/actions/orderActions";
 
 const ProductCards = () => {
   const dispatch = useDispatch();
@@ -23,6 +24,17 @@ const ProductCards = () => {
       dispatch(updateProductsToPrint(ID, updatedQuantity));
     }
   };
+
+  const updateOrderReducer = (e, id, name, unitsSelected, priceUnit) => {
+    e.preventDefault();
+    
+    const productToAdd = {[id]: {
+      name,
+      unitsSelected,
+      priceUnit
+    }}
+    dispatch(addProduct(productToAdd))
+  }
 
   const arrToPrint = productsToPrint.map((group) => {
     //GET CATEGORY AND PRODUCTS ARR TO PRINT FOR EACH GROUP
@@ -77,7 +89,10 @@ const ProductCards = () => {
               </div>
             </div>
 
-            <button className="update-order button buy second-row">
+            <button 
+            className="update-order button buy second-row" 
+            onClick={(e) => updateOrderReducer(e, ID, name, units_selected, price_unit)}
+            >
               <AiOutlineShoppingCart />
             </button>
           </div>
