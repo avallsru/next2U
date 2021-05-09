@@ -18,14 +18,20 @@
   border: 1px solid red;
 }
 .basic-info {
+  
   &.first-row {
     grid-area: basic-first;
+    
     font-weight: bold;
   }
   &.second-row {
     grid-area: basic-second;
     font-size: 0.7rem;
     
+  }
+  &.container {
+    display: flex;
+    align-items: center;
   }
 }
 
@@ -62,15 +68,10 @@
   "photo basic-second buy-second";
 }
 
-
-.quantity-container,
 .paying-container {
   display: flex;
   flex-direction: row;
 }
 .paying-container {
   width: 100%;
-}
-.quantity-container {
-  justify-content: space-between;
 }

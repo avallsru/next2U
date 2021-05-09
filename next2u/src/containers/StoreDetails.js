@@ -8,6 +8,7 @@ import CatsList from '../Components/ContainerStoreDetails/CatsList';
 import ProductsList from '../Components/ProductsList/ProductsList';
 
 import './StoreDetail.scss';
+import { Order } from '../Components/Order';
 
 
 const StoreDetails = props => {
@@ -16,9 +17,13 @@ const StoreDetails = props => {
     <div>
       <StoreBasicInfo className="basic-info"/>
       <CatsList list={product_list} className="cats-list"/>
-      <div className="products-list">
+      <div className="order">
+        <Order />
+      </div>
+      <div className="products-list-container">
         <ProductsList  />
       </div>
+      
       
       {/* <Selector /> */}
     </div>
