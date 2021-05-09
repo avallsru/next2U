@@ -1,10 +1,12 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 
+import DeliveryAddress from '../Components/DeliveryAddress';
+
 const LastConfirmation = props => {
   return (
     <div>
-      This is the last confirmation page
+      <DeliveryAddress />
     </div>
   );
 };

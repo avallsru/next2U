@@ -60,6 +60,7 @@ const Order = () => {
     }
     return formatedList;
   };
+  
   const changePage = () => {
     history.push("/last_confirmation");
   }
