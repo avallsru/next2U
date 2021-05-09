@@ -41,27 +41,36 @@ const EditContactInfo = () => {
   return (
     <div className="last-confirmation contact-info container">
       <div className="last-confirmation contact-info title">Datos de contacto</div>
-      <input 
-        className="input-contact-name" 
-        value={updatedName} 
-        placeholder={updatedName}
-        label="Nombre: " 
-        onChange={e => handleChange(e, 'name')}
+      <div className="contact name container">
+        <div className="contact-info name detail title">Nombre: </div>
+        <input 
+          className="last-confirmation editor input-contact" 
+          value={updatedName} 
+          placeholder={updatedName}
+          onChange={e => handleChange(e, 'name')}
       />
-      <input 
-        className="input-contact-phone" 
-        value={updatedPhone} 
-        placeholder={updatedPhone} 
-        label="Teléfono: "
-        onChange={e => handleChange(e, 'phone')}
+      </div>
+      <div className="contact phone container">
+        <div className="contact-info phone detail title">Teléfono: </div>
+        <input 
+          className="last-confirmation editor input-contact" 
+          value={updatedPhone} 
+          placeholder={updatedPhone} 
+          onChange={e => handleChange(e, 'phone')}
       />
-      <input 
-        className="input-contact-email" 
-        value={updatedEmail} 
-        placeholder={updatedEmail}
-        label="e-mail" 
-        onChange={e => handleChange(e, 'email')}
+      </div>
+      <div className="contact email container">
+        <div className="contact-info email detail title">e-mail: </div>
+        <input 
+          className="last-confirmation editor input-contact" 
+          value={updatedEmail} 
+          placeholder={updatedEmail}
+          onChange={e => handleChange(e, 'email')}
       />
+      </div>
+      
+      
+      
       <div className="button-container">
       <button 
         onClick={handleClick}

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { changeEditContactInfo } from '../../../redux/actions/lastConfirmationActions';
 
+import './UpdatedContactInfo.scss';
 const UpdatedContactInfo = () => {
   const dispatch = useDispatch();
 
@@ -16,16 +17,16 @@ const UpdatedContactInfo = () => {
   return (
     <div className="last-confirmation contact-info container">
       <div className="last-confirmation contact-info title">Datos de contacto</div>
-      <div className="contact-info name container">
-        <div className="contact-info name title">Nombre: </div>
+      <div className="contact name container">
+        <div className="contact-info detail name title">Nombre: </div>
         <div className="contact-info name value">{name}</div>
       </div>
-      <div className="contact-info phone container">
-        <div className="contact-info phone title">Teléfono: </div>
+      <div className="contact phone container">
+        <div className="contact-info detail phone title">Teléfono: </div>
         <div className="contact-info phone value">{phone}</div>
       </div>
-      <div className="contact-info email container">
-        <div className="contact-info email title">e-mail: </div>
+      <div className="contact email container">
+        <div className="contact-info detail email title">e-mail: </div>
         <div className="contact-info email value">{email}</div>
       </div>
       <div className="button-container">

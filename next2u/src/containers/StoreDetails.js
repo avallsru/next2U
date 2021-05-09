@@ -17,7 +17,7 @@ const StoreDetails = props => {
       <StoreBasicInfo className="basic-info"/>
       <CatsList list={product_list} className="cats-list"/>
       <div className="order">
-        <Order />
+        <Order page="store-details"/>
       </div>
       <div className="products-list-container">
         <ProductsList  />

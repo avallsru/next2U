@@ -8,6 +8,7 @@
   }
   &.container {
     width: 40%;
+    max-width: 310px;
     border: 1px solid black;
     > * {
       margin: 1vh 0;
@@ -26,6 +27,12 @@
     :focus {
       outline:none;
     }
+    &.input-contact {
+      height: auto;
+      width: 80%;
+      align-self: center;
+      padding-left: 5%;
+    }
   }
 
   &.editing-button {
@@ -34,5 +41,11 @@
   }
 }
 
-.container {
+
+.contact.container {
+  display: flex;
+  
+}
+.contact-info.detail.title {
+  font-size: 1rem;
 }
