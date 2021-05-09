@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux';
 // import PropTypes from 'prop-types';
 
 import StoreBasicInfo from '../Components/ContainerStoreDetails/StoreBasicInfo';
-import Selector from '../Components/ContainerStoreDetails/Selector';
 import CatsList from '../Components/ContainerStoreDetails/CatsList';
 import ProductsList from '../Components/ProductsList/ProductsList';
 
@@ -18,14 +17,11 @@ const StoreDetails = props => {
       <StoreBasicInfo className="basic-info"/>
       <CatsList list={product_list} className="cats-list"/>
       <div className="order">
-        <Order />
+        <Order page="store-details"/>
       </div>
       <div className="products-list-container">
         <ProductsList  />
       </div>
-      
-      
-      {/* <Selector /> */}
     </div>
   );
 };

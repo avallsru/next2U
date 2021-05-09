@@ -1,5 +1,8 @@
 @import '../../../utils/general.scss';
 
-.editing-address-container {
-  @include primaryFont;
+.delivery-address.container {
+  width: 40%;
+  > * {
+    
+  }
 }

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 // import PropTypes from 'prop-types';
 
 
-import InfoToShow from '../InfoToShow';
+// import InfoToShow from '../InfoToShow';
 
 import './Selector.scss';
 
@@ -21,9 +21,9 @@ const Selector = props => {
       <div className="info-option" onClick={ e=> handleClick(e, 'info') }>
         Info
       </div>
-      <div className="info-to-show">
+      {/* <div className="info-to-show">
         <InfoToShow />
-      </div>
+      </div> */}
     </div>
   );
 };

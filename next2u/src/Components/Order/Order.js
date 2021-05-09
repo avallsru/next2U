@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { RiDeleteBin5Fill } from 'react-icons/ri';
 
@@ -6,9 +7,9 @@ import "./Order.scss";
 import { updateOrder, updateTotalPrice } from "../../redux/actions/orderActions";
 
 import {updateOrderPrice} from '../../logic';
-import { useHistory } from "react-router";
 
-const Order = () => {
+
+const Order = (props) => {
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -60,9 +61,18 @@ const Order = () => {
     }
     return formatedList;
   };
+  
   const changePage = () => {
     history.push("/last_confirmation");
   }
+
+  const changePageButton = (props.page === "store-details") ?
+    (<div className="button-container">
+      <button className="pre-confirm-order button" onClick={changePage}>Pagar</button>
+    </div>)
+    :
+    (<div/>)
+  
   
 
   return (
@@ -73,9 +83,7 @@ const Order = () => {
         <span className="label total-price">TOTAL: </span>
         {totalPriceToPrint}€
       </div>
-      <div className="button-container">
-        <button className="pre-confirm-order button" onClick={changePage}>Pagar</button>
-      </div>
+      {changePageButton}
     </div>
   );
 };

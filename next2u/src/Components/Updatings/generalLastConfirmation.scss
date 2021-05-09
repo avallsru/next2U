@@ -1,0 +1,51 @@
+@import '../../utils/general.scss';
+
+.last-confirmation{
+  @include primaryFont;
+  & .title {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  &.container {
+    width: 40%;
+    max-width: 310px;
+    border: 1px solid black;
+    > * {
+      margin: 1vh 0;
+      text-align: center;
+      justify-content: center;
+      text-align: center;
+    }
+  }
+
+  &.editor {
+    border: 1px solid black;
+    padding: 5px;
+    resize: none;
+    height: 10vh;
+    overflow-y: scroll;
+    :focus {
+      outline:none;
+    }
+    &.input-contact {
+      height: auto;
+      width: 80%;
+      align-self: center;
+      padding-left: 5%;
+    }
+  }
+
+  &.editing-button {
+    width: 80%;
+    align-self: center;
+  }
+}
+
+
+.contact.container {
+  display: flex;
+  
+}
+.contact-info.detail.title {
+  font-size: 1rem;
+}
