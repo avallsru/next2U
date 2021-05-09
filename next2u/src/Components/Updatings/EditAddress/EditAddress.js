@@ -26,7 +26,9 @@ const EditAddress = () => {
   }
 
 
-  const handleClick = () => {
+  const handleClick = (e) => {
+    e.preventDefault();
+    
     dispatch(changeEditAddressStatus(false));
     dispatch(saveAddress(address));
   }

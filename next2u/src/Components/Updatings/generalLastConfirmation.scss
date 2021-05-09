@@ -8,6 +8,7 @@
   }
   &.container {
     width: 40%;
+    border: 1px solid black;
     > * {
       margin: 1vh 0;
       text-align: center;
@@ -34,5 +35,4 @@
 }
 
 .container {
-  border: 1px solid black;
 }

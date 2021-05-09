@@ -1,5 +1,5 @@
 import React from 'react';
-import withAddressEdition from '../../HOC/withAddressEdition';
+import {withAddressEdition} from '../../HOC';
 
 import './DeliveryAddress.scss';
 

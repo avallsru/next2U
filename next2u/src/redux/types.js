@@ -14,3 +14,5 @@ export const UPDATE_ORDER = 'UPDATE_ORDER';
 export const UPDATE_TOTAL_PRICE = 'UPDATE_TOTAL_PRICE';
 
 export const EDIT_ADDRESS = 'EDIT_ADDRESS';
+export const EDIT_CONTACT = 'EDIT_CONTACT';
+export const SAVE_CONTACT = 'SAVE_CONTACT';
