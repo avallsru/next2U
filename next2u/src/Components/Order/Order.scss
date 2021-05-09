@@ -1,5 +1,55 @@
 @import '../../utils/general.scss';
 
 .order-container {
+  
+  margin: 5%;
+  border: 1px solid black;
+  background-color: gray;
+  & * {
+  margin: 2%;
   @include primaryFont;
+  }
+  .button-container {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.product-ordered,
+.product-price {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+  font-size: 0.8rem;
+}
+.product-price {
+  align-items: center;
+}
+
+.product-ordered {
+  font-size: 0.8rem;
+  
+}
+
+.title.order,
+.label.total-price {
+  font-weight: bold;
+}
+
+.title.order,
+.total-price {
+  width: 100%;
+  text-align: center;
+}
+
+.delete-button {
+  background: none;
+  border: none;
+  :hover {
+    cursor: pointer;
+  }
+}
+
+.delete-icon {
+  color: blue;
 }

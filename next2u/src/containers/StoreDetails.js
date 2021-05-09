@@ -17,12 +17,13 @@ const StoreDetails = props => {
     <div>
       <StoreBasicInfo className="basic-info"/>
       <CatsList list={product_list} className="cats-list"/>
-      <div className="products-list">
-        <ProductsList  />
-      </div>
       <div className="order">
         <Order />
       </div>
+      <div className="products-list-container">
+        <ProductsList  />
+      </div>
+      
       
       {/* <Selector /> */}
     </div>

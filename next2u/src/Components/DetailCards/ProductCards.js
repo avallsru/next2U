@@ -3,11 +3,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 // import PropTypes from 'prop-types';
 
+import {updateOrder, updateTotalPrice} from "../../redux/actions/orderActions";
+
 import { getNames, updateOrderPrice, updateProdsById } from "../../logic";
 
 import "./ProductCards.scss";
-import { updateProductsToPrint } from "../../redux/actions/storesActions";
-import {updateOrder, updateTotalPrice} from "../../redux/actions/orderActions";
+import ProductQuantity from "../ProductQuantity/ProductQuantity";
 
 const ProductCards = () => {
   const dispatch = useDispatch();
@@ -18,15 +19,7 @@ const ProductCards = () => {
   const [quantity, setQuantity] = useState(0);
   const [productToOrder, setProductToOrder] = useState({});
 
-  const updateQuantity = ({ target }, unitsAvailable, unitsSelected, ID) => {
-    if(target.value === '+' && unitsSelected < unitsAvailable && unitsSelected >= 0) {
-      const updatedQuantity = unitsSelected + 1;
-      dispatch(updateProductsToPrint(ID, updatedQuantity));
-    } else if(target.value === '-' && unitsSelected > 0) {
-      const updatedQuantity = unitsSelected - 1;
-      dispatch(updateProductsToPrint(ID, updatedQuantity));
-    }
-  };
+  
 
   const updateOrderReducer = (e, id, name, unitsSelected, priceUnit) => {
     e.preventDefault();
@@ -39,9 +32,10 @@ const ProductCards = () => {
     }}
 
     const productsToDispatch = updateProdsById(productToAdd, orderProductsRedux);
-    const newTotalPrice = updateOrderPrice(productsToDispatch).toFixed(2);
-    dispatch(updateTotalPrice(newTotalPrice));
-    dispatch(updateOrder(productsToDispatch))
+
+    const {orderPrice, updatedList} = updateOrderPrice(productsToDispatch);
+    dispatch(updateTotalPrice(orderPrice));
+    dispatch(updateOrder(updatedList));
   }
 
   const arrToPrint = productsToPrint.map((group) => {
@@ -69,29 +63,13 @@ const ProductCards = () => {
           <div className="product-img-container">
             <img alt="algo"></img>
           </div>
-          <div className="basic-info-container">
+          <div className="basic-info container">
             <div className="basic-info first-row">{name}</div>
             <div className="basic-info second-row">{description}</div>
           </div>
           <div className="buy container">
             <div className="paying-container buy first-row">
-              <div className="quantity-container">
-                <button
-                  className="update-quantity button"
-                  onClick={(e) => updateQuantity(e, units_available, units_selected, ID)}
-                  value="-"
-                >
-                  -
-                </button>
-                <div className="quantity">{units_selected}</div>
-                <button
-                  className="update-quantity button"
-                  onClick={(e) => updateQuantity(e, units_available, units_selected, ID)}
-                  value="+"
-                >
-                  +
-                </button>
-              </div>
+              <ProductQuantity unitsAvailable={units_available} unitsSelected={units_selected} idValue={ID} />
               <div>
                 {price_unit}€/{kind_of_unit}
               </div>

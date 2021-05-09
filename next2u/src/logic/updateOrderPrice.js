@@ -1,12 +1,21 @@
 
 
 const updateOrderPrice = (products) => {
-  debugger;
-  let priceToReturn = 0;
-  for(let key in products) {
-    priceToReturn = products[key].totalPrice + priceToReturn;
+  let orderPrice = 0;
+  let updatedList = {};
+  for(const [key, value] of Object.entries(products)) {
+    debugger;
+    const unitPrice = value.priceUnit;
+    const unitsSelected = value.unitsSelected;
+
+    let productPrice =  parseFloat((unitPrice * unitsSelected)).toFixed(2);
+    value.totalPrice = productPrice;
+    orderPrice = orderPrice + parseFloat(productPrice);
+
+    Object.assign(updatedList, {[key]: value});
   }
-  return priceToReturn;
+
+  return {orderPrice, updatedList};
 };
 
 export default updateOrderPrice;
