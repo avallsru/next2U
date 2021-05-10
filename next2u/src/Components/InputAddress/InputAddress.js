@@ -73,14 +73,14 @@ const InputAdress = (props) => {
   };
 
   return (
-    <div className="inputAdress">
+    <div className="inputAdress component container">
       <input
         type="text"
         onChange={handleChange}
         value={address}
         placeholder="Busca tu dirección"
       />
-      <button type="submit" onClick={handleSubmit}>
+      <button className="submit-button" type="submit" onClick={handleSubmit}>
         Buscar
       </button>
     </div>
