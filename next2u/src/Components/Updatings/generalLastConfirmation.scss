@@ -11,14 +11,16 @@
   &.container {
     max-width: 310px;
     padding: 4%;
-    border-bottom: 1px solid $soft_green;
-    border-radius: 10px;
     > * {
       margin: 1vh 0;
       text-align: center;
       justify-content: center;
       text-align: center;
     }
+  }
+
+  &.delivery-address.container {
+    border-bottom: 1px solid $soft_green;
   }
 
   &.editor {
@@ -50,6 +52,14 @@
     width: 70%;
   }
 }
+
+.details.address.container,
+.details.contact.container {
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 
 .button-container.editing {
   display: flex;

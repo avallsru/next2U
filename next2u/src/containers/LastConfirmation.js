@@ -27,7 +27,9 @@ const LastConfirmation = props => {
         <DeliveryAddress />
         <ContactInfo />
       </div>
-      
+      <div className="last-button container">
+        <button className="last-button button">Confirmar pedido</button>
+      </div>
     </div>
   );
 };
