@@ -11,7 +11,7 @@ const defaultOrder = {
       //   name,
       //   price
       // }
-    totalPrice: 0
+  totalPrice: 0
 }
 
 

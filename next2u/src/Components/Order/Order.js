@@ -19,6 +19,7 @@ const Order = (props) => {
   const { products, totalPrice } = useSelector((store) => store.orderReducer);
 
   useEffect(() => {
+    debugger;
     setTotalPriceToPrint(totalPrice);
   }, [totalPrice]);
 
