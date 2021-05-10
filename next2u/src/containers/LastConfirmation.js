@@ -16,7 +16,7 @@ const LastConfirmation = props => {
     history.push('store_details');
   }
   return (
-    <div>
+    <div className="last-confirmation page container">
       <div className="order-container last-confirmation">
         <Order page="last-confirmation"/>
         <div className="button-container">

@@ -1,13 +1,16 @@
 @import '../utils/general.scss';
 
-.order-container.last-confirmation {
-  border: 1px solid $soft_green;
-  border-radius: 10px;
-}
-
-.editing-container {
+.last-confirmation.page.container {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+}
+.order-container.last-confirmation {
+  border-bottom: 1px solid $soft_green;
+}
+.details.address.container {
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .contact.container {
