@@ -24,15 +24,15 @@ const StoreCard = ({store}) => {
   
   return (
     <div className="detailsCard-container" onClick={handleClick}>
-      <div className="detail-img container">
+      <div className="detail img container">
         <img src="assets/img/stores/1.jpg" alt="detail-img" />
       </div>
-      <div className="detail-basic-data container">
+      <div className="detail basic-data container">
         <p className="detail-name">{store.name}</p>
         
         <div className="category-names">{store['store_categories_names']}</div>
       </div>
-      <div className="detail-other-info container">
+      <div className="detail other-info container">
         <div className="opening-hours">
           <FcClock />
           {store["opening_hours"]}
