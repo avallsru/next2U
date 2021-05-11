@@ -12,6 +12,8 @@ import {
 
 import { ProductCards }from "../DetailCards";
 
+import './ProductsList.scss';
+
 const ProductsList = (props) => {
   const storeToDetail = useSelector(
     (store) => store.storesReducer.storeToDetail
@@ -19,9 +21,6 @@ const ProductsList = (props) => {
   const { product_list } = storeToDetail;
   const dispatch = useDispatch();
 
-  const [valuesArr, setTemporalValuesArr] = useState([]);
-  const [keyName, setKeyName] = useState([]);
-  const [componentsList, setComponentsList] = useState("");
   const [productArr, setProductArr] = useState([]);
 
   useEffect(() => {

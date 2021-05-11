@@ -11,7 +11,6 @@ const updateOrderPrice = (products) => {
     let productPrice =  unitPrice * unitsSelected;
     value.totalPrice = productPrice;
     orderPrice = parseFloat(orderPrice) + productPrice;
-    debugger;
     orderPrice = orderPrice.toFixed(2)
 
     Object.assign(updatedList, {[key]: value});

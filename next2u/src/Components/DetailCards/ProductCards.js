@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { AiOutlineShoppingCart } from "react-icons/ai";
+import { HiShoppingCart } from 'react-icons/hi';
 // import PropTypes from 'prop-types';
 
 import {updateOrder, updateTotalPrice} from "../../redux/actions/orderActions";
@@ -62,7 +62,7 @@ const ProductCards = () => {
           key={Math.random() * Date.now()}
         >
           <div className="product-img-container">
-            <img alt="algo"></img>
+            <img src={`./assets/img/products/${ID}.jpg`} alt="algo"></img>
           </div>
           <div className="basic-info container">
             <div className="basic-info first-row">{name}</div>
@@ -71,7 +71,7 @@ const ProductCards = () => {
           <div className="buy container">
             <div className="paying-container buy first-row">
               <ProductQuantity unitsAvailable={units_available} unitsSelected={units_selected} idValue={ID} />
-              <div>
+              <div className="quantity-text">
                 {price_unit}€/{kind_of_unit}
               </div>
             </div>
@@ -80,7 +80,7 @@ const ProductCards = () => {
             className="update-order button buy second-row" 
             onClick={(e) => updateOrderReducer(e, ID, name, units_selected, price_unit)}
             >
-              <AiOutlineShoppingCart />
+              <HiShoppingCart className="buy icon" />
             </button>
           </div>
         </div>

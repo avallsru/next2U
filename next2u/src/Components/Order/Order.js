@@ -20,7 +20,7 @@ const Order = (props) => {
   const [totalPriceToPrint, setTotalPriceToPrint] = useState(0.0);
 
   const { products, totalPrice } = useSelector((store) => store.orderReducer);
-  const { orderActivation } = useSelector((store) => store.hocsReducer);
+  const { orderActivation, page } = useSelector((store) => store.hocsReducer);
   useEffect(() => {
     setTotalPriceToPrint(totalPrice);
   }, [totalPrice]);
@@ -45,6 +45,7 @@ const Order = (props) => {
 
   const prepareOrder = () => {
     const formatedList = [];
+    console.log(page);
 
     for (let key in products) {
       const formatedProduct = (
@@ -75,7 +76,7 @@ const Order = (props) => {
   };
 
   const changePageButton =
-    props.page === "store-details" ? (
+    page === "store_details" ? (
       <div className="button-container">
         <button className="pre-confirm-order button" onClick={changePage}>
           Pagar

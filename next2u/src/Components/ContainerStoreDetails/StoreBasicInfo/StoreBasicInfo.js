@@ -10,10 +10,11 @@ const StoreBasicInfo = props => {
   
   return (
     <>
+    
+    <div className="info-container">
     <div className="img-container">
       <img src="/assets/img/stores/1.jpg" alt="store logo" />
     </div>
-    <div className="info-container">
       <div className="basic-info">
         <p className="store-name title">{name}</p>
         <p className="store-categories">{stores_categories_names}</p>
