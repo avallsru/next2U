@@ -3,8 +3,9 @@
 .order-container {
   
   margin: 5%;
-  border: 1px solid black;
-  background-color: gray;
+  padding: 2%;
+  // background-color: $soft_green;
+  
   & * {
   margin: 2%;
   @include primaryFont;
@@ -12,6 +13,9 @@
   .button-container {
     display: flex;
     justify-content: center;
+  }
+  .go-back-button {
+    @include lastConfirmationButtons;
   }
 }
 
@@ -28,12 +32,13 @@
 
 .product-ordered {
   font-size: 0.8rem;
-  
+  border-bottom: 1px solid $soft_green;
 }
 
 .title.order,
 .label.total-price {
   font-weight: bold;
+  color: $dark_green;
 }
 
 .title.order,
@@ -51,5 +56,5 @@
 }
 
 .delete-icon {
-  color: blue;
+  color: $dark_green;
 }

@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { changeEditingStatus } from '../../../logic';
 import { changeEditAddressStatus } from '../../../redux/actions/lastConfirmationActions';
 
+import './UpdatedAddress.scss';
+
 const UpdatedAddress = () => {
   const dispatch = useDispatch();
 
@@ -16,15 +18,18 @@ const UpdatedAddress = () => {
   return (
     <div className="last-confirmation delivery-address container">
       <div className="last-confirmation delivery-address title">Dirección de entrega</div>
-      <div className="last-confirmation defined address">{address}</div> 
-      <div className="button-container">
-        <button 
-          onClick={handleClick}
-          className="last-confirmation editing-button"
-        >
-          Editar
-        </button>
-      </div>
+      <div className="details address container">
+        <div className="last-confirmation defined address">{address}</div> 
+        <div className="button-container editing">
+          <button 
+            onClick={handleClick}
+            className="last-confirmation editing-button"
+          >
+            Editar
+          </button>
+        </div>
+      </div>  
+      
       
     </div>
   );

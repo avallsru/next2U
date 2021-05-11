@@ -1,0 +1,9 @@
+.last-confirmation{
+  &.delivery-address.title {
+    margin: 1vh 0 20px 0;
+  }
+  &.defined.address {
+    padding: 0 2vw;
+    text-align: justify;
+  }
+}

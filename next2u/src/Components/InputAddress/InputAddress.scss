@@ -1,18 +1,28 @@
 @import '../../utils/general.scss';
 
-.inputAdress {
-  margin: 30vh 10vw 0 10vw;
+.inputAdress.component.container {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid $soft_green;
+  border-radius: 5px;
   >* {
     @include searchInput;
+    margin: 2vw;
   }
   input {
-    width: 70%;
+    width: 80%;
+    border: none;
+    :placeholder-shown {
+      color: gray;
+    }
   }
   button {
     width: 20%;
     background-color: $soft_green;
     color: $dark_green;
-    border-color: $dark_green;
+    border: none;
+    border-radius: 5px;
+    
   }
 }
 
@@ -28,11 +38,11 @@
     input {
       width: 70%;
     }
-    button {
+    .submit-button {
       width: 20%;
       background-color: $soft_green;
       color: $dark_green;
-      border-color: $dark_green;
+      
     }
   }
 }

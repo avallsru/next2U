@@ -4,12 +4,13 @@
   @include primaryFont;
   & .title {
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1rem;
+    color: $dark_green;
   }
+
   &.container {
-    width: 40%;
     max-width: 310px;
-    border: 1px solid black;
+    padding: 4%;
     > * {
       margin: 1vh 0;
       text-align: center;
@@ -18,16 +19,24 @@
     }
   }
 
+  &.delivery-address.container {
+    border-bottom: 1px solid $soft_green;
+  }
+
   &.editor {
     border: 1px solid black;
     padding: 5px;
     resize: none;
     height: 10vh;
     overflow-y: scroll;
+
     :focus {
       outline:none;
     }
+
     &.input-contact {
+      border: 1px solid $dark_green;
+      border-radius: 3px;
       height: auto;
       width: 80%;
       align-self: center;
@@ -36,16 +45,36 @@
   }
 
   &.editing-button {
-    width: 80%;
-    align-self: center;
+    @include lastConfirmationButtons;
+  }
+  .defined {
+    font-size: 0.9rem;
+    width: 70%;
   }
 }
 
+.details.address.container,
+.details.contact.container {
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
+
+.button-container.editing {
+  display: flex;
+  align-content: center;
+  margin-left: 5vw;
+}
 .contact.container {
   display: flex;
-  
+  justify-content: flex-start;
+  > * {
+    padding: 2px;
+  }
+  padding: 2px;
 }
 .contact-info.detail.title {
-  font-size: 1rem;
+  font-size: 0.9rem;
+  color: $soft_green
 }

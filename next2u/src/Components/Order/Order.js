@@ -15,10 +15,11 @@ const Order = (props) => {
 
   const [orderToPrint, setOrderToPrint] = useState([]);
   const [totalPriceToPrint, setTotalPriceToPrint] = useState(0.0);
-  // debugger;
+
   const { products, totalPrice } = useSelector((store) => store.orderReducer);
 
   useEffect(() => {
+    debugger;
     setTotalPriceToPrint(totalPrice);
   }, [totalPrice]);
 
@@ -31,7 +32,6 @@ const Order = (props) => {
     e.preventDefault();
     const newProductsList = {};
     for(const [key, value] of Object.entries(products)) {
-      debugger;
       if (key !== keyToDelete) {
         Object.assign(newProductsList, {key: value});
       }
@@ -43,7 +43,7 @@ const Order = (props) => {
 
   const prepareOrder = () => {
     const formatedList = [];
-    debugger;
+
     for (let key in products) {
       const formatedProduct = (
         <div className="product-ordered" key={Math.random() * Date.now()}>
