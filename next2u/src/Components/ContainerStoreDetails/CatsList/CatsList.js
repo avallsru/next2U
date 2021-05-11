@@ -15,15 +15,27 @@ const CatsList = ({ list }) => {
     getList();
   }, [productsToPrint]);
 
-  const handleClick = (e, category) => {
-    console.log(category);
+  const handleClick = (e, category, ref) => {
+    // e.preventDefault();
+    // debugger;
+    // if(ref) {
+    //   ref.scrollIntoView({behaviour: 'smooth'});
+    // }
   };
 
   const getList = () => {
     // setListToPrint([]);
     const catsArr = productsToPrint.map((group) => {
       const catName = Object.keys(group).join();
-      return <div key={Math.random()*Date.now()} onClick={(e) => handleClick(e, catName)}>{catName}</div>;
+      debugger;
+      return (
+        <div 
+          key={Math.random()*Date.now()} 
+          onClick={(e) => handleClick(e, catName, group[catName].ref)}
+        >
+          {catName}
+        </div>
+      )
     });
     setListToPrint(catsArr);
   };

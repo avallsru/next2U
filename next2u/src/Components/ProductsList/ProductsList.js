@@ -45,6 +45,7 @@ const ProductsList = (props) => {
         Object.keys(product),
         "products_categories"
       );
+      let key = temporalKey[0];
 
       //GET THE VALUES ARR OBJECTS
       const temporalValuesArr = Object.values(product);
@@ -56,7 +57,12 @@ const ProductsList = (props) => {
       });
       //  setTemporalValuesArr(...valuesArr, temporalValues);
       Promise.all(temporalValues).then((results) => {
-        setProductArr(...productArr, { [temporalKey[0]]: results });
+        const group = {
+          products: results,
+          ref: React.createRef()
+        }
+        
+        setProductArr(...productArr, {[key]: group});
       });
     });
   };

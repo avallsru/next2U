@@ -3,7 +3,7 @@ import {withAddressEdition} from '../../HOC';
 
 import './DeliveryAddress.scss';
 
-const DeliveryAddress = () => {
+const DeliveryAddress = (example="oki") => {
   return (
     <div>
       Dirección de entrega
