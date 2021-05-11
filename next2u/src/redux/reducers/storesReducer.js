@@ -39,20 +39,21 @@ function storesReducer(state = defaultList, action) {
     }
     case UPDATE_PRODUCTS_TO_PRINT: {
       const {idToFind, unitsSelected} = action.payload;
-
+      debugger;
       const updatedList = state.productsToPrint.map((group) => {
         const groupCategory = Object.keys(group)[0]; 
 
-        const updatedValues = group[groupCategory].map((product) => {
+        const updatedValues = group[groupCategory].products.map((product) => {
           if(product.ID===idToFind) {
             return {...product, units_selected: unitsSelected};
           }
           return product;
         });
-        return ({[groupCategory]: updatedValues})
+        const test = {...group[groupCategory], products: updatedValues};
+        return {[groupCategory]: test};
       })
 
-        
+       
       return{...state, productsToPrint: updatedList};
     }
     // case 'setReference': {

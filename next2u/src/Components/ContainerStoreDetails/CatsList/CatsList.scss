@@ -3,8 +3,12 @@
 .categories-to-print {
   @include primaryFont;
   @include hoverCursor;
-  width: 20vw;
-  height: 40vh;
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  width: 80%;
+  height: 35vh;
+  padding: 0 10%;
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
@@ -12,7 +16,8 @@
   text-align: center;
   background-color: $soft_green;
   color: $dark_green;
-  border-radius: 0 0 10px 10px;
+
+  
 
   > * {
     width: 100%;

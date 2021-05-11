@@ -8,12 +8,14 @@ import ProductsList from '../Components/ProductsList/ProductsList';
 
 import './StoreDetail.scss';
 import { Order } from '../Components/Order';
+import Navbar from '../Components/Navbar/Navbar';
 
 
 const StoreDetails = props => {
   const {product_list} = useSelector(store => store.storesReducer.storeToDetail);
   return (
     <div>
+      <Navbar />
       <StoreBasicInfo className="basic-info"/>
       <CatsList list={product_list} className="cats-list"/>
       <div className="order">

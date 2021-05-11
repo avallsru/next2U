@@ -6,6 +6,7 @@ import { FcClock, FcMoneyTransfer } from "react-icons/fc";
 
 import { getCollection, listFromDb } from '../../services';
 import { saveStoreToDetail } from '../../redux/actions/storesActions';
+import { setPage } from "../../redux/actions/hocsActions";
 
 import "./StoreCard.scss";
 
@@ -19,6 +20,7 @@ const StoreCard = ({store}) => {
  
   const handleClick = () => {
     dispatch(saveStoreToDetail(store));
+    dispatch(setPage('store_details'));
     history.push('store_details');
   } 
   

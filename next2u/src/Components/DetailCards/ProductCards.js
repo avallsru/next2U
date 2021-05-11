@@ -42,8 +42,9 @@ const ProductCards = () => {
     //GET CATEGORY AND PRODUCTS ARR TO PRINT FOR EACH GROUP
     const category = Object.keys(group);
     const productsArr = Object.values(group);
-
+    
     //TRANSFORM THE PRODUCTS ARR INTO SOMETHING PRINTABLE
+    debugger;
     const valuesArr = productsArr[0].products.map((product) => {
       const {
         ID,
@@ -89,7 +90,7 @@ const ProductCards = () => {
     //RETURN THE COMPLETE GROUP
     return (
       <div className="detail-basic-data container" key={Math.random() * Date.now()}>
-        <p className="detail-name">{category}</p>
+        <p className="detail-name" ref={group[category[0]].ref}>{category}</p>
 
         <div className="category-names">{valuesArr}</div>
       </div>

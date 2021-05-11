@@ -8,6 +8,7 @@ import { listStoresToPrint } from "../../logic";
 
 import "./StoreCatCard.scss";
 import StoreList from "../StoreList";
+import { updateCategoriesActivation } from "../../redux/actions/hocsActions";
 
 const StoreCatCard = ({ cat }) => {
   const dispatch = useDispatch();
@@ -21,6 +22,7 @@ const StoreCatCard = ({ cat }) => {
   const handleClick = (e) => {
     const definedList = listStoresToPrint(storesNearAddress, id);
     dispatch(listToPrint(definedList));
+    dispatch(updateCategoriesActivation(false));
     return(
       <StoreList />
     )

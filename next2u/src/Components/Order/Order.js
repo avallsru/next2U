@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
-import { RiDeleteBin5Fill } from 'react-icons/ri';
+import { RiDeleteBin5Fill } from "react-icons/ri";
 
 import "./Order.scss";
-import { updateOrder, updateTotalPrice } from "../../redux/actions/orderActions";
+import {
+  updateOrder,
+  updateTotalPrice,
+} from "../../redux/actions/orderActions";
 
-import {updateOrderPrice} from '../../logic';
-
+import { updateOrderPrice } from "../../logic";
+import { setPage } from "../../redux/actions/hocsActions";
 
 const Order = (props) => {
   const dispatch = useDispatch();
@@ -17,7 +20,7 @@ const Order = (props) => {
   const [totalPriceToPrint, setTotalPriceToPrint] = useState(0.0);
 
   const { products, totalPrice } = useSelector((store) => store.orderReducer);
-
+  const { orderActivation } = useSelector((store) => store.hocsReducer);
   useEffect(() => {
     setTotalPriceToPrint(totalPrice);
   }, [totalPrice]);
@@ -30,15 +33,15 @@ const Order = (props) => {
   const deleteProduct = (e, keyToDelete) => {
     e.preventDefault();
     const newProductsList = {};
-    for(const [key, value] of Object.entries(products)) {
+    for (const [key, value] of Object.entries(products)) {
       if (key !== keyToDelete) {
-        Object.assign(newProductsList, {key: value});
+        Object.assign(newProductsList, { key: value });
       }
     }
-    const {orderPrice, updatedList} = updateOrderPrice(newProductsList);
+    const { orderPrice, updatedList } = updateOrderPrice(newProductsList);
     dispatch(updateTotalPrice(orderPrice));
     dispatch(updateOrder(updatedList));
-  }
+  };
 
   const prepareOrder = () => {
     const formatedList = [];
@@ -53,29 +56,41 @@ const Order = (props) => {
             </div>
           </div>
           <div className="product-price">{products[key].totalPrice}€</div>
-          <button className="delete-button" onClick={(e) => deleteProduct(e, key)}><RiDeleteBin5Fill  className="delete-icon"/></button>
+          <button
+            className="delete-button"
+            onClick={(e) => deleteProduct(e, key)}
+          >
+            <RiDeleteBin5Fill className="delete-icon" />
+          </button>
         </div>
       );
       formatedList.push(formatedProduct);
     }
     return formatedList;
   };
-  
-  const changePage = () => {
-    history.push("/last_confirmation");
-  }
 
-  const changePageButton = (props.page === "store-details") ?
-    (<div className="button-container">
-      <button className="pre-confirm-order button" onClick={changePage}>Pagar</button>
-    </div>)
-    :
-    (<div/>)
-  
-  
+  const changePage = () => {
+    dispatch(setPage("last_confirmation"));
+    history.push("/last_confirmation");
+  };
+
+  const changePageButton =
+    props.page === "store-details" ? (
+      <div className="button-container">
+        <button className="pre-confirm-order button" onClick={changePage}>
+          Pagar
+        </button>
+      </div>
+    ) : (
+      <div />
+    );
 
   return (
-    <div className="order-container">
+    <div
+      className={
+        orderActivation ? "order-container visible" : "order-container hidden"
+      }
+    >
       <div className="title order">Tu pedido</div>
       <div className="products-list">{orderToPrint}</div>
       <div className="total-price">

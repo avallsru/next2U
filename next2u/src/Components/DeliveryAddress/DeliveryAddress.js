@@ -3,12 +3,16 @@ import {withAddressEdition} from '../../HOC';
 
 import './DeliveryAddress.scss';
 
-const DeliveryAddress = (example="oki") => {
+let testProps = '';
+
+const DeliveryAddress = (test) => {
+  
   return (
     <div>
-      Dirección de entrega
+      <DeliveryAddress test={test} />
     </div>
   );
 };
+
 
 export default withAddressEdition(DeliveryAddress);

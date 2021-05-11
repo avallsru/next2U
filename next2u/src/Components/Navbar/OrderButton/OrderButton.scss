@@ -1,0 +1,8 @@
+@import '../../../utils/general.scss';
+
+.order-option.button {
+  border: 1px solid $dark_green;
+  border-radius: 50%;
+  align-self: center;
+  background-color: $green_yellow;
+}
