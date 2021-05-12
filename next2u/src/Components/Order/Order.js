@@ -7,6 +7,7 @@ import "./Order.scss";
 import {
   updateOrder,
   updateTotalPrice,
+  updateOrderActivation
 } from "../../redux/actions/orderActions";
 
 import { updateOrderPrice } from "../../logic";
@@ -71,6 +72,7 @@ const Order = (props) => {
   };
 
   const changePage = () => {
+    dispatch(updateOrderActivation(true));
     dispatch(setPage("last_confirmation"));
     history.push("/last_confirmation");
   };

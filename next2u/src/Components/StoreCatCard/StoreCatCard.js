@@ -42,7 +42,7 @@ const StoreCatCard = ({ cat }) => {
         onClick={handleClick}
         onMouseOver={handleHover}
       >
-        <img src={`./assets/img/stores_categories/${photoId}.png`} alt={altText} className="img card-store-cat" />
+        <img src={`./assets/img/stores_categories/${photoId}.jpg`} alt={altText} className="img card-store-cat" />
         <div className="name card-store-cat">{name}</div>
       </div>
     </div>

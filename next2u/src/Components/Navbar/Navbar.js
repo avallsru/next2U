@@ -40,7 +40,7 @@ const Navbar = ({refToAssign}) => {
   const scrollTop = () => {
     debugger;
     if(refToAssign) {
-      refToAssign.current.scrollIntoView({behaviour: 'smooth'});
+      refToAssign.current.scrollIntoView({behaviour: 'smooth', block:"center"});
     }
   }
 
