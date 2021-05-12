@@ -5,35 +5,31 @@ import { useDispatch } from 'react-redux';
 import { API_KEY, API_BASE_SEARCH_NEAR_STORES } from '../const/constants';
 
 import { addStoresToCompare } from '../redux/actions/storesActions';
+import getStoresNextPage from './getStoresNextPage';
 
-const storesToCompare = [];
-const getStores = async (...args) => {
+
+const getStores = async (lat, lon) => {
   const baseUrl = API_BASE_SEARCH_NEAR_STORES;
-  let lat, lon = 0;
-  let apiToCall = '';
+  const apiToCall = `${baseUrl}nearest-stores?location=${lat},${lon}`;
 
-  if (args.length === 2) {
-    lat = args[0];
-    lon = args[1];
-    apiToCall = `${baseUrl}nearest-stores?location=${lat},${lon}`;
-  } else {
-    const page = args[0];
-    apiToCall = `${baseUrl}nearest-stores/next?token=${page}`;;
-  }
-  
-  const results = await fetch(apiToCall);
+  const results =  await fetch(apiToCall);
   const fetchedResults = await results.json();
+  const pageToken = await fetchedResults['next_page_token'];
+
+  const storesToCompare = [];
+
   for(let store of fetchedResults.results) {
     storesToCompare.push(store);
   }
-  console.log(storesToCompare);
-  
-  const pageToken = fetchedResults['next_page_token'];
 
-  if(pageToken) {
-    await getStores(pageToken);
-  }  
-  return storesToCompare;
+  const returnedStores = await getStoresNextPage(pageToken);
+  
+  const finalList = storesToCompare.concat(returnedStores);
+  console.log(finalList);
+  
+
+  
+  return finalList;
 };
 
 // getStores.propTypes = {

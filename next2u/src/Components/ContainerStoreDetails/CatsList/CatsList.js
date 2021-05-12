@@ -21,9 +21,8 @@ const CatsList = ({ list }) => {
 
   const handleClick = (e, category, ref) => {
     dispatch(updateCategoriesActivation(false));
-    debugger;
     e.preventDefault();
-    debugger;
+
     if(ref) {
       ref.current.scrollIntoView({behaviour: 'smooth', block:"center"});
     }

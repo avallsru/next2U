@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
+import { BiSearchAlt2 } from 'react-icons/bi';
+
 // import PropTypes from 'prop-types';
 
 import { listStoresToPrint } from "../../logic";
@@ -35,15 +37,12 @@ const InputRestName = (props) => {
     <div className="inputName-container">
       
       <form className="inputName-form" onSubmit={handleSubmit}>
-        <img 
-          src="assets/img/searchicon.png" 
-          alt="lupa" 
-          className="inputName-img"
-        />
+      <BiSearchAlt2 className="search-input icon" />
+        
         <input
           className="inputName-text"
           type="text"
-          placeholder="Busca el nombre de la tienda que buscas"
+          placeholder="¿Qué tienda estás buscando?"
           value={name}
           onChange={handleChange}
         >

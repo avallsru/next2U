@@ -6,7 +6,7 @@ import CategoriesButton from './CategoriesButton';
 import './Navbar.scss';
 import OrderButton from './OrderButton/OrderButton';
 
-const Navbar = () => {
+const Navbar = ({refToAssign}) => {
   const {page} = useSelector(store => store.hocsReducer);
 
   const [scrolling, setScrolling] = useState(false);
@@ -19,10 +19,28 @@ const Navbar = () => {
     }
   }
 
-  const printButton = () => {
+  const printButtons = () => {
+    if(page === "store_details") {
+      return(
+        <div className="navbar buttons-container">
+        <div className="order-button container">
+          <OrderButton />
+        </div>
+          
+        <div className="categories-button container">
+        <CategoriesButton />
+          
+        </div>
+        
+      </div>
+      )
+    }
+  }
+
+  const scrollTop = () => {
     debugger;
-    if(page === "stores_results" || page === "store_details") {
-      return(<CategoriesButton />)
+    if(refToAssign) {
+      refToAssign.current.scrollIntoView({behaviour: 'smooth'});
     }
   }
 
@@ -31,18 +49,15 @@ const Navbar = () => {
   return (
     <div className={scrolling ? "navbar general container active" : "navbar general container"}>
       <div className="navbar logo container">
-        <img className="navbar img"src="./assets/img/logo/logo_green_small.png" alt="" />
-      </div>
-      <div className="navbar buttons-container">
-        <div className="order-button container">
-          <OrderButton />
-        </div>
-        
-        <div className="categories-button container">
-          { printButton() }
-        </div>
+        <img 
+          className="navbar img"
+          src={scrolling ? `./assets/img/logo/logo_green_small.png` : `./assets/img/logo/logo_white_small.png`} 
+          alt="" 
+          onClick={scrollTop}
+        />
       </div>
       
+      { printButtons() }
     </div>
   );
 };

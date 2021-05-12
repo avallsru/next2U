@@ -10,17 +10,20 @@ import './OrderButton.scss';
 
 const OrderButton = () => {
   const dispatch = useDispatch();
-  const {orderActivation} = useSelector(store => store.hocsReducer);
+  const {orderActivation, page} = useSelector(store => store.hocsReducer);
 
   const handleClick = () => {
     dispatch(updateOrderActivation(!orderActivation));
   }
+
   return (
     <div>
-      <button className="order-option button" onClick={handleClick}>
-        <HiShoppingCart className="shopping-cart navbar icon"/>
-      </button>
-      {orderActivation ? <Order /> : <div />}
+      {page === "store_details" ? 
+        <button className="order-option button" onClick={handleClick}>
+          <HiShoppingCart className="shopping-cart navbar icon"/> 
+        </button>
+      : <div />}
+      { orderActivation ? <Order /> : <div />}
     </div>
       
   );

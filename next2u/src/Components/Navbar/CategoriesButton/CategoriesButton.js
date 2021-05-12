@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { IoMdOptions } from 'react-icons/io';
-import { updateCategoriesActivation } from '../../../redux/actions/hocsActions';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { prepareSimpleList, updateCategoriesActivation } from '../../../redux/actions/hocsActions';
 import StoreCatList from '../../StoreCatList';
 import CatsList from '../../ContainerStoreDetails/CatsList/CatsList';
 
@@ -20,16 +20,19 @@ const CategoriesButton = () => {
   }
 
   const showCategories = () => {
+    debugger;
     if (categoriesActivation === true && page === 'stores_results') {
+      // dispatch(prepareSimpleList(true));
       return <StoreCatList className="categories-component" />
     } else if (categoriesActivation === true && page === 'store_details') {
+      // dispatch(prepareSimpleList(false));
       return <CatsList className="categories-component" />
     }
   }
   return (
     <div>
       <button className="categories-option button" onClick={handleClick}>
-        <IoMdOptions className="categories navbar icon"/>
+        <GiHamburgerMenu className="categories navbar icon"/>
       </button>
       {showCategories()}
     </div>
