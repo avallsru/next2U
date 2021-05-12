@@ -3,6 +3,7 @@
 //COLORS
 $soft_green: rgb(126, 217, 87);
 $dark_green: rgb(0, 128, 55);
+$green_yellow: rgb(183, 237,115);;
 
 //FONTS
 @mixin primaryFont {
@@ -37,3 +38,10 @@ $dark_green: rgb(0, 128, 55);
   }
 }
 
+@mixin roundedButtons {
+  padding: 3px 5px;
+  border: 1px solid $dark_green;
+  border-radius: 50%;
+  align-self: center;
+  background-color: $green_yellow;
+}

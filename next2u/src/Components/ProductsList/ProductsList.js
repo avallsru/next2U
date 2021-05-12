@@ -12,6 +12,8 @@ import {
 
 import { ProductCards }from "../DetailCards";
 
+import './ProductsList.scss';
+
 const ProductsList = (props) => {
   const storeToDetail = useSelector(
     (store) => store.storesReducer.storeToDetail
@@ -19,9 +21,6 @@ const ProductsList = (props) => {
   const { product_list } = storeToDetail;
   const dispatch = useDispatch();
 
-  const [valuesArr, setTemporalValuesArr] = useState([]);
-  const [keyName, setKeyName] = useState([]);
-  const [componentsList, setComponentsList] = useState("");
   const [productArr, setProductArr] = useState([]);
 
   useEffect(() => {
@@ -45,6 +44,7 @@ const ProductsList = (props) => {
         Object.keys(product),
         "products_categories"
       );
+      let key = temporalKey[0];
 
       //GET THE VALUES ARR OBJECTS
       const temporalValuesArr = Object.values(product);
@@ -56,7 +56,12 @@ const ProductsList = (props) => {
       });
       //  setTemporalValuesArr(...valuesArr, temporalValues);
       Promise.all(temporalValues).then((results) => {
-        setProductArr(...productArr, { [temporalKey[0]]: results });
+        const group = {
+          products: results,
+          ref: React.createRef()
+        }
+        
+        setProductArr(...productArr, {[key]: group});
       });
     });
   };

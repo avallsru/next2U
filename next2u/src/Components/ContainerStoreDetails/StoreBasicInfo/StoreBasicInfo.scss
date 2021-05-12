@@ -3,28 +3,38 @@
 .info-container {
   @include primaryFont;
   position: absolute;
-  top: 10%;
-  left: 25%;
+  top: 15%;
+  max-width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  border: 1px solid gray;
+  border: 2px solid $soft_green;
+  border-radius: 10px;
   padding: 5%;
-  padding-top: 10%;
+  background-color: $soft_green;
+  >* {
+    color: $dark_green;
+  }
+
 }
 
 .img-container {
-  position: absolute;
-  left: 43%;
+  // position: relative;
+  left: 20%;
   top: 5%;
-  z-index: 1;
+  margin-right: 0;
+  width: 60%;
   display: flex;
   flex-direction: column;
   justify-content: center;  
-  border: 0.5px solid black;
+  margin-bottom: 5%;
   
   & > * {
     max-width: 160px;
     max-height: 120px;
     vertical-align: center;
+    border-radius: 10px;
    
   }
   

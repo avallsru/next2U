@@ -6,22 +6,23 @@ import StoreBasicInfo from '../Components/ContainerStoreDetails/StoreBasicInfo';
 import CatsList from '../Components/ContainerStoreDetails/CatsList';
 import ProductsList from '../Components/ProductsList/ProductsList';
 
-import './StoreDetail.scss';
 import { Order } from '../Components/Order';
+import Navbar from '../Components/Navbar/Navbar';
 
+import './StoreDetail.scss';
 
 const StoreDetails = props => {
   const {product_list} = useSelector(store => store.storesReducer.storeToDetail);
   return (
     <div>
-      <StoreBasicInfo className="basic-info"/>
-      <CatsList list={product_list} className="cats-list"/>
-      <div className="order">
-        <Order page="store-details"/>
+      <Navbar />
+      <div className="store-detail container">
+        <StoreBasicInfo className="basic-info"/>      
+        <div className="products-list-container">
+          <ProductsList  />
+        </div>
       </div>
-      <div className="products-list-container">
-        <ProductsList  />
-      </div>
+      
     </div>
   );
 };

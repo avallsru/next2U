@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { AiOutlineShoppingCart } from "react-icons/ai";
+import { HiShoppingCart } from 'react-icons/hi';
 // import PropTypes from 'prop-types';
 
 import {updateOrder, updateTotalPrice} from "../../redux/actions/orderActions";
@@ -42,9 +42,10 @@ const ProductCards = () => {
     //GET CATEGORY AND PRODUCTS ARR TO PRINT FOR EACH GROUP
     const category = Object.keys(group);
     const productsArr = Object.values(group);
-
+    
     //TRANSFORM THE PRODUCTS ARR INTO SOMETHING PRINTABLE
-    const valuesArr = productsArr[0].map((product) => {
+    debugger;
+    const valuesArr = productsArr[0].products.map((product) => {
       const {
         ID,
         name,
@@ -61,7 +62,7 @@ const ProductCards = () => {
           key={Math.random() * Date.now()}
         >
           <div className="product-img-container">
-            <img alt="algo"></img>
+            <img src={`./assets/img/products/${ID}.jpg`} alt="algo"></img>
           </div>
           <div className="basic-info container">
             <div className="basic-info first-row">{name}</div>
@@ -70,7 +71,7 @@ const ProductCards = () => {
           <div className="buy container">
             <div className="paying-container buy first-row">
               <ProductQuantity unitsAvailable={units_available} unitsSelected={units_selected} idValue={ID} />
-              <div>
+              <div className="quantity-text">
                 {price_unit}€/{kind_of_unit}
               </div>
             </div>
@@ -79,7 +80,7 @@ const ProductCards = () => {
             className="update-order button buy second-row" 
             onClick={(e) => updateOrderReducer(e, ID, name, units_selected, price_unit)}
             >
-              <AiOutlineShoppingCart />
+              <HiShoppingCart className="buy icon" />
             </button>
           </div>
         </div>
@@ -89,7 +90,7 @@ const ProductCards = () => {
     //RETURN THE COMPLETE GROUP
     return (
       <div className="detail-basic-data container" key={Math.random() * Date.now()}>
-        <p className="detail-name">{category}</p>
+        <p className="detail-name" ref={group[category[0]].ref}>{category}</p>
 
         <div className="category-names">{valuesArr}</div>
       </div>

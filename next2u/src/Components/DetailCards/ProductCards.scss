@@ -4,18 +4,26 @@
 // GROUP CONTAINER
 .detail-basic-data {
   @include primaryFont;
+  .detail-name {
+    color: $dark_green;
+  }
   
 }
 
 .product-detail {
-  border: 1px solid black;
+  border-bottom: 1px solid $dark_green;
   margin: 5% 0;
 }
 
 // PRODUCT CARD
 .product-img-container {
   grid-area: photo;
-  border: 1px solid red;
+  max-width: 90%;
+  height: auto;
+  align-items: center;
+  > * {
+    width: 100%;
+  }
 }
 .basic-info {
   
@@ -46,6 +54,8 @@
     width: auto;
   }
   &.container {
+    grid-area: buy;
+    width: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -61,17 +71,24 @@
 
 .product-detail {
   display: grid;
-  grid-template-columns: 20% 30% 50%;
-  grid-template-rows: auto;
+  grid-template-columns: 35% 20% 45%;
+  grid-template-rows: 60% 40%;
   grid-template-areas: 
-  "photo basic-first buy-first"
-  "photo basic-second buy-second";
+  "photo basic-first buy"
+  "photo basic-second buy";
+  justify-items: center;
 }
 
 .paying-container {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
 }
 .paying-container {
   width: 100%;
+}
+
+.quantity-text {
+  font-size: 0.8rem;
+  font-weight: bold;
 }

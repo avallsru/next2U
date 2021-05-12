@@ -3,18 +3,27 @@
 .categories-to-print {
   @include primaryFont;
   @include hoverCursor;
-  width: 15vw;
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  width: 80%;
+  height: 35vh;
+  padding: 0 10%;
+  overflow-y: scroll;
   display: flex;
   flex-direction: column;
   font-weight: bold;
   text-align: center;
-  background-color: gray;
+  background-color: $soft_green;
+  color: $dark_green;
+
+  
 
   > * {
     width: 100%;
     // justify-self: center;
     padding: 0.7em 0;
-    border-bottom: 0.5px solid black;
+    border-bottom: 0.5px solid $dark_green;
     :hover {
       cursor: pointer;
     }

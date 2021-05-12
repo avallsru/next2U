@@ -1,0 +1,23 @@
+@import '../../../utils/general.scss';
+
+
+
+.navbar.icon {
+  color: $dark_green;
+  height: 100%;
+  width: auto;
+}
+
+.categories-option.button {
+  padding: 3px 5px;
+  height: 40%;
+  width: auto;
+  display: inline-block;
+  border-radius: 5px;
+  border: 1px solid $dark_green;
+  background-color: $green_yellow;
+}
+
+.categories-component {
+  z-index: 1;
+}

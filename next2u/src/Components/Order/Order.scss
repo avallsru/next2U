@@ -2,8 +2,16 @@
 
 .order-container {
   
-  margin: 5%;
-  padding: 2%;
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  width: 80%;
+  max-height: 35vh;
+  overflow-y: scroll;
+  margin-top: 8%;
+  padding: 0 10%;
+  overflow-y: scroll;
+  background-color: $soft_green;
   // background-color: $soft_green;
   
   & * {
@@ -17,6 +25,15 @@
   .go-back-button {
     @include lastConfirmationButtons;
   }
+}
+
+.pre-confirm-order.button {
+  border: 1px solid $dark_green;
+  background-color: $green_yellow;
+  color: $dark_green;
+  border-radius: 5px;
+  padding-bottom: 2px;
+
 }
 
 .product-ordered,

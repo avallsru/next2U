@@ -3,17 +3,36 @@
 .navbar {
   &.general.container {
     position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
     width: 100%;
     top: 0;
     left: 0;
     background-color: transparent;
-    height: auto;
+    height: 10%;
+    z-index: 1;
     &.active {
       background-color: $soft_green;
+      .navbar.buttons-container {
+        width: 30%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+      }
+      > .visible {
+        display: block;
+        // z-index: 1;
+      }
     }
+    
+  }
+  &.buttons-container {
+    display:none;
   }
 
   &.logo.container {
+    display: inline-block;
     max-width: 30%;
     height: auto;
     height: auto;
@@ -27,3 +46,15 @@
     border-radius: 10px;
   }
 }
+
+.categories-button.container,
+.order-button.container {
+  margin-top: 15%;
+}
+
+.hidden {
+  display: none;
+}
+
+
+

@@ -11,6 +11,7 @@ import { setCoordinates, saveAddress } from "../../redux/actions/addressActions"
 import { listSelectedStores, listToPrint } from "../../redux/actions/storesActions";
 
 import "./InputAddress.scss";
+import { setPage } from "../../redux/actions/hocsActions";
 
 const InputAdress = (props) => {
   const dispatch = useDispatch();
@@ -69,6 +70,7 @@ const InputAdress = (props) => {
     addCatNames(storesToPrint);
     setStoresList(storesToPrint);
     
+    dispatch(setPage("stores_results"));
     history.push("/stores_results");
   };
 
