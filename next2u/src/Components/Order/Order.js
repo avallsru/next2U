@@ -6,12 +6,11 @@ import { RiDeleteBin5Fill } from "react-icons/ri";
 import "./Order.scss";
 import {
   updateOrder,
-  updateTotalPrice,
-  updateOrderActivation
+  updateTotalPrice
 } from "../../redux/actions/orderActions";
 
 import { updateOrderPrice } from "../../logic";
-import { setPage } from "../../redux/actions/hocsActions";
+import { setPage, updateOrderActivation } from "../../redux/actions/hocsActions";
 
 const Order = (props) => {
   const dispatch = useDispatch();
