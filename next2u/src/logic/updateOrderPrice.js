@@ -9,7 +9,7 @@ const updateOrderPrice = (products) => {
     const unitsSelected = value.unitsSelected;
     
     let productPrice =  unitPrice * unitsSelected;
-    value.totalPrice = productPrice;
+    value.totalPrice = productPrice.toFixed(2);
     orderPrice = parseFloat(orderPrice) + productPrice;
     orderPrice = orderPrice.toFixed(2)
 

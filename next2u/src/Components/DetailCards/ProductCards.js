@@ -89,9 +89,10 @@ const ProductCards = () => {
     //RETURN THE COMPLETE GROUP
     return (
       <div className="detail-basic-data container" key={Math.random() * Date.now()}>
-        <p className="detail-name" ref={group[category[0]].ref}>{category}</p>
+        <div className="detail-name product-card" ref={group[category[0]].ref}>{category}</div>
+        <div className="category-names product-card">{valuesArr}</div>
 
-        <div className="category-names">{valuesArr}</div>
+        
       </div>
     );
   });

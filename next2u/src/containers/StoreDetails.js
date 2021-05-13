@@ -21,7 +21,10 @@ const StoreDetails = props => {
     <div >
       <Navbar refToAssign={topRef}/>
       <div className="reference-top store-detail container" ref={topRef}>
-        <StoreBasicInfo className="basic-info"/>      
+        <div className="basic-info store-detail-page">
+        <StoreBasicInfo />  
+        </div>
+            
         <div className="products-list-container">
           <ProductsList  />
         </div>

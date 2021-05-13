@@ -4,15 +4,23 @@
 // GROUP CONTAINER
 .detail-basic-data {
   @include primaryFont;
-  .detail-name {
-    color: $dark_green;
+  .detail-name.product-card {
+    padding: 2% 0;
+    border-radius: 5px;
+    background-color: $soft_green;
+    color: white;
+     text-align: center;
   }
   
 }
 
-.product-detail {
-  border-bottom: 1px solid $dark_green;
-  margin: 5% 0;
+.category-names.product-card {
+  > * {
+    border-bottom: 1px solid $dark_green;
+  }
+  :last-child {
+    border: none;
+  }
 }
 
 // PRODUCT CARD
@@ -29,7 +37,7 @@
   
   &.first-row {
     grid-area: basic-first;
-    
+    text-align: center;
     font-weight: bold;
   }
   &.second-row {
@@ -77,6 +85,8 @@
   "photo basic-first buy"
   "photo basic-second buy";
   justify-items: center;
+  margin: 5% 0;
+  padding-bottom: 5% 0;
 }
 
 .paying-container {

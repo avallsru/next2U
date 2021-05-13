@@ -33,16 +33,6 @@
   text-align: center; 
 }
 
-// .detail.basic-data {
-//   grid-area: basic-data;
-//   // text-align: center;
-//   // padding-left: 1em;
-//   > * {
-//     font-size: 1em;
-//   }
-
-// }
-
 .detail.other-info {
   grid-area: other-details;
   padding: 0 5%;
@@ -53,10 +43,7 @@
   font-weight: bold;
   margin: 0 2%;
   margin: 0.3% 0.2%;
-  // margin-block-end: 0.3em; 
-  // margin-block-start: 0.3em;
-  // margin-inline-start: 0.2em;
-    // margin-inline-end: 0.2em;
+
 }
 .category-names {
   font-size: 0.8em;

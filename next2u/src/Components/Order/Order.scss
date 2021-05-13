@@ -1,5 +1,31 @@
 @import '../../utils/general.scss';
 
+@keyframes appearing {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+  }
+  to { 
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+@keyframes disappearing {
+  from {
+    opacity: 1;
+    visibility: visible;
+    // transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+    // transform: translateY(10px);
+  }
+}
+
 .order-container {
   left: 0;
   display: inline-block;
@@ -11,6 +37,15 @@
     position: absolute;
     max-height: 35vh;
     overflow-y: scroll;
+    display: block;
+    animation: appearing 0.7s linear forwards;
+    transform-origin: top center;
+    // margin-top: 8%;   
+  
+    &.hidden {
+      animation: disappearing 1.5s forwards;
+    }
+    
   }
   & * {
   margin: 2%;

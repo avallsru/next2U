@@ -4,13 +4,12 @@
   @include primaryFont;
   position: absolute;
   top: 15%;
-  max-width: 60%;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   border: 2px solid $soft_green;
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 5%;
   background-color: $soft_green;
   >* {

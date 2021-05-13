@@ -13,7 +13,7 @@ const Navbar = ({refToAssign}) => {
   const [scrolling, setScrolling] = useState(false);
 
   const changeBackground = () => {
-    if(window.scrollY >= 80) {
+    if(window.scrollY >= 350) {
       setScrolling(true);
     } else {
       setScrolling(false);
