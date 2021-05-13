@@ -7,6 +7,7 @@ import './Navbar.scss';
 import OrderButton from './OrderButton/OrderButton';
 
 const Navbar = ({refToAssign}) => {
+  debugger;
   const {page} = useSelector(store => store.hocsReducer);
 
   const [scrolling, setScrolling] = useState(false);

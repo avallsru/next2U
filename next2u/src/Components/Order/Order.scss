@@ -1,19 +1,17 @@
 @import '../../utils/general.scss';
 
 .order-container {
-  
-  position: absolute;
   left: 0;
   display: inline-block;
   width: 80%;
-  max-height: 35vh;
-  overflow-y: scroll;
-  margin-top: 8%;
   padding: 0 10%;
   overflow-y: scroll;
   background-color: $soft_green;
-  // background-color: $soft_green;
-  
+  &.store-details {
+    position: absolute;
+    max-height: 35vh;
+    overflow-y: scroll;
+  }
   & * {
   margin: 2%;
   @include primaryFont;
@@ -24,6 +22,10 @@
   }
   .go-back-button {
     @include lastConfirmationButtons;
+    border: 1px solid $dark_green;
+    background-color: $green_yellow;
+    color: $dark_green;
+    // font-weight: bold;
   }
 }
 
@@ -33,7 +35,6 @@
   color: $dark_green;
   border-radius: 5px;
   padding-bottom: 2px;
-
 }
 
 .product-ordered,
@@ -42,6 +43,10 @@
   justify-content: space-between;
   margin: 5px 0;
   font-size: 0.8rem;
+  
+}
+.product-basic-information {
+  width: 35%;
 }
 .product-price {
   align-items: center;
@@ -49,7 +54,8 @@
 
 .product-ordered {
   font-size: 0.8rem;
-  border-bottom: 1px solid $soft_green;
+  padding: 2% 0;
+  border-bottom: 1px solid $dark_green;
 }
 
 .title.order,

@@ -29,7 +29,7 @@ const LastConfirmation = props => {
         <div className="order-container last-confirmation">
           <Order page="last-confirmation"/>
           <div className="button-container">
-            <button className="go-back-button" onClick={handleClick}>Volver al pedido</button>
+            <button className="go-back-button" onClick={handleClick}>Volver a la tienda</button>
           </div>
         </div>      
         <div className="editing-container">

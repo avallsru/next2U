@@ -32,10 +32,11 @@ const Order = (props) => {
 
   const deleteProduct = (e, keyToDelete) => {
     e.preventDefault();
+    debugger;
     const newProductsList = {};
     for (const [key, value] of Object.entries(products)) {
       if (key !== keyToDelete) {
-        Object.assign(newProductsList, { key: value });
+        Object.assign(newProductsList, { [key]: value });
       }
     }
     const { orderPrice, updatedList } = updateOrderPrice(newProductsList);
@@ -87,11 +88,23 @@ const Order = (props) => {
       <div />
     );
 
+    const defineClassNames = () => {
+      let classNames = "";
+      if (page === "store_details" && orderActivation) {
+        classNames = "order-container store-details";
+      } else if(page === "store_details" && !orderActivation) {
+        classNames = "order-container store-details hidden";
+      }
+      else {
+        classNames = "order-container";
+      }
+      
+      return classNames;
+    }
+
   return (
     <div
-      className={
-        orderActivation ? "order-container visible" : "order-container hidden"
-      }
+      className={defineClassNames()}
     >
       <div className="title order">Tu pedido</div>
       <div className="products-list">{orderToPrint}</div>

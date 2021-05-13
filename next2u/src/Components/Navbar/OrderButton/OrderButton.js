@@ -23,7 +23,8 @@ const OrderButton = () => {
           <HiShoppingCart className="shopping-cart navbar icon"/> 
         </button>
       : <div />}
-      { orderActivation ? <Order /> : <div />}
+      <Order />
+      {/* { orderActivation ? <Order /> : <div />} */}
     </div>
       
   );

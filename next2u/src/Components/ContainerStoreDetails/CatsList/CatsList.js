@@ -36,6 +36,7 @@ const CatsList = ({ list }) => {
         <div 
           key={Math.random()*Date.now()} 
           onClick={(e) => handleClick(e, catName, group[catName].ref)}
+          className="one-by-one"
         >
           {catName}
         </div>

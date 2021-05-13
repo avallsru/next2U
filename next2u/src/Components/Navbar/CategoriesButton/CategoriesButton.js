@@ -20,21 +20,17 @@ const CategoriesButton = () => {
   }
 
   const showCategories = () => {
-    debugger;
     if (categoriesActivation === true && page === 'stores_results') {
       // dispatch(prepareSimpleList(true));
-      return <StoreCatList className="categories-component" />
-    } else if (categoriesActivation === true && page === 'store_details') {
-      // dispatch(prepareSimpleList(false));
-      return <CatsList className="categories-component" />
-    }
+      return 
+    } 
   }
   return (
     <div>
       <button className="categories-option button" onClick={handleClick}>
         <GiHamburgerMenu className="categories navbar icon"/>
       </button>
-      {showCategories()}
+      <CatsList className={categoriesActivation ? "categories-component" : "categories-component hidden"} />
     </div>
   );
 };

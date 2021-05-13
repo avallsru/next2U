@@ -1,13 +1,51 @@
 @import '../../../utils/general.scss';
 
+@keyframes growDown {
+  0% {
+    transform: scaleY(0)
+  }
+  80% {
+    transform: scaleY(1.1)
+  }
+  100% {
+    transform: scaleY(1)
+  }
+}
+
+@keyframes appearing {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+  }
+  to { 
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+@keyframes disappearing {
+  from {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+  }
+}
+
 .categories-to-print {
   @include primaryFont;
   @include hoverCursor;
   position: absolute;
   left: 0;
-  display: inline-block;
+  display: block;
   width: 80%;
-  height: 35vh;
+  max-height: 35vh;
   padding: 0 10%;
   overflow-y: scroll;
   display: flex;
@@ -16,6 +54,22 @@
   text-align: center;
   background-color: $soft_green;
   color: $dark_green;
+  display: block;
+  // transition: max-height 5s ease;
+  animation: appearing 0.7s linear forwards;
+  
+
+  .one-by-one {
+    animation: growDown 0.9s linear forwards;
+    transform-origin: top center;
+    transform: translateY();
+  }
+
+  &.hidden {
+    // display: none;
+    animation: disappearing 2s forwards ;
+    transform: translateY();
+  }
 
   
 

@@ -13,10 +13,14 @@ import './StoreDetail.scss';
 
 const StoreDetails = props => {
   const {product_list} = useSelector(store => store.storesReducer.storeToDetail);
+  debugger;
+  const topRef = React.createRef();
+
+
   return (
-    <div>
-      <Navbar />
-      <div className="store-detail container">
+    <div >
+      <Navbar refToAssign={topRef}/>
+      <div className="reference-top store-detail container" ref={topRef}>
         <StoreBasicInfo className="basic-info"/>      
         <div className="products-list-container">
           <ProductsList  />

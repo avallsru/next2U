@@ -9,7 +9,6 @@ import { saveStoreToDetail } from '../../redux/actions/storesActions';
 import { setPage } from "../../redux/actions/hocsActions";
 
 import "./StoreCard.scss";
-import { previous } from "../../logic";
 
 const StoreCard = ({store}) => {
 

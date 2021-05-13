@@ -22,7 +22,7 @@ const getNames = async(categoriesArr, kind) => {
    
     const filteredByCat = categories.filter(
       (category) => {
-        return ((parseInt(category.id) + 1) === numId)    
+        return (parseInt(category.id) === numId)    
       }  
     );
     // console.log(filteredByCat);
