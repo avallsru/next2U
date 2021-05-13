@@ -19,8 +19,8 @@ const StoreDetails = props => {
 
   return (
     <div >
-      <Navbar refToAssign={topRef}/>
-      <div className="reference-top store-detail container" ref={topRef}>
+      <Navbar />
+      <div className="reference-top store-detail container" >
         <div className="basic-info store-detail-page">
         <StoreBasicInfo />  
         </div>

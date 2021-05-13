@@ -43,32 +43,36 @@
   @include hoverCursor;
   position: absolute;
   left: 0;
-  display: block;
+  display: none;
   width: 80%;
   max-height: 35vh;
   padding: 0 10%;
   overflow-y: scroll;
-  display: flex;
   flex-direction: column;
   font-weight: bold;
   text-align: center;
   background-color: $soft_green;
   color: $dark_green;
-  display: block;
-  // transition: max-height 5s ease;
-  animation: appearing 0.7s linear forwards;
-  
+  transition: opacity 2s;
+  &.visible {
+    animation: appearing 0.7s linear forwards;
+    display: block;
 
   .one-by-one {
     animation: growDown 0.9s linear forwards;
     transform-origin: top center;
     transform: translateY();
   }
+  }
+  
+
+  
 
   &.hidden {
     // display: none;
     animation: disappearing 2s forwards ;
     transform: translateY();
+    opacity: 0;
   }
 
   

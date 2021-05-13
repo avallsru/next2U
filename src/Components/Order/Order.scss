@@ -33,13 +33,18 @@
   padding: 0 10%;
   overflow-y: scroll;
   background-color: $soft_green;
+  
   &.store-details {
-    position: absolute;
-    max-height: 35vh;
-    overflow-y: scroll;
-    display: block;
-    animation: appearing 0.7s linear forwards;
-    transform-origin: top center;
+    display: none;
+    &visible {
+      position: absolute;
+      max-height: 35vh;
+      overflow-y: scroll;
+      display: block;
+      animation: appearing 0.7s linear forwards;
+      transform-origin: top center;
+    }
+    
     // margin-top: 8%;   
   
     &.hidden {

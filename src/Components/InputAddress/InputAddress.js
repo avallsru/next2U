@@ -32,10 +32,10 @@ const InputAdress = (props) => {
     dispatch(saveAddress(address));
   }, [address]);
 
-  useEffect(() => {
-    dispatch(listSelectedStores(storesList));
-    dispatch(listToPrint(storesList));
-  }, [storesList]);
+  // useEffect(() => {
+  //   dispatch(listSelectedStores(storesList));
+  //   dispatch(listToPrint(storesList));
+  // }, [storesList]);
 
   const addCatNames =  (selectedStores) => {
     const listWithCatNames = selectedStores.map(async(store) => {
@@ -56,6 +56,8 @@ const InputAdress = (props) => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    history.push("/stores_results");
     localStorage.setItem('address', address, JSON.stringify(address));
 
     //GET THE COORDS
@@ -68,10 +70,12 @@ const InputAdress = (props) => {
     // setCoords({lat, lon});
     setAddress(formatedAddress);
     addCatNames(storesToPrint);
-    setStoresList(storesToPrint);
-    
+    // setStoresList(storesToPrint);
+    dispatch(listSelectedStores(storesToPrint));
+    dispatch(listToPrint(storesToPrint));
     dispatch(setPage("stores_results"));
-    history.push("/stores_results");
+    
+    
   };
 
   return (

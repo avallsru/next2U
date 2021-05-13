@@ -91,7 +91,7 @@ const Order = (props) => {
     const defineClassNames = () => {
       let classNames = "";
       if (page === "store_details" && orderActivation) {
-        classNames = "order-container store-details";
+        classNames = "order-container store-details visible";
       } else if(page === "store_details" && !orderActivation) {
         classNames = "order-container store-details hidden";
       }

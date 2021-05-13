@@ -1,0 +1,20 @@
+@keyframes fade {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.skeleton {
+  &.principal-container.cards,
+  &.categories-list,
+  &.detailsCard-container,
+  &.inputName-container {
+    animation: fade 2s linear;
+    animation-iteration-count: infinite;
+  }
+  
+}

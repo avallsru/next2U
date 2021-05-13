@@ -6,8 +6,7 @@ import CategoriesButton from './CategoriesButton';
 import './Navbar.scss';
 import OrderButton from './OrderButton/OrderButton';
 
-const Navbar = ({refToAssign}) => {
-  debugger;
+const Navbar = () => {
   const {page} = useSelector(store => store.hocsReducer);
 
   const [scrolling, setScrolling] = useState(false);
@@ -39,10 +38,7 @@ const Navbar = ({refToAssign}) => {
   }
 
   const scrollTop = () => {
-    debugger;
-    if(refToAssign) {
-      refToAssign.current.scrollIntoView({behaviour: 'smooth', block:"center"});
-    }
+    window.scrollTo(0, 0)
   }
 
   window.addEventListener('scroll', changeBackground);
