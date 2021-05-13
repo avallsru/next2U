@@ -1,21 +1,22 @@
 @import '../../utils/general.scss';
 
 .inputName-container {
-  width: 70%;
-  border: 1px solid rgb(209, 209, 209);
-  margin: 5% 15% 5% 15%;
+  width: 100%;
+  border: 1.5px solid $soft_green;
+  border-radius: 5px;
+  margin: 5% 0%;
 }
 
 .inputName-form {
-  > * {
-    display: inline-block;
-    vertical-align: middle;
-  }
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 2% 0;
 }
 
 .inputName-text {
   @include searchInput;
-  font-size: 1.3rem;
+  font-size: 1rem;
   border: none;
   width: 80%;
   color: -internal-light-dark(rgb(255, 255, 255), rgb(255, 255, 255));
@@ -24,6 +25,12 @@
     border: none;
     
   }
+}
+
+.search-input.icon {
+  height: 1.5em;
+  width: auto;
+  color: $soft_green;
 }
 
 

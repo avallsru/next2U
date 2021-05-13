@@ -1,5 +1,10 @@
-
+@import '../utils/general.scss';
 
 .stores-container {
-  padding: 5% 15% 10% 15%;
+  padding: 5% 0 10% 0;
+}
+.icon-test {
+  width: 12%;
+  height: auto;
+  color: $soft_green;
 }

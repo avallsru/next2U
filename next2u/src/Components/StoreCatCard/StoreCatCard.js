@@ -33,16 +33,20 @@ const StoreCatCard = ({ cat }) => {
   };
 
   const altText = `${name} icon`;
+  const photoId = parseInt(id) + 1;
   return (
-    <div
-      className="container card-store-cat"
-      name={name}
-      onClick={handleClick}
-      onMouseOver={handleHover}
-    >
-      <img src={imgRoute} alt={altText} className="img card-store-cat" />
-      <div className="name card-store-cat">{name}</div>
+    <div className="store-cat principal-container">
+      <div
+        className="container card-store-cat"
+        name={name}
+        onClick={handleClick}
+        onMouseOver={handleHover}
+      >
+        <img src={`./assets/img/stores_categories/${photoId}.jpg`} alt={altText} className="img card-store-cat" />
+        <div className="name card-store-cat">{name}</div>
+      </div>
     </div>
+   
   );
 };
 

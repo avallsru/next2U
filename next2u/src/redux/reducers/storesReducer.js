@@ -39,7 +39,6 @@ function storesReducer(state = defaultList, action) {
     }
     case UPDATE_PRODUCTS_TO_PRINT: {
       const {idToFind, unitsSelected} = action.payload;
-      debugger;
       const updatedList = state.productsToPrint.map((group) => {
         const groupCategory = Object.keys(group)[0]; 
 
@@ -49,8 +48,8 @@ function storesReducer(state = defaultList, action) {
           }
           return product;
         });
-        const test = {...group[groupCategory], products: updatedValues};
-        return {[groupCategory]: test};
+        const newValues = {...group[groupCategory], products: updatedValues};
+        return {[groupCategory]: newValues};
       })
 
        

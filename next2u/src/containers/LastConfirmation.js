@@ -8,7 +8,8 @@ import {Order} from '../Components/Order';
 import DeliveryAddress from '../Components/DeliveryAddress';
 import ContactInfo from '../Components/ContactInfo';
 
-import './LastConfirmation.scss';import { setPage } from '../redux/actions/hocsActions';
+import './LastConfirmation.scss';
+import { setPage, updateOrderActivation } from '../redux/actions/hocsActions';
 ;
 
 const LastConfirmation = props => {
@@ -18,6 +19,7 @@ const LastConfirmation = props => {
   const handleClick = e => {
     e.preventDefault();
     dispatch(setPage("store_details"));
+    dispatch(updateOrderActivation(false));
     history.push('store_details');
   }
   return (

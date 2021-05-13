@@ -6,11 +6,11 @@ import { RiDeleteBin5Fill } from "react-icons/ri";
 import "./Order.scss";
 import {
   updateOrder,
-  updateTotalPrice,
+  updateTotalPrice
 } from "../../redux/actions/orderActions";
 
 import { updateOrderPrice } from "../../logic";
-import { setPage } from "../../redux/actions/hocsActions";
+import { setPage, updateOrderActivation } from "../../redux/actions/hocsActions";
 
 const Order = (props) => {
   const dispatch = useDispatch();
@@ -71,6 +71,7 @@ const Order = (props) => {
   };
 
   const changePage = () => {
+    dispatch(updateOrderActivation(true));
     dispatch(setPage("last_confirmation"));
     history.push("/last_confirmation");
   };

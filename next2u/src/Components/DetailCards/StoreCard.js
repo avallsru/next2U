@@ -9,6 +9,7 @@ import { saveStoreToDetail } from '../../redux/actions/storesActions';
 import { setPage } from "../../redux/actions/hocsActions";
 
 import "./StoreCard.scss";
+import { previous } from "../../logic";
 
 const StoreCard = ({store}) => {
 
@@ -24,36 +25,40 @@ const StoreCard = ({store}) => {
     history.push('store_details');
   } 
   
+  
+  
   return (
     <div className="detailsCard-container" onClick={handleClick}>
       <div className="detail img container">
-        <img src="assets/img/stores/1.jpg" alt="detail-img" />
+        <img src={`assets/img/stores/${store.ID}.jpg`} alt="detail-img" className="logo-store" />
       </div>
       <div className="detail basic-data container">
-        <p className="detail-name">{store.name}</p>
+        <div className="detail-name">{store.name}</div>
         
         <div className="category-names">{store['store_categories_names']}</div>
       </div>
       <div className="detail other-info container">
         <div className="opening-hours">
           <FcClock />
-          {store["opening_hours"]}
+          <div className="opening-hours detail">
+           {store["opening_hours"]}
+          </div>
         </div>
         <div className="paying-info">
-          <FcMoneyTransfer />
-          <div className="delivery-price">
-            <span>
-              <b>Entrega:</b>
-            </span>
-            <span>{`${store["deliver_price"]}€`}</span>
+          <FcMoneyTransfer className="money-icon"/>
+          
+            <div className="delivery first-column">
+              Entrega:
+            </div>
+            <div className="delivery second-column">{`${store["deliver_price"]}€`}</div>
+          
+          
+            <div className="min first-column">
+              Pedido mín:
+            </div>
+            <div className="min second-column">{`${store["minimum_price_order"]}€`}</div>
           </div>
-          <div className="minimum-order">
-            <span>
-              <b>Pedido mín:</b>
-            </span>
-            <span>{`${store["minimum_price_order"]}€`}</span>
-          </div>
-        </div>
+        
       </div>
     </div>
   )

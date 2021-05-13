@@ -4,6 +4,7 @@ import filterNearStores from './filterNearStores';
 import updateProdsById from './updateProdsById';
 import updateOrderPrice from './updateOrderPrice';
 import changeEditingStatus from './changeEditingStatus';
+import previous from './previous';
 
 export {
   listStoresToPrint,
@@ -11,5 +12,6 @@ export {
   filterNearStores,
   updateProdsById,
   updateOrderPrice,
-  changeEditingStatus
+  changeEditingStatus,
+   previous
 }

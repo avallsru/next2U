@@ -44,7 +44,6 @@ const ProductCards = () => {
     const productsArr = Object.values(group);
     
     //TRANSFORM THE PRODUCTS ARR INTO SOMETHING PRINTABLE
-    debugger;
     const valuesArr = productsArr[0].products.map((product) => {
       const {
         ID,

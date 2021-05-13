@@ -1,7 +1,0 @@
-ID,name,location,phone_contact,deliver_option,deliver_price,score,opening_hours,minimum_price_order,store_categories_id,product_list,logo
-1,GRA NOA,"Carrer de Mossèn Andreu, 7, 08940 Cornellà de Llobregat, Barcelona",607015701,1,1,0,9-14h 17-20:30h,3,[1],"{""10"":[1,2,3,4,5,6],""11"":[7,8,9,10,11],""12"":[12,13,14],""13"":[15,16,17],""14"":[18,19,20,21],""15"":[22,23,24,25,26,27,28,29],""16"":[30,31,32,33,34,35],""17"":[36,37,38,39,40]}",1.jpg
-2,La mongeta boja,"Av. del Parc, 51, 08940 Cornellà de Llobregat, Barcelona",615991809,1,0,0,9-21h,"1,5",[1],{},2.jpg
-3,Duldi,"Carrer de la Miranda, 57, 08940 Cornellà de Llobregat, Barcelona",934714006,1,2,0,10-13:30h 17-20h,3,[3],"{""6"":[41,42,43,44,45,46,47,48,49],""7"":[50,51,52,53],""8"":[54,55,56,57,58],""9"":[59,60]}",3.jpg
-4,Atalaya perfumeries,"Carrer de la Miranda, 41, 08940 Cornellà de Llobregat, Barcelona",672072181,1,1,0,9:30-14h 17-20:30h,5,"[4,6]",{},4.jpg
-5,Danna moda,"Carrer de la Miranda, 38, 08940 Cornellà de Llobregat, Barcelona",930383599,1,0,0,10-20:30h,5,"[4,5]",{},5.jpg
-,,,,,,0,,,,,
