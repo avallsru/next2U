@@ -1,3 +1,6 @@
+![next2U De la tienda a tu casa](/assets/img/logo/logo_green_bckground.png "next2U")
+
+
 # next2U
 ## The app that connects you with your local stores
 
