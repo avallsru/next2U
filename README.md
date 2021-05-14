@@ -1,4 +1,4 @@
-![next2U De la tienda a tu casa](/assets/img/logo/logo_green_bckground.png "next2U")
+![next2U De la tienda a tu casa](public/assets/img/logo/logo_green_bckground.png "next2U")
 
 
 # next2U
@@ -9,9 +9,16 @@
 ### General description
 **next2U** is an app to buy things from small stores by filtering by location and by kind of store.
 
-###Necessity that resolves
+*Necessity that resolves*:
 Big companies such as Fnac, elCorteIngles, the big supermarkets and similar have their own on-line platform and delivery system. But small local stores don’t have enough resources (neither technological nor logistics) to achieve that goal.
 Being inspired by other platforms (like ones which join different restaurants), **next2U** seeks to become a platform where little stores could easily sell online and deliver their products to their customers (if they want it).
+
+#### Check the website
+<https://next2u-31408.web.app/last_confirmation>
+
+***For api calls the project just works near the addresses:
+- Rambla Poblenou, 50. Barcelona
+- Av. Parc, 57. Cornellà de Llobregat
 
 ------
 
@@ -21,6 +28,8 @@ Being inspired by other platforms (like ones which join different restaurants), 
 - Button to search by the inpu value
 
 You will change to the next page when the input button is clicked
+
+![Home Page](public/assets/img/screenshots/home.png "home page")
 
 #### Stores result
 - Filter list by kind of store
@@ -34,6 +43,8 @@ You will change to the next page when the input button is clicked
   - Opening hours
 
 You will change to the next page selecting a store card.
+
+![Stores Results Page](public/assets/img/screenshots/store_results.png "stores results page")
 
 #### Store detail
 - Store detail card
@@ -54,6 +65,8 @@ You will change to the next page selecting a store card.
 
 You will change to the next page when confirm order button is clicked
 
+![Stores Details Page](public/assets/img/screenshots/store_details.png "stores details page")
+
 #### Confirm order
 - Order detail. It will show:
   - Product detail:
@@ -64,10 +77,12 @@ You will change to the next page when confirm order button is clicked
   - Final price
 - Delivery adress
 - Contact info
-- Button to confirm the order --> the app finishes here
+- Button to confirm the order --> appears a pop up with the resume --> ***THE APP FINISHES HERE***
+
+![Last Confirmation Page](public/assets/img/screenshots/last_confirmation.png "last confirmation page")
 
 ------
-### Data model
+### Data model Firebase
 ```js
 #### USERS:
   {
@@ -142,5 +157,15 @@ You will change to the next page when confirm order button is clicked
 }
 ```
 
+### Technologies used
+![Technologies](public/assets/img/technologies/technologies.png "techs used")
+
+
+### Flow Chart
+
+![Flow Chart](public/assets/img/flowchart/flow_chart.png "flow char")
+
+
+### 
 
 
