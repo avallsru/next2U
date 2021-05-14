@@ -161,7 +161,7 @@ You will change to the next page when confirm order button is clicked
 ![Technologies](public/assets/img/technologies/technologies.png "techs used")
 
 ### Tests
-*[Here are the results](https://gph.is/g/ZlQL2AK)*
+[Review here the results](https://gph.is/g/ZlQL2AK)
 
 ### Flow Chart
 
