@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useHistory } from "react-router";
 import { useDispatch } from 'react-redux'
 // import PropTypes from 'prop-types';
@@ -10,11 +10,16 @@ import ContactInfo from '../Components/ContactInfo';
 
 import './LastConfirmation.scss';
 import { setPage, updateOrderActivation } from '../redux/actions/hocsActions';
+import FinalPopup from '../Components/FinalPopUp';
 ;
 
 const LastConfirmation = props => {
   const history = useHistory();
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleClick = e => {
     e.preventDefault();
@@ -22,6 +27,13 @@ const LastConfirmation = props => {
     dispatch(updateOrderActivation(false));
     history.push('store_details');
   }
+
+  const throwLastPopUp = (e) => {
+    e.preventDefault();
+    debugger;
+    dispatch(setPage("last_pop_up"));
+  }
+
   return (
     <>
       <Navbar />
@@ -37,9 +49,10 @@ const LastConfirmation = props => {
           <ContactInfo />
         </div>
         <div className="last-button container">
-          <button className="last-button button">Confirmar pedido</button>
+          <button className="last-button button" onClick={throwLastPopUp}>Confirmar pedido</button>
         </div>
       </div>
+      <FinalPopup />
     </>
   );
 };

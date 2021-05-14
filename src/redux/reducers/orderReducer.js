@@ -3,14 +3,6 @@ import {UPDATE_ORDER, UPDATE_TOTAL_PRICE} from '../types';
 const defaultOrder = {
   storeKey: 0,
   products: {},
-      // id1: {
-      //   name,
-      //   price
-      // },
-      // id2: {
-      //   name,
-      //   price
-      // }
   totalPrice: 0
 }
 

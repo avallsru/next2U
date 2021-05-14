@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { updateOrderActivation } from '../../../redux/actions/hocsActions';
 
 import {Order} from '../../Order';
+import ItemsOrdered from '../ItemsOrdered/ItemsOrdered';
 
 import './OrderButton.scss';
 
@@ -19,9 +20,13 @@ const OrderButton = () => {
   return (
     <div>
       {page === "store_details" ? 
-        <button className="order-option button" onClick={handleClick}>
-          <HiShoppingCart className="shopping-cart navbar icon"/> 
-        </button>
+        <div className="order navbar container">
+          <button className="order-option button" onClick={handleClick}>
+            <HiShoppingCart className="shopping-cart navbar icon"/> 
+            <ItemsOrdered />
+          </button>
+          
+        </div>
       : <div />}
       <Order />
       {/* { orderActivation ? <Order /> : <div />} */}

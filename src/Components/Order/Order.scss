@@ -17,18 +17,18 @@
   from {
     opacity: 1;
     visibility: visible;
-    // transform: translateY(0);
+    transform: translateY(0);
   }
   to {
     opacity: 0;
     visibility: hidden;
-    // transform: translateY(10px);
+    transform: translateY(10px);
   }
 }
 
 .order-container {
   left: 0;
-  display: inline-block;
+  // display: inline-block;
   width: 80%;
   padding: 0 10%;
   overflow-y: scroll;
@@ -36,22 +36,26 @@
   
   &.store-details {
     display: none;
-    &visible {
+    
+    &.visible {
+      
       position: absolute;
       max-height: 35vh;
       overflow-y: scroll;
-      display: block;
+      
       animation: appearing 0.7s linear forwards;
       transform-origin: top center;
+      display: block;
     }
-    
-    // margin-top: 8%;   
   
     &.hidden {
-      animation: disappearing 1.5s forwards;
+      animation: disappearing 2s linear forwards;
+      visibility: hidden;
+      opacity: 0;
     }
-    
   }
+
+  
   & * {
   margin: 2%;
   @include primaryFont;
@@ -65,7 +69,6 @@
     border: 1px solid $dark_green;
     background-color: $green_yellow;
     color: $dark_green;
-    // font-weight: bold;
   }
 }
 

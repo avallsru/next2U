@@ -38,14 +38,14 @@ const Navbar = () => {
   }
 
   const scrollTop = () => {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
   }
 
   window.addEventListener('scroll', changeBackground);
   
   return (
     <div className={scrolling ? "navbar general container active" : "navbar general container"}>
-      <div className="navbar logo container">
+      <div className={scrolling ? "navbar logo container green" : "navbar logo container"}>
         <img 
           className="navbar img"
           src={scrolling ? `./assets/img/logo/logo_green_small.png` : `./assets/img/logo/logo_white_small.png`} 

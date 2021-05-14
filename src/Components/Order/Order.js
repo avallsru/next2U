@@ -46,7 +46,6 @@ const Order = (props) => {
 
   const prepareOrder = () => {
     const formatedList = [];
-    console.log(page);
 
     for (let key in products) {
       const formatedProduct = (
@@ -58,12 +57,17 @@ const Order = (props) => {
             </div>
           </div>
           <div className="product-price">{products[key].totalPrice}€</div>
-          <button
-            className="delete-button"
-            onClick={(e) => deleteProduct(e, key)}
-          >
-            <RiDeleteBin5Fill className="delete-icon" />
-          </button>
+          {
+            page !== "last_pop_up" ?
+                <button
+                className="delete-button"
+                onClick={(e) => deleteProduct(e, key)}
+              >
+                <RiDeleteBin5Fill className="delete-icon" />
+              </button>
+            : <div />
+          
+          }
         </div>
       );
       formatedList.push(formatedProduct);
@@ -110,7 +114,7 @@ const Order = (props) => {
       <div className="products-list">{orderToPrint}</div>
       <div className="total-price">
         <span className="label total-price">TOTAL: </span>
-        {totalPriceToPrint}€
+        <b>{totalPriceToPrint}€</b>
       </div>
       {changePageButton}
     </div>

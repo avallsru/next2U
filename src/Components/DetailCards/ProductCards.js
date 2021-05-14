@@ -65,7 +65,7 @@ const ProductCards = () => {
           </div>
           <div className="basic-info container">
             <div className="basic-info first-row">{name}</div>
-            <div className="basic-info second-row">{description}</div>
+            {/* <div className="basic-info second-row">{description}</div> */}
           </div>
           <div className="buy container">
             <div className="paying-container buy first-row">

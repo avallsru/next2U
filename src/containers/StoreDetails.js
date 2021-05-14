@@ -29,7 +29,9 @@ const StoreDetails = props => {
           <ProductsList  />
         </div>
       </div>
-      
+      <div className="go-top button container">
+        <img src="./assets/img/logo_background_green.png" alt="our logo" />
+      </div>
     </div>
   );
 };
