@@ -16,7 +16,7 @@ Being inspired by other platforms (like ones which join different restaurants), 
 #### Check the website
 <https://next2u-31408.web.app/last_confirmation>
 
-***For api calls the project just works near the addresses:
+***Because of technical "problems api calls the project just works near the addresses:
 - Rambla Poblenou, 50. Barcelona
 - Av. Parc, 57. Cornellà de Llobregat
 
@@ -161,9 +161,13 @@ You will change to the next page when confirm order button is clicked
 ![Technologies](public/assets/img/technologies/technologies.png "techs used")
 
 
+### Tests
+<https://gph.is/g/ZlQL2AK>
+
+
 ### Flow Chart
 
-![Flow Chart](public/assets/img/flowchart/flow_chart.png "flow char")
+![Flow Chart](public/assets/img/flowchart/flux_chart.png "flow char")
 
 
 ### 
