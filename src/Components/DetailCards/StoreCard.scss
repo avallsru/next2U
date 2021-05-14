@@ -4,7 +4,6 @@
   grid-template-columns: 35% 22% 40%;
   grid-template-areas: "photo basic-data other-details"; 
   padding: 5% 0 5% 0;
-  // margin: 5% 0;
   border-bottom: 1px solid $soft_green;
   > * {
     @include primaryFont;

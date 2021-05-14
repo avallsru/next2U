@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 // import PropTypes from 'prop-types';
 
-
-// import InfoToShow from '../InfoToShow';
-
 import './Selector.scss';
 
 const Selector = props => {

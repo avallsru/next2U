@@ -28,11 +28,6 @@ const ProductsList = (props) => {
     dispatch(resetProductsToPrint());
   }, []);
 
-  // useEffect(() => {
-  //   console.timeLog(storeToDetail)
-  //   dispatch(saveStoreToDetail(storeToDetail))
-  // }, [storeToDetail]);
-
   useEffect(() => {
     dispatch(defineProductsToPrint(productArr));
   }, [productArr]);
@@ -54,7 +49,6 @@ const ProductsList = (props) => {
         const productToPrint = await listFromDb("products", filter);
         return productToPrint[0];
       });
-      //  setTemporalValuesArr(...valuesArr, temporalValues);
       Promise.all(temporalValues).then((results) => {
         const group = {
           products: results,

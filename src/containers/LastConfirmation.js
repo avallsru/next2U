@@ -3,15 +3,15 @@ import { useHistory } from "react-router";
 import { useDispatch } from 'react-redux'
 // import PropTypes from 'prop-types';
 
+import { setPage, updateOrderActivation } from '../redux/actions/hocsActions';
+
 import Navbar from '../Components/Navbar';
 import {Order} from '../Components/Order';
 import DeliveryAddress from '../Components/DeliveryAddress';
 import ContactInfo from '../Components/ContactInfo';
+import FinalPopup from '../Components/FinalPopUp';
 
 import './LastConfirmation.scss';
-import { setPage, updateOrderActivation } from '../redux/actions/hocsActions';
-import FinalPopup from '../Components/FinalPopUp';
-;
 
 const LastConfirmation = props => {
   const history = useHistory();
@@ -30,7 +30,6 @@ const LastConfirmation = props => {
 
   const throwLastPopUp = (e) => {
     e.preventDefault();
-    debugger;
     dispatch(setPage("last_pop_up"));
   }
 

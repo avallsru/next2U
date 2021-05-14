@@ -1,27 +1,20 @@
 import React, { useEffect } from 'react';
-// import PropTypes from 'prop-types';
-// import { MdPets, MdPhotoCamera } from 'react-icons/md';
-// import { IoFish } from 'react-icons/io5';
-// import { GiClothes, GiFruitBowl } from 'react-icons/gi';
-// import { FaCandyCane }from 'react-icons/fa';
-// import { IoFlower } from 'react-icons/io5';
-// import { FaChild } from 'react-icons/fa';
 
+import { useSelector } from 'react-redux';
+
+import SkeletonGeneralContainer from '../Components/SkeletonsStoresResults';
 import StoreCatList from '../Components/StoreCatList';
 import InputRestName from '../Components/InputRestName';
 import StoreList from '../Components/StoreList';
 import Navbar from '../Components/Navbar';
 
 import './StoresResults.scss';
-import { useSelector } from 'react-redux';
-import SkeletonGeneralContainer from '../Components/SkeletonsStoresResults';
 
 const StoresResults = props => {
   
   const { storesToPrint } = useSelector(store => store.storesReducer);
 
   useEffect(() => {
-    debugger;
     console.log('');
   }, [storesToPrint]);
   

@@ -18,13 +18,7 @@ const CategoriesButton = () => {
     dispatch(updateCategoriesActivation(!categoriesActivation));
 
   }
-
-  const showCategories = () => {
-    if (categoriesActivation === true && page === 'stores_results') {
-      // dispatch(prepareSimpleList(true));
-      return 
-    } 
-  }
+  
   return (
     <div>
       <button className="categories-option button" onClick={handleClick}>

@@ -25,7 +25,7 @@ const getNames = async(categoriesArr, kind) => {
         return (parseInt(category.id) === numId)    
       }  
     );
-    // console.log(filteredByCat);
+    
     filteredByCat.forEach((categoryObj) => {
       categoriesName.push(categoryObj.name);
     });

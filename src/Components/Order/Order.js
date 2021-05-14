@@ -3,14 +3,16 @@ import { useHistory } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { RiDeleteBin5Fill } from "react-icons/ri";
 
-import "./Order.scss";
 import {
   updateOrder,
   updateTotalPrice
 } from "../../redux/actions/orderActions";
+import { setPage, updateOrderActivation } from "../../redux/actions/hocsActions";
 
 import { updateOrderPrice } from "../../logic";
-import { setPage, updateOrderActivation } from "../../redux/actions/hocsActions";
+
+import "./Order.scss";
+
 
 const Order = (props) => {
   const dispatch = useDispatch();
@@ -32,7 +34,6 @@ const Order = (props) => {
 
   const deleteProduct = (e, keyToDelete) => {
     e.preventDefault();
-    debugger;
     const newProductsList = {};
     for (const [key, value] of Object.entries(products)) {
       if (key !== keyToDelete) {

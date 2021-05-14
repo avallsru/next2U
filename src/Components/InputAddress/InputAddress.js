@@ -3,15 +3,15 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 
-import { listFromDb, getAddressDetails, getStores } from "../../services";
+import { getAddressDetails, getStores } from "../../services";
 
 import { filterNearStores, getNames } from "../../logic";
 
 import { setCoordinates, saveAddress } from "../../redux/actions/addressActions";
 import { listSelectedStores, listToPrint } from "../../redux/actions/storesActions";
+import { setPage } from "../../redux/actions/hocsActions";
 
 import "./InputAddress.scss";
-import { setPage } from "../../redux/actions/hocsActions";
 
 const InputAdress = (props) => {
   const dispatch = useDispatch();
@@ -31,11 +31,6 @@ const InputAdress = (props) => {
   useEffect(() => {
     dispatch(saveAddress(address));
   }, [address]);
-
-  // useEffect(() => {
-  //   dispatch(listSelectedStores(storesList));
-  //   dispatch(listToPrint(storesList));
-  // }, [storesList]);
 
   const addCatNames =  (selectedStores) => {
     const listWithCatNames = selectedStores.map(async(store) => {
@@ -67,10 +62,8 @@ const InputAdress = (props) => {
     //GET THE STORES THAT COINCIDE
     const storesToPrint = await filterNearStores(allStores);
     
-    // setCoords({lat, lon});
     setAddress(formatedAddress);
     addCatNames(storesToPrint);
-    // setStoresList(storesToPrint);
     dispatch(listSelectedStores(storesToPrint));
     dispatch(listToPrint(storesToPrint));
     dispatch(setPage("stores_results"));

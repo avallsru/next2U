@@ -55,9 +55,6 @@ function storesReducer(state = defaultList, action) {
        
       return{...state, productsToPrint: updatedList};
     }
-    // case 'setReference': {
-    //   return {...state, ...action.payload}
-    // }
     default: {
       return state;
     }

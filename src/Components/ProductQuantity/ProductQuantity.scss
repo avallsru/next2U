@@ -5,39 +5,49 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  .button,
   > * {
     font-size: 0.9rem;
   }
   .button {
     @include primaryFont();
-    @include roundedButtons();
     padding: 0px 3px 2px 3px;
     padding-top: 0;
-    // background-color: $soft_green;
-    border-radius: 50%;
     color: $dark_green;
     font-weight: bold;
     font-size: 0.8rem;
-    border: 0.1px solid $dark_green;
+    background: none;
     vertical-align: center;
+    border: none;
+    margin: 0 6%;
+    width: auto;
   }
+}
+
+.quantity-buttons.container {
+  display: flex;
+  margin: 0 8%;
+  flex-direction: row;
+  justify-content: center;
+  background-color: $green_yellow;
+  width: 50%;
+  padding: 2%;
   :first-child {
-    margin-right: 6%;
-  }
-  :last-child {
-    margin-left: 6%;
+    border-right: 0.9px solid $dark_green;
   }
 }
 
 .buy {
   .update-order {
     @include roundedButtons();
-    // border: none;
-    // background-color: $soft_green;
   }
   .icon {
     color: $dark_green;
   }
+}
+
+#first-buttons-with-border {
+  
+  border: 1px solid $dark_green;
+  border-radius: 10%;
 }
 

@@ -77,6 +77,7 @@ const ProductCards = () => {
 
             <button 
             className="update-order button buy second-row" 
+            id="second-button-with-border"
             onClick={(e) => updateOrderReducer(e, ID, name, units_selected, price_unit)}
             >
               <HiShoppingCart className="buy icon" />

@@ -25,9 +25,6 @@ const getStores = async (lat, lon) => {
   const returnedStores = await getStoresNextPage(pageToken);
   
   const finalList = storesToCompare.concat(returnedStores);
-  console.log(finalList);
-  
-
   
   return finalList;
 };

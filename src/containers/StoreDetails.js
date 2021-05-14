@@ -12,10 +12,9 @@ import Navbar from '../Components/Navbar/Navbar';
 import './StoreDetail.scss';
 
 const StoreDetails = props => {
-  const {product_list} = useSelector(store => store.storesReducer.storeToDetail);
-  debugger;
-  const topRef = React.createRef();
-
+  const goToTop = () => {
+    window.scrollTo(0,0);
+  }
 
   return (
     <div >
@@ -29,8 +28,8 @@ const StoreDetails = props => {
           <ProductsList  />
         </div>
       </div>
-      <div className="go-top button container">
-        <img src="./assets/img/logo_background_green.png" alt="our logo" />
+      <div className="go-top button container" onClick={goToTop}>
+        <img src="./assets/img/logo/white_icon.png" alt="our logo" />
       </div>
     </div>
   );

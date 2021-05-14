@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router';
 
 import CategoriesButton from './CategoriesButton';
 
@@ -7,6 +8,7 @@ import './Navbar.scss';
 import OrderButton from './OrderButton/OrderButton';
 
 const Navbar = () => {
+  const history = useHistory();
   const {page} = useSelector(store => store.hocsReducer);
 
   const [scrolling, setScrolling] = useState(false);
@@ -38,7 +40,7 @@ const Navbar = () => {
   }
 
   const scrollTop = () => {
-    window.scrollTo(0, 0);
+    history.push("/");
   }
 
   window.addEventListener('scroll', changeBackground);

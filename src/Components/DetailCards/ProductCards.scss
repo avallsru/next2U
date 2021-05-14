@@ -102,3 +102,7 @@
   font-size: 0.8rem;
   font-weight: bold;
 }
+
+#second-button-with-border {
+  @include roundedButtons;
+}

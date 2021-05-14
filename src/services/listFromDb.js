@@ -16,7 +16,6 @@ function parseDocument(doc) {
 export async function listFromDb(collection, filter) {
   try {
     let db = getCollection(collection);
-    // console.log(db);
     if (filter) {
       db = db.where(filter.field, filter.condition, filter.value);
     } 
@@ -28,7 +27,6 @@ export async function listFromDb(collection, filter) {
     return data;
     
   } catch (error) {
-    console.log("listStore -> error", error)
     return [];
   }
 }
