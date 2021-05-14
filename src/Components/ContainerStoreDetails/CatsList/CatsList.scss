@@ -1,0 +1,114 @@
+@import '../../../utils/general.scss';
+
+@keyframes growDown {
+  0% {
+    transform: scaleY(0)
+  }
+  80% {
+    transform: scaleY(1.1)
+  }
+  100% {
+    transform: scaleY(1)
+  }
+}
+
+@keyframes growUp {
+  0% {
+    transform: scaleY(1)
+  }
+  20% {
+    transform: scaleY(1.1)
+  }
+  100% {
+    transform: scaleY(0)
+  }
+}
+
+
+
+@keyframes appearing {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    
+  }
+  to { 
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    
+  }
+}
+
+@keyframes disappearing {
+  from {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+  }
+}
+
+.categories-to-print {
+  @include primaryFont;
+  @include hoverCursor;
+  position: absolute;
+  display: none;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  width: 80%;
+  max-height: 35vh;
+  padding: 0 10%;
+  overflow-y: scroll;
+  flex-direction: column;
+  font-weight: bold;
+  text-align: center;
+  background-color: $soft_green;
+  color: $dark_green;
+  
+  z-index: -2;
+  &.visible {
+    animation: appearing 0.7s linear forwards;
+    visibility: visible;
+    display: block;
+
+  .one-by-one {
+    animation: growDown 0.9s linear forwards;
+    transform-origin: top center;
+  }
+  }
+  
+
+  
+
+  &.hidden {
+    animation: disappearing 0.7s linear forwards ;
+    transform: translateY();
+    visibility: hidden;
+    .one-by-one {
+      animation: growUp 0.9 linear forwards;
+    }
+  }
+
+  
+
+  > * {
+    width: 100%;
+    // justify-self: center;
+    padding: 0.7em 0;
+    border-bottom: 0.5px solid $dark_green;
+    :hover {
+      cursor: pointer;
+    }
+  }
+  
+  :last-child {
+    border: none;
+  }
+}

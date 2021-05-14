@@ -1,0 +1,35 @@
+@import '../../utils/general.scss';
+
+
+
+
+.skeleton.categories-list {
+  justify-content: normal;
+}
+
+.skeleton.container.card-store-cats {
+  @include primaryFont;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 3vw;
+  overflow-x: scroll;
+  overflow-y: visible;
+  padding: 6% 6%;
+  height: 13vw;
+  width: 12vw;
+  max-width: 118px;
+  max-height: 118px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+.skeleton.img.card-store-cats {
+  height: 100%;
+  width: 95%;
+  margin: 1vh 0.5vw;
+  border: 1px solid $soft_green;
+  border-radius: 5px;
+  
+}

@@ -1,0 +1,24 @@
+@import '../../utils/general.scss';
+
+
+.skeleton.logo-store {
+  height: 50px;
+  border: 1px solid $soft_green;
+  border-radius: 10px;
+}
+
+.skeleton {
+  &.detail-name,
+  &.category-names,
+  &.opening-hours,
+  &.delivery,
+  &.paying-info
+  {
+    height: 20px;
+    background-color: $soft_green;
+    opacity: 1;
+  }
+  &.detail.basic-data.container {
+    justify-content: space-around;
+  }  
+}

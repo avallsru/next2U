@@ -1,0 +1,125 @@
+@import '../../utils/general.scss';
+
+@keyframes appearing {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+  }
+  to { 
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+@keyframes disappearing {
+  from {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+  }
+}
+
+.order-container {
+  left: 0;
+  width: 80%;
+  padding: 0 10%;
+  overflow-y: scroll;
+  background-color: $soft_green;
+  
+  &.store-details {
+    display: none;
+    
+    &.visible {
+      
+      position: absolute;
+      max-height: 35vh;
+      overflow-y: scroll;
+      
+      animation: appearing 0.7s linear forwards;
+      transform-origin: top center;
+      display: block;
+    }
+  
+    &.hidden {
+      animation: disappearing 2s linear forwards;
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+
+  
+  & * {
+  margin: 2%;
+  @include primaryFont;
+  }
+  .button-container {
+    display: flex;
+    justify-content: center;
+  }
+  .go-back-button {
+    @include lastConfirmationButtons;
+    border: 1px solid $dark_green;
+    background-color: $green_yellow;
+    color: $dark_green;
+  }
+}
+
+.pre-confirm-order.button {
+  border: 1px solid $dark_green;
+  background-color: $green_yellow;
+  color: $dark_green;
+  border-radius: 5px;
+  padding-bottom: 2px;
+}
+
+.product-ordered,
+.product-price {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+  font-size: 0.8rem;
+  
+}
+.product-basic-information {
+  width: 35%;
+}
+.product-price {
+  align-items: center;
+}
+
+.product-ordered {
+  font-size: 0.8rem;
+  padding: 2% 0;
+  border-bottom: 1px solid $dark_green;
+}
+
+.title.order,
+.label.total-price {
+  font-weight: bold;
+  color: $dark_green;
+}
+
+.title.order,
+.total-price {
+  width: 100%;
+  text-align: center;
+}
+
+.delete-button {
+  background: none;
+  border: none;
+  :hover {
+    cursor: pointer;
+  }
+}
+
+.delete-icon {
+  color: $dark_green;
+}

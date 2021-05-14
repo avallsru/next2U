@@ -1,0 +1,49 @@
+@import '../../../utils/general.scss';
+
+.info-container {
+  @include primaryFont;
+  position: absolute;
+  top: 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 2px solid $soft_green;
+  border-radius: 5px;
+  padding: 5%;
+  background-color: $soft_green;
+  >* {
+    color: $dark_green;
+  }
+
+}
+
+.img-container {
+  left: 20%;
+  top: 5%;
+  margin-right: 0;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  
+  margin-bottom: 5%;
+  
+  & > * {
+    max-width: 160px;
+    max-height: 120px;
+    vertical-align: center;
+    border-radius: 10px;
+   
+  }
+  
+}
+
+.store-name,
+.store-categories {
+  margin-block: 0px;
+}
+
+.store-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+}

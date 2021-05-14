@@ -1,0 +1,54 @@
+@import '../../../utils/general.scss';
+
+@keyframes changingNumber {
+  0%{
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+    background-color: $dark_green;
+    color: white;
+  }
+
+  100% {
+    transform: scale(1);
+    background-color: $green_yellow;
+  }
+}
+@keyframes changingNumbers {
+  0%{
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+    background-color: $dark_green;
+    color: white;
+  }
+
+  100% {
+    transform: scale(1);
+    background-color: $green_yellow;
+  }
+}
+.order.navbar.number-items {
+  @include primaryFont;
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+  left: 80%;
+  top: -7px;
+  font-weight: bold;
+  border: 1px solid $dark_green;
+  border-radius: 50%;
+  background-color: $green_yellow;
+  font-size: 0.9em;
+
+  &.true {
+    animation: changingNumber 1s forwards ease-in-out;
+  }
+
+  &.false {
+    animation: changingNumbers 1s forwards ease-in-out;
+  }
+}

@@ -1,0 +1,37 @@
+@import '../utils/general.scss';
+.store-detail.container {
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+}
+
+.products-list-container{
+  margin-top: 90%;
+}
+.basic-info.store-detail-page {
+  margin-bottom: 20%;
+}
+
+.go-top.button.container {
+  position: fixed;
+  bottom: 3%;
+  left: 80%;
+  right: 3%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2%;
+  border: 1.5px solid $soft_green;
+  border-radius: 50%;
+  background-color: white;
+  z-index: 3;
+  > * {
+    width: 80%;
+    height: auto;
+    z-index: 4;
+  }
+  
+
+}
+
+

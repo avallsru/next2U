@@ -1,0 +1,28 @@
+@import '../utils/general.scss';
+
+.last-confirmation.page.container {
+  margin-top: 20%;
+  display: flex;
+  flex-direction: column;
+}
+.order-container.last-confirmation {
+  border-bottom: 1px solid $soft_green;
+}
+
+.contact.container {
+  display: flex;
+}
+
+.last-button {
+  &.button {
+    @include lastConfirmationButtons;
+    font-weight: bold;
+    padding: 2vh;
+  }
+  
+  &.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
