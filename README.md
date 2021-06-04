@@ -14,7 +14,7 @@ Big companies such as Fnac, elCorteIngles, the big supermarkets and similar have
 Being inspired by other platforms (like ones which join different restaurants), **next2U** seeks to become a platform where little stores could easily sell online and deliver their products to their customers (if they want it).
 
 #### Check the website
-<https://next2u-31408.web.app/last_confirmation>
+<https://next2u-31408.web.app>
 
 ***Because of technical "problems api calls the project just works near the addresses:
 - Rambla Poblenou, 50. Barcelona
